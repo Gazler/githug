@@ -7,7 +7,8 @@ module Gitscrub
       
       def load(level_no)
         level = new
-        level.instance_eval(File.read("../levels/#{level_no}.rb"))
+        location = "#{File.dirname(__FILE__)}/../../levels/#{level_no}.rb"
+        level.instance_eval(File.read(location))
         level
       end
 
