@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_development_dependency "rspec"
+  s.add_development_dependency "rspec", "~>2.8.0"
+
+  s.add_dependency "grit", "~>2.4.1"
   # s.add_runtime_dependency "rest-client"
 end
