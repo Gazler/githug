@@ -9,6 +9,7 @@ describe Gitscrub::Game do
     @profile.stub(:level).and_return(1)
     @profile.stub(:save)
     @level = mock
+    @level.stub(:ldescription)
     Gitscrub::UI.stub(:puts)
     Gitscrub::Level.stub(:load).and_return(@level)
   end
@@ -28,6 +29,7 @@ describe Gitscrub::Game do
 
   it "should echo congratulations if the level is solved" do
     @level.stub(:solve).and_return(true)
+    @profile.should_receive(:level=).with(2)
     Gitscrub::UI.should_receive(:puts).with("Congratulations, you have solved the level")
     @game.play_level
   end
@@ -36,6 +38,13 @@ describe Gitscrub::Game do
     @level.stub(:solve).and_return(false)
     Gitscrub::UI.should_receive(:puts).with("Sorry, this solution is not quite right!")
     @game.play_level
+  end
+
+  it "should output the description of the next level" do
+    @level.stub(:ldescription).and_return("Description")  
+    @profile.stub(:level=)
+    Gitscrub::UI.should_receive(:puts).with("Description")
+    @game.level_bump
   end
   
 end

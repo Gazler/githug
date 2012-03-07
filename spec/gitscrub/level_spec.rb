@@ -17,10 +17,16 @@ end
 
   it "should load the level" do
     File.stub(:dirname).and_return("")
+    File.stub(:exists?).and_return(true)
     File.should_receive(:read).with('/../../levels/1.rb').and_return(@file)
     level = Gitscrub::Level.load(1)
     level.ldifficulty.should eql(1)
     level.ldescription.should eql("A test description")
+  end
+
+  it "should return false if the level does not exist" do
+    File.stub(:exists?).and_return(false)
+    Gitscrub::Level.load(1).should eql(false)
   end
 
   it "should solve the problem" do

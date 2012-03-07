@@ -14,7 +14,7 @@ module Gitscrub
         @@in_stream = in_stream
       end
 
-      def puts(string)
+      def puts(string = "")
         @@out_stream.puts(string)
       end
 

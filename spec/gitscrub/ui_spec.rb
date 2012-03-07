@@ -17,6 +17,11 @@ describe Gitscrub::UI do
     @out.string.should eql("hello\n")
   end
 
+  it "should print an empty line with no arguments" do
+    @ui.puts 
+    @out.string.should eql("\n")
+  end
+
   it "should print without a new line" do
     @ui.print("hello")
     @out.string.should eql("hello")

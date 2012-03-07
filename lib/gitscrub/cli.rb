@@ -31,8 +31,9 @@ module Gitscrub
 
       def make_directory
         unless File.exists?("./git_scrub") || Dir.pwd.split("/").last == "git_scrub"
-          if UI.ask("No gitscrubber directory found, do you wish to create one?")
+          if UI.ask("No gitscrub directory found, do you wish to create one?")
             Dir.mkdir("./git_scrub")
+            Dir.chdir("git_scrub")
           else
             UI.puts("Exiting")
             exit

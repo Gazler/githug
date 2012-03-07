@@ -8,6 +8,7 @@ module Gitscrub
       def load(level_no)
         level = new
         location = "#{File.dirname(__FILE__)}/../../levels/#{level_no}.rb"
+        return false unless File.exists?(location)
         level.instance_eval(File.read(location))
         level
       end
@@ -28,7 +29,6 @@ module Gitscrub
 
     def solve
       lsolution.call
-      true
     rescue
       false
     end

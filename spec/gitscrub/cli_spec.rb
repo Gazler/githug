@@ -18,6 +18,7 @@ describe Gitscrub::CLI do
   it "should create a directory if one does not exist" do
     Gitscrub::UI.stub(:ask).and_return(true) 
     Dir.should_receive(:mkdir).with("./git_scrub")
+    Dir.should_receive(:chdir).with("git_scrub")
     @cli.make_directory
   end
 
