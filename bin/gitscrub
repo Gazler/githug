@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'gitscrub/cli'
+
+Gitscrub::CLI.start

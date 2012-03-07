@@ -4,3 +4,4 @@ Gemfile.lock
 pkg/*
 *.swp
 .rvmrc
+git_scrub/*
