@@ -5,3 +5,4 @@ pkg/*
 *.swp
 .rvmrc
 git_scrub/*
+.profile.yml

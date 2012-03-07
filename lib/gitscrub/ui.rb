@@ -41,8 +41,13 @@ module Gitscrub
         line
       end
 
-      def ask(a)
-        true
+      def request(msg)
+        print(msg)
+        gets.chomp
+      end
+      
+      def ask(msg)
+        request("#{msg} [yn] ") == 'y'
       end
 
     end

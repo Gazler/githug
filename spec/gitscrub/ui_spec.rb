@@ -42,5 +42,28 @@ describe Gitscrub::UI do
     @ui.word_box("Gitscrub")
     @out.string.should eql(word_box)
   end
+
+
+  it "should request text input" do
+    @in.puts "bar"
+    @in.rewind
+    @ui.request("foo").should == "bar"
+    @out.string.should == "foo"
+  end
+
+  it "should ask for yes/no and return true when yes" do
+    @ui.should_receive(:request).with('foo? [yn] ').and_return('y')
+    @ui.ask("foo?").should be_true
+  end
+  
+  it "should ask for yes/no and return false when no" do
+    @ui.stub(:request).and_return('n')
+    @ui.ask("foo?").should be_false
+  end
+  
+  it "should ask for yes/no and return false for any input" do
+    @ui.stub(:request).and_return('aklhasdf')
+    @ui.ask("foo?").should be_false
+  end
   
 end
