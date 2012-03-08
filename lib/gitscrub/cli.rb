@@ -24,7 +24,14 @@ module Gitscrub
     desc :reset, "reset the current level"
 
     def reset
-      true
+      profile = Profile.load
+      level = Level.load(profile.level)
+      if level
+        UI.word_box("Gitscrub")
+        UI.puts("resetting level")
+        level.setup_level
+        level.full_description
+      end
     end
 
     no_tasks do

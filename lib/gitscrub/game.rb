@@ -21,9 +21,7 @@ module Gitscrub
             level_bump
           else
             UI.puts "Sorry, this solution is not quite right!"
-            UI.puts
-            UI.puts level.ldescription
-            UI.puts
+            UI.puts level.full_description
           end
         end
       end
@@ -33,9 +31,8 @@ module Gitscrub
       profile.level += 1
       profile.save
       if level = Level.load(profile.level)
-        UI.puts
-        UI.puts(level.ldescription)
-        UI.puts
+        UI.puts(level.full_description)
+        level.setup_level
       end
     end
 

@@ -9,7 +9,8 @@ describe Gitscrub::Game do
     @profile.stub(:level).and_return(1)
     @profile.stub(:save)
     @level = mock
-    @level.stub(:ldescription)
+    @level.stub(:full_description)
+    @level.stub(:setup_level)
     Gitscrub::UI.stub(:puts)
     Gitscrub::Level.stub(:load).and_return(@level)
   end
@@ -41,9 +42,14 @@ describe Gitscrub::Game do
   end
 
   it "should output the description of the next level" do
-    @level.stub(:ldescription).and_return("Description")  
+    @level.should_receive(:full_description)
     @profile.stub(:level=)
-    Gitscrub::UI.should_receive(:puts).with("Description")
+    @game.level_bump
+  end
+
+  it "should call setup_level for the next level" do
+    @level.should_receive(:setup_level)  
+    @profile.stub(:level=)
     @game.level_bump
   end
   

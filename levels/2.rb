@@ -1,5 +1,12 @@
 difficulty 1
-description "Add a file called README to your repository"
+description "There is a file in your folder called README, you should add it to your staging area"
+
+setup do
+  `rm -rf .git`
+  `git init`
+  `touch README`
+end
+
 solution do
   repo = Grit::Repo.new(".")
   return false unless repo.status.files.keys == ["README"]
