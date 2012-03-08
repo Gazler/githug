@@ -13,6 +13,10 @@ end
 solution do
   Grit::Repo.new("gitscrub/notadir")
 end
+
+hint do
+  puts "this is a hint"
+end
     eof
     File.stub(:exists?).and_return(true)
     File.stub(:read).and_return(@file)
@@ -20,6 +24,8 @@ end
     @repo = mock
     @repo.stub(:reset) 
     Gitscrub::Repository.stub(:new).and_return(@repo)
+    Gitscrub::UI.stub(:puts)
+    Gitscrub::UI.stub(:print)
   end
 
   it "should mixin UI" do
@@ -98,6 +104,18 @@ end
       @level.setup_level
     end
 
+  end
+
+  describe "hint" do
+    it "should display a hint" do
+      @level.should_receive(:puts).with("this is a hint")
+      @level.show_hint 
+    end
+
+    it "should not call the hint if none exist" do
+      @level.instance_variable_set("@hint", nil)
+      lambda {@level.show_hint}.should_not raise_error(NoMethodError)
+    end
   end
 
 

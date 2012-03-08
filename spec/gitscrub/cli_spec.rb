@@ -12,7 +12,7 @@ describe Gitscrub::CLI do
   it "should print the logo" do
     Gitscrub::UI.should_receive(:word_box).with("Gitscrub")
     @cli.stub(:make_directory) 
-    @cli.setup
+    @cli.play
   end
 
   it "should create a directory if one does not exist" do
@@ -40,12 +40,7 @@ describe Gitscrub::CLI do
     lambda {@cli.make_directory}.should raise_error(SystemExit)
   end
 
-  it "should check the current solution" do
-    @cli.check.should eql(true) 
-  end
-
-  describe "reset" do
-    
+  describe "level methods" do
     before(:each) do
       @level = mock
       @profile = mock
@@ -53,23 +48,33 @@ describe Gitscrub::CLI do
       Gitscrub::Profile.stub(:load).and_return(@profile)
       Gitscrub::Level.stub(:load).and_return(@level)
     end
-    
-    it "should reset the current level" do
-      @level.should_receive(:setup_level)
-      @level.should_receive(:full_description)
-      Gitscrub::UI.should_receive(:word_box).with("Gitscrub")
-      Gitscrub::UI.should_receive(:puts).with("resetting level")
-      @cli.reset
+
+    it "should call the hint method on the level" do
+      @level.should_receive(:show_hint)
+      @cli.hint
     end
 
-    it "should not reset if the level cannot be loaded" do
-      Gitscrub::Level.stub(:load).and_return(false)
-      @level.should_not_receive(:setup_level)
-      @level.should_not_receive(:full_description)
-      Gitscrub::UI.should_not_receive(:word_box).with("Gitscrub")
-      Gitscrub::UI.should_not_receive(:puts).with("resetting level")
-      @cli.reset
-    end
-  end  
+    describe "reset" do
+      
+      
+      it "should reset the current level" do
+        @level.should_receive(:setup_level)
+        @level.should_receive(:full_description)
+        Gitscrub::UI.should_receive(:word_box).with("Gitscrub")
+        Gitscrub::UI.should_receive(:puts).with("resetting level")
+        @cli.reset
+      end
+
+      it "should not reset if the level cannot be loaded" do
+        Gitscrub::Level.stub(:load).and_return(false)
+        @level.should_not_receive(:setup_level)
+        @level.should_not_receive(:full_description)
+        Gitscrub::UI.should_not_receive(:word_box).with("Gitscrub")
+        Gitscrub::UI.should_not_receive(:puts).with("resetting level")
+        @cli.reset
+      end
+    end  
+
+  end
   
 end

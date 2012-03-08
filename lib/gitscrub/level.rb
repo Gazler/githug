@@ -59,5 +59,18 @@ module Gitscrub
       false
     end
 
+    def hint(&hint)
+      @hint = hint
+    end
+
+    def show_hint
+      UI.word_box("Gitscrub")
+      if @hint
+        @hint.call
+      else
+        UI.puts("No hints available for this level")
+      end
+    end
+
   end
 end

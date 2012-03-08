@@ -4,29 +4,29 @@ module Gitscrub
   class CLI < Thor
 
 
-    default_task :setup
+    default_task :play
 
-    desc :setup, "Initialize the game"
+    desc :play, "Initialize the game"
 
-    def setup
+    def play
       UI.word_box("Gitscrub")
       make_directory
       game = Game.new
       game.play_level
     end
 
-    desc :check, "check your current solution"
+    desc :hint, "Get a hint for the current level"
 
-    def check
-      true
+    def hint
+      if level = load_level
+        level.show_hint
+      end
     end
 
-    desc :reset, "reset the current level"
+    desc :reset, "Reset the current level"
 
     def reset
-      profile = Profile.load
-      level = Level.load(profile.level)
-      if level
+      if level = load_level
         UI.word_box("Gitscrub")
         UI.puts("resetting level")
         level.setup_level
@@ -35,6 +35,12 @@ module Gitscrub
     end
 
     no_tasks do
+
+      def load_level
+        profile = Profile.load
+        Level.load(profile.level)
+      end
+
 
       def make_directory
         if File.exists?("./git_scrub") 

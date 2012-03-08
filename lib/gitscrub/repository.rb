@@ -18,6 +18,10 @@ module Gitscrub
       end
     end
 
+    def valid?
+      !@grit.nil?
+    end
+
 
   end
 end

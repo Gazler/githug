@@ -45,5 +45,16 @@ describe Gitscrub::Repository do
     end
   end
 
+  describe "valid?" do
+    it "should be valid if grit exists" do
+      @repository.should be_valid  
+    end
+
+    it "should not be valid if grit does not exist" do
+      @repository.instance_variable_set("@grit", nil) 
+      @repository.should_not be_valid
+    end
+  end
+
 
 end
