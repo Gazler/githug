@@ -54,6 +54,15 @@ An example level:
 
  `difficulty`, `description` and `solution` are required.
 
+ **note** Because `solution` is a Proc, you cannot prematurely return out of it and as a result, must put an implicit return on the last line of the solution block.
+
+
+    solution do
+      solved = false
+      solved = true if repo.valid?
+      solved
+    end
+
  By default, `setup` will remove all files from the game folder.  You do not need to include a setup method if you don't want an initial git repository (if you are testing `git init` or only checking an answer.)
  
  You can call `repo.init` to initialize an empty repository with a .gitignore file. It takes a single parameter of false if you want to skip the initial commit of the .gitignore file.
