@@ -14,14 +14,14 @@ solution do
   Grit::Repo.new("gitscrub/notadir")
 end
     eof
+    File.stub(:exists?).and_return(true)
     File.stub(:read).and_return(@file)
     @level = Gitscrub::Level.load(1)
   end
 
   it "should load the level" do
     File.stub(:dirname).and_return("")
-    File.stub(:exists?).and_return(true)
-    File.should_receive(:read).with('/../../levels/1.rb').and_return(@file)
+    File.should_receive(:read).with('/../../levels/init.rb').and_return(@file)
     level = Gitscrub::Level.load(1)
     level.ldifficulty.should eql(1)
     level.ldescription.should eql("A test description")
@@ -51,6 +51,18 @@ end
 
   it "should call setup" do
     @level.setup_level.should eql("test") 
+  end
+
+  it "should mixin UI" do
+    Gitscrub::Level.ancestors.should include(Gitscrub::UI)
+  end
+
+  it "should initialize a repository when repo is called" do
+    repo = mock
+    Gitscrub::Repository.should_receive(:new).and_return(repo)
+    @level.repo.should equal(repo)
+    Gitscrub::Repository.should_not_receive(:new).and_return(repo)
+    @level.repo.should equal(repo)
   end
   
 end

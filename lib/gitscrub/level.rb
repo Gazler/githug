@@ -2,13 +2,15 @@ module Gitscrub
   class Level
     include UI
 
+    LEVELS = [nil, "init", "add", "commit", "contribute"]
+
     attr_accessor :ldifficulty, :ldescription, :lsolution, :level_no, :lsetup
     
     class << self
       
       def load(level_no)
         level = new
-        location = "#{File.dirname(__FILE__)}/../../levels/#{level_no}.rb"
+        location = "#{File.dirname(__FILE__)}/../../levels/#{LEVELS[level_no]}.rb"
         return false unless File.exists?(location)
         level.instance_eval(File.read(location))
         level.level_no = level_no
@@ -44,6 +46,10 @@ module Gitscrub
 
     def setup_level
       lsetup.call
+    end
+
+    def repo
+      @repo ||= Repository.new
     end
 
     def solve
