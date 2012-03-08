@@ -1,5 +1,5 @@
 module Gitscrub
-  class UI
+  module UI
 
     @@out_stream
     @@in_stream
@@ -50,6 +50,11 @@ module Gitscrub
         request("#{msg} [yn] ") == 'y'
       end
 
+    end
+
+    def method_missing(method, *args, &block)
+      return UI.send(method, *args) if UI.methods(false).include?(method)
+      super
     end
 
   end

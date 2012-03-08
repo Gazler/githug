@@ -1,5 +1,6 @@
 module Gitscrub
   class Level
+    include UI
 
     attr_accessor :ldifficulty, :ldescription, :lsolution, :level_no, :lsetup
     
