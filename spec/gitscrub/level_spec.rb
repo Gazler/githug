@@ -118,6 +118,13 @@ end
     end
   end
 
+  describe "init_from_level" do
+    it "should copy the files from the level folder" do
+      FileUtils.should_receive(:cp_r).with("#{@level.level_path}/.", ".") 
+      @level.init_from_level
+    end  
+  end
+
 
   
 end

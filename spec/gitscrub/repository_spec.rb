@@ -78,7 +78,7 @@ describe Gitscrub::Repository do
   describe "method_missing" do
     it "should deletegate to grit if the method exists" do
       @grit.should_receive(:respond_to?).with(:valid_method).and_return(true)      
-      @grit.should_receive(:call).with(:valid_method)
+      @grit.should_receive(:valid_method)
       @repository.valid_method
     end
 

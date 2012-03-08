@@ -42,7 +42,7 @@ module Gitscrub
       end
 
       def request(msg)
-        print(msg)
+        print("#{msg} ")
         gets.chomp
       end
       

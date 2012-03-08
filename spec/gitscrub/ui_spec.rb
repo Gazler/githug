@@ -53,7 +53,7 @@ describe Gitscrub::UI do
     @in.puts "bar"
     @in.rewind
     @ui.request("foo").should == "bar"
-    @out.string.should == "foo"
+    @out.string.should == "foo "
   end
 
   it "should ask for yes/no and return true when yes" do

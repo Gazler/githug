@@ -7,7 +7,11 @@ setup do
 end
 
 solution do
-  return false unless repo.status.files.keys == ["README"]
+  return false unless repo.status.files.keys.include?("README")
   return false if repo.status.files["README"].untracked
   true
+end
+
+hint do
+  puts "You can type `git` in your shell to get a list of available git commands"
 end

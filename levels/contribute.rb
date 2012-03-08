@@ -19,3 +19,7 @@ solution do
   end
   contributor
 end
+
+hint do
+  puts "Forking the repository would be a good start!"
+end

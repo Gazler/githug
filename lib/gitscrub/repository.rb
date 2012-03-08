@@ -32,7 +32,7 @@ module Gitscrub
 
     def method_missing(method, *args, &block)
       if @grit && @grit.respond_to?(method) 
-        return @grit.call(method, *args, &block)
+        return @grit.send(method, *args, &block)
       end
       super
     end
