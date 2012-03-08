@@ -22,6 +22,21 @@ module Gitscrub
       !@grit.nil?
     end
 
+    def init(gitignore = true)
+      @grit = Grit::Repo.init(".")
+      if gitignore
+        @grit.add(".gitignore")
+        @grit.commit("added .gitignore")
+      end
+    end
+
+    def method_missing(method, *args, &block)
+      if @grit && @grit.respond_to?(method) 
+        return @grit.call(method, *args, &block)
+      end
+      super
+    end
+
 
   end
 end

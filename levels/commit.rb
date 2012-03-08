@@ -2,9 +2,9 @@ difficulty 1
 description "Make a commit"
 
 setup do
-  `git init`
-  `touch README`
-  `git add README`
+  repo.init
+  FileUtils.touch("README")
+  repo.add("README")
 end
 
 solution do

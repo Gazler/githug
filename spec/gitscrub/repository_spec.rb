@@ -56,5 +56,37 @@ describe Gitscrub::Repository do
     end
   end
 
+  describe "init" do
+    before(:each) do
+      @repo = mock 
+      Grit::Repo.should_receive(:init).with(".").and_return(@repo)
+    end
+
+    it "should initialize an empty repository and add .gitignore" do
+      @repo.should_receive(:add).with(".gitignore")
+      @repo.should_receive(:commit).with("added .gitignore")
+      @repository.init
+    end
+
+    it "should not add and commit gitignore if prompted" do
+      @repo.should_not_receive(:add).with(".gitignore")
+      @repo.should_not_receive(:commit).with("added .gitignore")
+      @repository.init(false)
+    end
+  end
+
+  describe "method_missing" do
+    it "should deletegate to grit if the method exists" do
+      @grit.should_receive(:respond_to?).with(:valid_method).and_return(true)      
+      @grit.should_receive(:call).with(:valid_method)
+      @repository.valid_method
+    end
+
+    it "should not deletegate to grit if the method does not exist" do
+      @grit.should_receive(:respond_to?).with(:invalid_method).and_return(false)      
+      lambda { @repository.invalid_method }.should raise_error(NoMethodError)
+    end
+  end
+
 
 end
