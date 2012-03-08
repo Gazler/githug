@@ -19,6 +19,7 @@ describe Gitscrub::CLI do
     Gitscrub::UI.stub(:ask).and_return(true) 
     Dir.should_receive(:mkdir).with("./git_scrub")
     Dir.should_receive(:chdir).with("git_scrub")
+    File.should_receive(:open).with(".gitignore", "w").and_return(true)
     @cli.make_directory
   end
 
@@ -28,8 +29,14 @@ describe Gitscrub::CLI do
     @cli.make_directory 
   end
 
-  it "should create a directory if one does not exist" do
+  it "should exit if the user selects no" do
     Gitscrub::UI.stub(:ask).and_return(false) 
+    lambda {@cli.make_directory}.should raise_error(SystemExit)
+  end
+
+  it "should prompt to change into the directory if it exists" do
+    File.stub(:exists?).and_return(true) 
+    Gitscrub::UI.should_receive(:puts).with("Please change into the git_scrub directory")
     lambda {@cli.make_directory}.should raise_error(SystemExit)
   end
 

@@ -2,7 +2,6 @@ difficulty 1
 description "There is a file in your folder called README, you should add it to your staging area"
 
 setup do
-  `rm -rf .git`
   `git init`
   `touch README`
 end

@@ -70,5 +70,15 @@ describe Gitscrub::UI do
     @ui.stub(:request).and_return('aklhasdf')
     @ui.ask("foo?").should be_false
   end
+
+  it "should print out a success message in green" do
+    @ui.success("success")
+    @out.string.should eql("\033[32msuccess\033[0m\n")
+  end
+
+  it "should print out a error message in red" do
+    @ui.error("error")
+    @out.string.should eql("\033[31merror\033[0m\n")
+  end
   
 end

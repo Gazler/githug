@@ -4,7 +4,7 @@ module Gitscrub
 
     LEVELS = [nil, "init", "add", "commit", "contribute"]
 
-    attr_accessor :ldifficulty, :ldescription, :lsolution, :level_no, :lsetup
+    attr_accessor :level_no
     
     class << self
       
@@ -20,32 +20,33 @@ module Gitscrub
     end
 
     def difficulty(num)
-      @ldifficulty = num
+      @difficulty = num
     end
 
     def description(description)
-      @ldescription = description
+      @description = description
     end
 
     def solution(&block)
-      @lsolution = block
+      @solution = block
     end
 
     def setup(&block)
-      @lsetup = block 
+      @setup = block 
     end
 
     def full_description
       UI.puts
       UI.puts "Level: #{level_no}"
-      UI.puts "Difficulty: #{"*"*ldifficulty}"
+      UI.puts "Difficulty: #{"*"*@difficulty}"
       UI.puts
-      UI.puts ldescription
+      UI.puts @description
       UI.puts
     end
 
     def setup_level
-      lsetup.call
+      repo.reset
+      @setup.call if @setup
     end
 
     def repo
@@ -53,7 +54,7 @@ module Gitscrub
     end
 
     def solve
-      lsolution.call
+      @solution.call
     rescue
       false
     end

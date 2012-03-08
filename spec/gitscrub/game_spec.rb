@@ -31,13 +31,13 @@ describe Gitscrub::Game do
   it "should echo congratulations if the level is solved" do
     @level.stub(:solve).and_return(true)
     @profile.should_receive(:level=).with(2)
-    Gitscrub::UI.should_receive(:puts).with("Congratulations, you have solved the level")
+    Gitscrub::UI.should_receive(:success).with("Congratulations, you have solved the level")
     @game.play_level
   end
 
   it "should echo congratulations if the level is solved" do
     @level.stub(:solve).and_return(false)
-    Gitscrub::UI.should_receive(:puts).with("Sorry, this solution is not quite right!")
+    Gitscrub::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
     @game.play_level
   end
 

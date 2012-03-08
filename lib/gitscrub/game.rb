@@ -17,10 +17,10 @@ module Gitscrub
         level = Level.load(profile.level)
         if solve && level
           if level.solve  
-            UI.puts "Congratulations, you have solved the level"
+            UI.success "Congratulations, you have solved the level"
             level_bump
           else
-            UI.puts "Sorry, this solution is not quite right!"
+            UI.error "Sorry, this solution is not quite right!"
             UI.puts level.full_description
           end
         end

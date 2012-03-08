@@ -2,7 +2,6 @@ difficulty 1
 description "Make a commit"
 
 setup do
-  `rm -rf .git`
   `git init`
   `touch README`
   `git add README`

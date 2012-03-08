@@ -37,10 +37,18 @@ module Gitscrub
     no_tasks do
 
       def make_directory
-        unless File.exists?("./git_scrub") || Dir.pwd.split("/").last == "git_scrub"
+        if File.exists?("./git_scrub") 
+          UI.puts "Please change into the git_scrub directory"
+          exit
+        end
+
+        unless File.basename(Dir.pwd) == "git_scrub"
           if UI.ask("No gitscrub directory found, do you wish to create one?")
             Dir.mkdir("./git_scrub")
             Dir.chdir("git_scrub")
+            File.open(".gitignore", "w") do |file|
+              file.write(".profile.yml")
+            end
           else
             UI.puts("Exiting")
             exit
