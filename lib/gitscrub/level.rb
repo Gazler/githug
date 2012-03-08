@@ -2,7 +2,7 @@ module Gitscrub
   class Level
     include UI
 
-    LEVELS = [nil, "init", "add", "commit", "config", "contribute"]
+    LEVELS = [nil, "init", "add", "commit", "config", "blame",  "contribute"]
 
     attr_accessor :level_no, :level_path
     
@@ -23,6 +23,7 @@ module Gitscrub
 
     def init_from_level
       FileUtils.cp_r("#{level_path}/.", ".")
+      FileUtils.mv(".gitscrub", ".git")
     end
 
     def difficulty(num)
