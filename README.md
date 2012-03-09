@@ -68,8 +68,6 @@ An example level:
  
  You can call `repo.init` to initialize an empty repository with a .gitignore file. It takes a single parameter of false if you want to skip the initial commit of the .gitignore file.
 
- All methods called on `repo` are sent to the grit gem if the method does not existyou want to skip the initial commit of the .gitignore file.
-
  All methods called on `repo` are sent to the [grit gem](https://github.com/mojombo/grit) if the method does not exist, and you can use that for most git related commands (`repo.add`, `repo.commit`, etc.)
 
 
