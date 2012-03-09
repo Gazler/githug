@@ -19,7 +19,8 @@ Gitscrub has 3 commands:
  * reset - Reset the current level
 
 
- ##Contributing
+##Contributing
+
  Get yourself on the [contributors list](https://github.com/Gazler/gitscrub/contributors) by doing the following:
 
   * Fork the repository

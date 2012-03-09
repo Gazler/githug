@@ -10,7 +10,7 @@ solution do
   solved = false
 
   offender = repo.commit("97bdd0cccf9f4b8730f78cb53a81a74f205dbcc2").author.name
-  solved = true if request("Who made the commit with the password?") == offender
+  solved = true if request("Who made the commit with the password?").downcase == offender.downcase
     
   solved
 end
