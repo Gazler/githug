@@ -3,8 +3,8 @@ module Gitscrub
 
     attr_accessor :grit
   
-    def initialize
-      @grit = Grit::Repo.new(".")
+    def initialize(location = ".")
+      @grit = Grit::Repo.new(location)
     rescue Grit::InvalidGitRepositoryError
       @grit = nil
     end

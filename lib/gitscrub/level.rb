@@ -60,8 +60,8 @@ module Gitscrub
       @setup.call if @setup
     end
 
-    def repo
-      @repo ||= Repository.new
+    def repo(location = "")
+      @repo ||= Repository.new(location)
     end
 
     def solve

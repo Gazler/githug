@@ -11,7 +11,7 @@ describe Gitscrub::Repository do
   describe "initialize" do
     
     it "should call grit on initialize" do
-      Grit::Repo.should_receive(:new).and_return(@grit) 
+      Grit::Repo.should_receive(:new).with(".").and_return(@grit) 
       repo = Gitscrub::Repository.new
       repo.grit.should equal(@grit)
     end
@@ -20,6 +20,11 @@ describe Gitscrub::Repository do
       Grit::Repo.should_receive(:new).and_raise(Grit::InvalidGitRepositoryError) 
       repo = Gitscrub::Repository.new
       repo.grit.should equal(nil)
+    end
+
+    it "should initialize with a location" do
+      Grit::Repo.should_receive(:new).with("test").and_return(@grit) 
+      repo = Gitscrub::Repository.new("test")
     end
 
   end
