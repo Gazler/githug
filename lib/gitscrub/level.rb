@@ -2,7 +2,7 @@ module Gitscrub
   class Level
     include UI
 
-    LEVELS = [nil, "init", "add", "commit", "config", "blame",  "contribute"]
+    LEVELS = [nil, "init", "add", "commit", "config", "clone", "blame",  "contribute"]
 
     attr_accessor :level_no, :level_path
     
