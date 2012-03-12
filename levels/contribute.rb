@@ -10,7 +10,7 @@ solution do
   contributor = false
 
   repo = Grit::Repo.new(location)
-  repo.commits.each do |commit|
+  repo.commits('master', false).each do |commit|
     if commit.author.name == repo.config["user.name"]
       if commit.author.email == repo.config["user.email"]
         contributor = true
