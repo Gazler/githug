@@ -69,12 +69,14 @@ describe Gitscrub::Repository do
 
     it "should initialize an empty repository and add .gitignore" do
       @repo.should_receive(:add).with(".gitignore")
+      @repo.should_receive(:add).with(".profile.yml")
       @repo.should_receive(:commit).with("added .gitignore")
       @repository.init
     end
 
     it "should not add and commit gitignore if prompted" do
       @repo.should_not_receive(:add).with(".gitignore")
+      @repo.should_not_receive(:add).with(".profile.yml")
       @repo.should_not_receive(:commit).with("added .gitignore")
       @repository.init(false)
     end

@@ -6,5 +6,5 @@ solution do
 end
 
 hint do
-  puts "You should have a look at this site: https://github.com/Gazler/cloneme"
+  puts "This is like the last level, git clone has an optional argument."
 end
