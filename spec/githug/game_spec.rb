@@ -8,6 +8,7 @@ describe Githug::Game do
     @game = Githug::Game.new
     @profile.stub(:level).and_return(1)
     @profile.stub(:save)
+    @profile.stub(:level_bump)
     @level = mock
     @level.stub(:full_description)
     @level.stub(:setup_level)
@@ -21,16 +22,15 @@ describe Githug::Game do
 
   it "should show a description if the level is 0" do
     @level.should_not_receive(:solve)
-    @profile.stub(:level).and_return(0) 
-    @profile.should_receive(:save)
+    @profile.stub(:level).and_return(nil)
+    @profile.should_receive(:level_bump)
     Githug::UI.should_receive(:puts).with("Welcome to Githug")
-    @profile.should_receive(:level=).with(1)
     @game.play_level
   end
 
   it "should echo congratulations if the level is solved" do
     @level.stub(:solve).and_return(true)
-    @profile.should_receive(:level=).with(2)
+    @profile.should_receive(:level_bump)
     Githug::UI.should_receive(:success).with("Congratulations, you have solved the level")
     @game.play_level
   end

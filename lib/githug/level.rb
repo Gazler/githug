@@ -2,19 +2,21 @@ module Githug
   class Level
     include UI
 
-    LEVELS = [nil, "init", "add", "commit", "config", "clone", "clone_to_folder", "status", "diff", "blame",  "contribute"]
+    LEVELS = [nil, "init", "add", "commit", "config", "clone",
+              "clone_to_folder", "ignore", "status", "rm", "rm_cached", "log",
+              "diff", "blame", "contribute"]
 
     attr_accessor :level_no, :level_path
     
     class << self
       
-      def load(level_no)
+      def load(level_name)
         level = new
-        level_path = "#{File.dirname(__FILE__)}/../../levels/#{LEVELS[level_no]}"
+        level_path = "#{File.dirname(__FILE__)}/../../levels/#{level_name}"
         location = "#{level_path}.rb"
         return false unless File.exists?(location)
         level.instance_eval(File.read(location))
-        level.level_no = level_no
+        level.level_no = LEVELS.index(level_name)
         level.level_path = level_path
         level
       end

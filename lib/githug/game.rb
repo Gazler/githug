@@ -9,7 +9,7 @@ module Githug
 
     def play_level
       solve = true
-      if profile.level == 0
+      if profile.level.nil?
         UI.puts("Welcome to Githug")
         solve = false
         level_bump
@@ -28,8 +28,7 @@ module Githug
     end
 
     def level_bump
-      profile.level += 1
-      profile.save
+      profile.level_bump
       if level = Level.load(profile.level)
         UI.puts(level.full_description)
         level.setup_level

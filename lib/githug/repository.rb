@@ -26,7 +26,7 @@ module Githug
       @grit = Grit::Repo.init(".")
       if gitignore
         @grit.add(".gitignore")
-        @grit.commit("added .gitignore")
+        @grit.commit_all("added .gitignore")
       end
     end
 

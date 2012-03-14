@@ -20,7 +20,7 @@ end
     eof
     File.stub(:exists?).and_return(true)
     File.stub(:read).and_return(@file)
-    @level = Githug::Level.load(1)
+    @level = Githug::Level.load("init")
     @repo = mock
     @repo.stub(:reset) 
     Githug::Repository.stub(:new).and_return(@repo)
@@ -38,7 +38,7 @@ end
     it "should load the level" do
       File.stub(:dirname).and_return("")
       File.should_receive(:read).with('/../../levels/init.rb').and_return(@file)
-      level = Githug::Level.load(1)
+      level = Githug::Level.load("init")
       level.instance_variable_get("@difficulty").should eql(1)
       level.instance_variable_get("@description").should eql("A test description")
     end

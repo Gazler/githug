@@ -8,10 +8,13 @@ module Githug
     class << self
       def load
         settings = {
-          :level => 0
+          :level => nil,
+          :current_levels => [],
+          :completed_levels => [] 
         }
 
         settings.merge! YAML::load(File.open(PROFILE_FILE)) if File.exists?(PROFILE_FILE)
+
         self.new(settings)
       end
     end
@@ -34,6 +37,21 @@ module Githug
       File.open(PROFILE_FILE, 'w') do |out|
         YAML.dump(settings, out)
       end
+    end
+
+    def level_bump
+      levels = Level::LEVELS
+      level_no = levels.index(settings[:level])
+
+      settings[:completed_levels] << level
+
+      settings[:current_levels] = levels
+
+      next_level = (levels - settings[:completed_levels]).first || levels.last
+
+      settings[:level] = next_level
+      save
+      next_level
     end
 
 

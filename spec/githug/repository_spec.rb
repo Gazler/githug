@@ -69,7 +69,7 @@ describe Githug::Repository do
 
     it "should initialize an empty repository and add .gitignore" do
       @repo.should_receive(:add).with(".gitignore")
-      @repo.should_receive(:commit).with("added .gitignore")
+      @repo.should_receive(:commit_all).with("added .gitignore")
       @repository.init
     end
 
