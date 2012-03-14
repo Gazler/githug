@@ -1,5 +1,5 @@
 require 'yaml'
-module Gitscrub
+module Githug
   class Profile
     PROFILE_FILE = ".profile.yml"
 

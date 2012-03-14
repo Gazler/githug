@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'githug/cli'
+
+Githug::CLI.start

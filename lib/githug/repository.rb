@@ -1,4 +1,4 @@
-module Gitscrub
+module Githug
   class Repository
 
     attr_accessor :grit
@@ -11,7 +11,7 @@ module Gitscrub
 
     def reset
       dont_delete = ["..", ".", ".gitignore", ".profile.yml"]
-      if File.basename(Dir.pwd) == "git_scrub"
+      if File.basename(Dir.pwd) == "git_hug"
         Dir.entries(Dir.pwd).each do |file|
           FileUtils.rm_rf(file) unless dont_delete.include?(file) 
         end

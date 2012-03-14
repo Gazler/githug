@@ -1,4 +1,4 @@
-module Gitscrub
+module Githug
   class Level
     include UI
 
@@ -23,7 +23,7 @@ module Gitscrub
 
     def init_from_level
       FileUtils.cp_r("#{level_path}/.", ".")
-      FileUtils.mv(".gitscrub", ".git")
+      FileUtils.mv(".githug", ".git")
     end
 
     def difficulty(num)
@@ -72,7 +72,7 @@ module Gitscrub
 
 
     def show_hint
-      UI.word_box("Gitscrub")
+      UI.word_box("Githug")
       if @hint
         @hint.call
       else

@@ -1,4 +1,4 @@
-module Gitscrub
+module Githug
   class Game
 
     attr_accessor :profile
@@ -10,7 +10,7 @@ module Gitscrub
     def play_level
       solve = true
       if profile.level == 0
-        UI.puts("Welcome to Gitscrub")
+        UI.puts("Welcome to Githug")
         solve = false
         level_bump
       else

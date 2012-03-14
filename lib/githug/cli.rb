@@ -1,6 +1,6 @@
 require 'thor'
-require 'gitscrub'
-module Gitscrub
+require 'githug'
+module Githug
   class CLI < Thor
 
 
@@ -9,7 +9,7 @@ module Gitscrub
     desc :play, "Initialize the game"
 
     def play
-      UI.word_box("Gitscrub")
+      UI.word_box("Githug")
       make_directory
       game = Game.new
       game.play_level
@@ -27,7 +27,7 @@ module Gitscrub
 
     def reset
       if level = load_level
-        UI.word_box("Gitscrub")
+        UI.word_box("Githug")
         UI.puts("resetting level")
         level.setup_level
         level.full_description
@@ -43,15 +43,15 @@ module Gitscrub
 
 
       def make_directory
-        if File.exists?("./git_scrub") 
-          UI.puts "Please change into the git_scrub directory"
+        if File.exists?("./git_hug") 
+          UI.puts "Please change into the git_hug directory"
           exit
         end
 
-        unless File.basename(Dir.pwd) == "git_scrub"
-          if UI.ask("No gitscrub directory found, do you wish to create one?")
-            Dir.mkdir("./git_scrub")
-            Dir.chdir("git_scrub")
+        unless File.basename(Dir.pwd) == "git_hug"
+          if UI.ask("No githug directory found, do you wish to create one?")
+            Dir.mkdir("./git_hug")
+            Dir.chdir("git_hug")
             File.open(".gitignore", "w") do |file|
               file.write(".profile.yml")
             end

@@ -1,19 +1,19 @@
-#Gitscrub
+#Githug
 Git Your Game On
 
 ##About
-Gitscrub is designed to give you a practical way of learning git.  It has a series of levels, each utilizing git commands to ensure a correct answer.
+Githug is designed to give you a practical way of learning git.  It has a series of levels, each utilizing git commands to ensure a correct answer.
 
 ##Installation
-To install Gitscrub
+To install Githug
 
-    gem install gitscrub
+    gem install githug
 
-After the gem is installed, you can run `gitscrub` where you will be prompted to create a directory.
+After the gem is installed, you can run `githug` where you will be prompted to create a directory.
 
 ##Commands
 
-Gitscrub has 3 commands:
+Githug has 3 commands:
  * play - This is the default command and it will check your solution for the current level.
  * hint - Gives you a hint (if available) for the current level
  * reset - Reset the current level
@@ -21,17 +21,17 @@ Gitscrub has 3 commands:
 
 ##Contributing
 
- Get yourself on the [contributors list](https://github.com/Gazler/gitscrub/contributors) by doing the following:
+ Get yourself on the [contributors list](https://github.com/Gazler/githug/contributors) by doing the following:
 
   * Fork the repository
   * Make a level using the DSL (covered below)
-  * Add your level to the LEVELS array inside `lib/gitscrub/level.rb` in a position that makes sense (the "commit" level after the "add" and "init" levels for example)
+  * Add your level to the LEVELS array inside `lib/githug/level.rb` in a position that makes sense (the "commit" level after the "add" and "init" levels for example)
   * Make sure your level works (covered below)
   * Submit a pull request
 
 ##DSL
 
-Gitscrub has a DSL for writing levels
+Githug has a DSL for writing levels
 
 An example level:
 
@@ -83,7 +83,7 @@ This will copy the contents of a repository specified in the levels folder for y
  * cd "yourlevel"
  * git init
  * some git stuff
- * **important** rename ".git" to ".gitscrub" so it does not get treated as a submodule
+ * **important** rename ".git" to ".githug" so it does not get treated as a submodule
  * cd "../"
  * git add "yourlevel"
 

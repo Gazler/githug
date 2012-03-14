@@ -2,10 +2,10 @@ difficulty 3
 description "Contribute to this repository by making a pull request on Github"
 
 solution do
-  location = "/tmp/gitscrub"
+  location = "/tmp/githug"
   FileUtils.rm_rf(location)
   puts "Cloning repository to #{location}"
-  `git clone git@github.com:Gazler/gitscrub.git #{location}`
+  `git clone git@github.com:Gazler/githug.git #{location}`
 
   contributor = false
 

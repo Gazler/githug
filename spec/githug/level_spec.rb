@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'grit'
 
-describe Gitscrub::Level do
+describe Githug::Level do
   
   before(:each) do
     @file = <<-eof
@@ -11,7 +11,7 @@ setup do
   "test"
 end
 solution do
-  Grit::Repo.new("gitscrub/notadir")
+  Grit::Repo.new("githug/notadir")
 end
 
 hint do
@@ -20,16 +20,16 @@ end
     eof
     File.stub(:exists?).and_return(true)
     File.stub(:read).and_return(@file)
-    @level = Gitscrub::Level.load(1)
+    @level = Githug::Level.load(1)
     @repo = mock
     @repo.stub(:reset) 
-    Gitscrub::Repository.stub(:new).and_return(@repo)
-    Gitscrub::UI.stub(:puts)
-    Gitscrub::UI.stub(:print)
+    Githug::Repository.stub(:new).and_return(@repo)
+    Githug::UI.stub(:puts)
+    Githug::UI.stub(:print)
   end
 
   it "should mixin UI" do
-    Gitscrub::Level.ancestors.should include(Gitscrub::UI)
+    Githug::Level.ancestors.should include(Githug::UI)
   end
 
 
@@ -38,14 +38,14 @@ end
     it "should load the level" do
       File.stub(:dirname).and_return("")
       File.should_receive(:read).with('/../../levels/init.rb').and_return(@file)
-      level = Gitscrub::Level.load(1)
+      level = Githug::Level.load(1)
       level.instance_variable_get("@difficulty").should eql(1)
       level.instance_variable_get("@description").should eql("A test description")
     end
 
     it "should return false if the level does not exist" do
       File.stub(:exists?).and_return(false)
-      Gitscrub::Level.load(1).should eql(false)
+      Githug::Level.load(1).should eql(false)
     end
 
   end
@@ -68,10 +68,10 @@ end
   describe "full_description" do
 
     it "should display a full description" do
-      Gitscrub::UI.stub(:puts)
-      Gitscrub::UI.should_receive(:puts).with("Level: 1")
-      Gitscrub::UI.should_receive(:puts).with("Difficulty: *")
-      Gitscrub::UI.should_receive(:puts).with("A test description")
+      Githug::UI.stub(:puts)
+      Githug::UI.should_receive(:puts).with("Level: 1")
+      Githug::UI.should_receive(:puts).with("Difficulty: *")
+      Githug::UI.should_receive(:puts).with("A test description")
       @level.full_description
     end
 
@@ -95,7 +95,7 @@ end
       
     it "should initialize a repository when repo is called" do
       @level.repo.should equal(@repo)
-      Gitscrub::Repository.should_not_receive(:new)
+      Githug::Repository.should_not_receive(:new)
       @level.repo.should equal(@repo)
     end
 
@@ -121,7 +121,7 @@ end
   describe "init_from_level" do
     it "should copy the files from the level folder" do
       FileUtils.should_receive(:cp_r).with("#{@level.level_path}/.", ".") 
-      FileUtils.should_receive(:mv).with(".gitscrub", ".git")
+      FileUtils.should_receive(:mv).with(".githug", ".git")
       @level.init_from_level
     end  
   end

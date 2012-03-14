@@ -1,4 +1,4 @@
-module Gitscrub
+module Githug
   module UI
 
     @@out_stream

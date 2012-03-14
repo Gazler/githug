@@ -1,18 +1,18 @@
 require 'spec_helper'
 
-describe Gitscrub::Game do
+describe Githug::Game do
   
   before(:each) do
     @profile = mock
-    Gitscrub::Profile.stub(:new).and_return(@profile)
-    @game = Gitscrub::Game.new
+    Githug::Profile.stub(:new).and_return(@profile)
+    @game = Githug::Game.new
     @profile.stub(:level).and_return(1)
     @profile.stub(:save)
     @level = mock
     @level.stub(:full_description)
     @level.stub(:setup_level)
-    Gitscrub::UI.stub(:puts)
-    Gitscrub::Level.stub(:load).and_return(@level)
+    Githug::UI.stub(:puts)
+    Githug::Level.stub(:load).and_return(@level)
   end
 
   it "should have a profile" do
@@ -23,7 +23,7 @@ describe Gitscrub::Game do
     @level.should_not_receive(:solve)
     @profile.stub(:level).and_return(0) 
     @profile.should_receive(:save)
-    Gitscrub::UI.should_receive(:puts).with("Welcome to Gitscrub")
+    Githug::UI.should_receive(:puts).with("Welcome to Githug")
     @profile.should_receive(:level=).with(1)
     @game.play_level
   end
@@ -31,13 +31,13 @@ describe Gitscrub::Game do
   it "should echo congratulations if the level is solved" do
     @level.stub(:solve).and_return(true)
     @profile.should_receive(:level=).with(2)
-    Gitscrub::UI.should_receive(:success).with("Congratulations, you have solved the level")
+    Githug::UI.should_receive(:success).with("Congratulations, you have solved the level")
     @game.play_level
   end
 
   it "should echo congratulations if the level is solved" do
     @level.stub(:solve).and_return(false)
-    Gitscrub::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
+    Githug::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
     @game.play_level
   end
 

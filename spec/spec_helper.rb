@@ -1,1 +1,1 @@
-require './lib/gitscrub.rb'
+require './lib/githug.rb'
