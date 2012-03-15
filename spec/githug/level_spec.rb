@@ -14,6 +14,10 @@ solution do
   Grit::Repo.new("githug/notadir")
 end
 
+hints [
+  "this is hint 1",
+  "this is hint 2"]
+
 hint do
   puts "this is a hint"
 end
@@ -107,7 +111,18 @@ end
   end
 
   describe "hint" do
-    it "should display a hint" do
+    
+    it "should return sequential hint if there are multiple" do
+      @level.should_receive(:puts).with("this is hint 1")
+      @level.show_hint
+      @level.should_receive(:puts).with("this is hint 2")
+      @level.show_hint
+      @level.should_receive(:puts).with("this is hint 1")
+      @level.show_hint
+    end
+
+    it "should display a hint if there are not multiple" do
+      @level.instance_variable_set("@hints", nil)
       @level.should_receive(:puts).with("this is a hint")
       @level.show_hint 
     end
@@ -125,7 +140,4 @@ end
       @level.init_from_level
     end  
   end
-
-
-  
 end

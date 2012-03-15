@@ -49,6 +49,11 @@ module Githug
       @hint = hint
     end
 
+    def hints(hints)
+      @hints = hints
+      @hint_index = 0
+    end
+
     def full_description
       UI.puts
       UI.puts "Level: #{level_no}"
@@ -73,10 +78,16 @@ module Githug
       false
     end
 
-
     def show_hint
       UI.word_box("Githug")
-      if @hint
+      if @hints
+        puts @hints[@hint_index]
+        if @hint_index < @hints.size - 1
+          @hint_index += 1
+        else
+          @hint_index = 0
+        end
+      elsif @hint
         @hint.call
       else
         UI.puts("No hints available for this level")

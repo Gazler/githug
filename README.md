@@ -61,6 +61,12 @@ An example level:
 
  `difficulty`, `description` and `solution` are required.
 
+You can also include multiple hints like this:
+
+    hints [
+      "You can type `git` in your shell to get a list of available git commands",
+      "Check the man for `git add`"]
+
  **note** Because `solution` is a Proc, you cannot prematurely return out of it and as a result, must put an implicit return on the last line of the solution block.
 
 
