@@ -3,12 +3,13 @@ require 'spec_helper'
 describe Githug::Game do
   
   before(:each) do
-    @profile = mock
+    @profile = mock.as_null_object
     Githug::Profile.stub(:new).and_return(@profile)
     @game = Githug::Game.new
     @profile.stub(:level).and_return(1)
     @profile.stub(:save)
     @profile.stub(:level_bump)
+    @profile.stub(:current_attempts).and_return(0)
     @level = mock
     @level.stub(:full_description)
     @level.stub(:setup_level)
@@ -28,17 +29,36 @@ describe Githug::Game do
     @game.play_level
   end
 
-  it "should echo congratulations if the level is solved" do
-    @level.stub(:solve).and_return(true)
-    @profile.should_receive(:level_bump)
-    Githug::UI.should_receive(:success).with("Congratulations, you have solved the level")
-    @game.play_level
-  end
+  describe "solve" do
 
-  it "should echo congratulations if the level is solved" do
-    @level.stub(:solve).and_return(false)
-    Githug::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
-    @game.play_level
+    it "should echo congratulations if the level is solved" do
+      @level.stub(:solve).and_return(true)
+      @profile.should_receive(:level_bump)
+      Githug::UI.should_receive(:success).with("Congratulations, you have solved the level")
+      @game.play_level
+    end
+
+    it "should echo the solution is not right" do
+      @level.stub(:solve).and_return(false)
+      Githug::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
+      @game.play_level
+    end
+
+    it "should increment the number of failed attempts" do
+      @level.stub(:solve).and_return(false)
+      @profile.should_receive(:current_attempts=).with(1)
+      @profile.should_receive(:save)
+      @game.play_level
+    end
+
+    it "should prompt for a hint if the user has failed 3 times." do
+      @profile.stub(:current_attempts).and_return(3)
+      @level.stub(:solve).and_return(false)
+      Githug::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
+      Githug::UI.should_receive(:error).with("Don't forget you can type `githug hint` for a hint and `githug reset` to reset the current level")
+      @game.play_level
+    end
+
   end
 
   it "should output the description of the next level" do
