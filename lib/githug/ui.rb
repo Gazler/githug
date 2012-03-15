@@ -1,8 +1,8 @@
 module Githug
   module UI
 
-    @@out_stream
-    @@in_stream
+    @@out_stream = STDOUT
+    @@in_stream = STDIN
 
     class << self
       
