@@ -34,6 +34,11 @@ module Githug
       end
     end
 
+    def dry_run(level)
+      level = Level.load(level)
+
+    end
+
     def level_bump
       profile.level_bump
       if level = Level.load(profile.level)
