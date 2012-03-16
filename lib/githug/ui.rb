@@ -65,7 +65,7 @@ module Githug
     end
 
     def method_missing(method, *args, &block)
-      return UI.send(method, *args) if UI.methods(false).include?(method)
+      return UI.send(method, *args) if UI.methods(false).include?(method.to_s) || UI.methods(false).include?(method)
       super
     end
 
