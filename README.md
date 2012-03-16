@@ -14,6 +14,7 @@ After the gem is installed, you can run `githug` where you will be prompted to c
 ##Commands
 
 Githug has 3 commands:
+
  * play - This is the default command and it will check your solution for the current level.
  * hint - Gives you a hint (if available) for the current level
  * reset - Reset the current level
