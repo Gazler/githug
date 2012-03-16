@@ -101,3 +101,8 @@ This will copy the contents of a repository specified in the levels folder for y
  * git add "yourlevel"
 
 After doing this, your level should be able to copy the contents from that git repository and use those for your level.  You can see the "blame" level for an example of this.
+
+
+
+
+
