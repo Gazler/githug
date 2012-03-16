@@ -6,7 +6,8 @@ module Githug
               "clone_to_folder", "ignore", "status", "rm", "rm_cached", "log",
               "commit_ammend", "reset", "checkout_file", "remote", "remote_url",
               "remote_add", "diff", "blame", "branch", "checkout", "merge",
-              "contribute"]
+              "squash", "contribute"]
+>>>>>>> dpick/squash_commits
 
     attr_accessor :level_no, :level_path
     
