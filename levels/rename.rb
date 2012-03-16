@@ -5,6 +5,8 @@ description "We have a file called oldFile.txt. We want to rename it to newFile.
 setup do
     repo.init
     FileUtils.touch("oldFile.txt")
+    repo.add("oldFile.txt")
+    repo.commit_all("Commited oldFile.txt")
 end
 
 solution do
