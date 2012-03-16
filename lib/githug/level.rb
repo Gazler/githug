@@ -7,7 +7,6 @@ module Githug
               "commit_ammend", "reset", "checkout_file", "remote", "remote_url",
               "remote_add", "diff", "blame", "branch", "checkout", "merge",
               "squash", "contribute"]
->>>>>>> dpick/squash_commits
 
     attr_accessor :level_no, :level_path
     

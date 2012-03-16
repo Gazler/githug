@@ -1,5 +1,5 @@
 #Githug
-Git Your Game On
+Git Your Game On [![Build Status](https://secure.travis-ci.org/Gazler/githug.png?branch=master)](http://travis-ci.org/Gazler/githug)
 
 ##About
 Githug is designed to give you a practical way of learning git.  It has a series of levels, each utilizing git commands to ensure a correct answer.
