@@ -112,12 +112,20 @@ end
 
   describe "hint" do
     
+    before(:each) do
+      @profile = mock.as_null_object
+      Githug::Profile.stub(:load).and_return(@profile)
+      @profile.stub(:current_hint_index).and_return(0,0,1,0)
+    end
+
     it "should return sequential hint if there are multiple" do
-      @level.should_receive(:puts).with("this is hint 1")
+      @level.should_receive(:puts).ordered.with("this is hint 1")
       @level.show_hint
-      @level.should_receive(:puts).with("this is hint 2")
+      
+      @level.should_receive(:puts).ordered.with("this is hint 2")
       @level.show_hint
-      @level.should_receive(:puts).with("this is hint 1")
+      
+      @level.should_receive(:puts).ordered.with("this is hint 1")
       @level.show_hint
     end
 

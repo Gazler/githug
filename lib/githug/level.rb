@@ -51,7 +51,6 @@ module Githug
 
     def hints(hints)
       @hints = hints
-      @hint_index = 0
     end
 
     def full_description
@@ -80,12 +79,16 @@ module Githug
 
     def show_hint
       UI.word_box("Githug")
+      profile = Profile.load
+      current_hint_index = profile.current_hint_index
       if @hints
-        puts @hints[@hint_index]
-        if @hint_index < @hints.size - 1
-          @hint_index += 1
+        puts @hints[current_hint_index]
+        if current_hint_index < @hints.size - 1
+          profile.current_hint_index += 1
+          profile.save
         else
-          @hint_index = 0
+          profile.current_hint_index = 0
+          profile.save
         end
       elsif @hint
         @hint.call

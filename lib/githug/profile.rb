@@ -10,6 +10,7 @@ module Githug
         settings = {
           :level => nil,
           :current_attempts => 0,
+          :current_hint_index => 0,
           :current_levels => [],
           :completed_levels => [] 
         }
@@ -49,6 +50,8 @@ module Githug
       settings[:current_levels] = levels
 
       settings[:current_attempts] = 0
+
+      settings[:current_hint_index] = 0
 
       next_level = (levels - settings[:completed_levels]).first || levels.last
 
