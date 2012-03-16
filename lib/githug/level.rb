@@ -5,7 +5,7 @@ module Githug
     LEVELS = [nil, "init", "add", "commit", "config", "clone",
               "clone_to_folder", "ignore", "status", "rm", "rm_cached", "log",
               "commit_ammend", "reset", "checkout_file", "remote", "remote_url",
-              "remote_add", "diff", "blame", "checkout", "contribute"]
+              "remote_add", "diff", "blame", "checkout", "merge", "contribute"]
 
     attr_accessor :level_no, :level_path
     
