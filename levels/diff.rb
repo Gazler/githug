@@ -6,7 +6,7 @@ setup do
 end
 
 solution do
-  line = request "What line has changed?"
+  line = request "What is the number of the line which has changed?"
   return false unless line == "23"
   true
 end
