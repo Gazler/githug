@@ -18,7 +18,7 @@ setup do
 end
 
 solution do
-  repo.commits.length == 1
+  repo.commits.length == 2
 end
 
 hint do
