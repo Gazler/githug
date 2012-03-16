@@ -4,5 +4,5 @@ Gemfile.lock
 pkg/*
 *.swp
 .rvmrc
-git_scrub/*
+git_hug/*
 .profile.yml
