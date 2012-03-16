@@ -50,6 +50,10 @@ module Githug
       @hint = hint
     end
 
+    def hints(hints)
+      @hints = hints
+    end
+
     def full_description
       UI.puts
       UI.puts "Level: #{level_no}"
@@ -74,10 +78,20 @@ module Githug
       false
     end
 
-
     def show_hint
       UI.word_box("Githug")
-      if @hint
+      profile = Profile.load
+      current_hint_index = profile.current_hint_index
+      if @hints
+        puts @hints[current_hint_index]
+        if current_hint_index < @hints.size - 1
+          profile.current_hint_index += 1
+          profile.save
+        else
+          profile.current_hint_index = 0
+          profile.save
+        end
+      elsif @hint
         @hint.call
       else
         UI.puts("No hints available for this level")
