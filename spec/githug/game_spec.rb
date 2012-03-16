@@ -61,6 +61,14 @@ describe Githug::Game do
 
   end
 
+
+  describe "dry run" do
+    it "should play the game without altering the profile" do
+      Level.should_receive(:load)
+      @level.dry_run  
+    end
+  end
+
   it "should output the description of the next level" do
     @level.should_receive(:full_description)
     @profile.stub(:level=)
