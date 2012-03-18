@@ -9,7 +9,7 @@ To install Githug
 
     gem install githug
 
-After the gem is installed, you can run `githug` where you will be prompted to create a directory.
+After the gem is installed, you can run `githug` where you will be prompted to create a directory.  Githug should work on Linux and OS X.
 
 ##Commands
 
