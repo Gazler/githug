@@ -54,6 +54,30 @@ end
 
   end
 
+  describe "load_from_file" do
+    it "should load the level" do
+      File.stub(:dirname).and_return("")
+      File.should_receive(:read).with('/foo/bar/test/level.rb').and_return(@file)
+      level = Githug::Level.load_from_file("/foo/bar/test/level.rb")
+      level.instance_variable_get("@difficulty").should eql(1)
+      level.instance_variable_get("@description").should eql("A test description")
+    end
+
+    it "should return false if the level does not exist" do
+      File.stub(:exists?).and_return(false)
+      Githug::Level.load_from_file("/foo/bar/test/level.rb").should eql(false)
+    end
+  end
+
+  describe "setup" do
+
+    it "should return false if the level does not exist" do
+      File.stub(:exists?).and_return(false)
+      Githug::Level.setup("/foo/bar/test/level.rb").should eql(false)
+    end
+
+  end
+
 
   describe "solve" do
     
@@ -66,6 +90,13 @@ end
       @level.solve.should eql(true)
     end
 
+  end
+
+  describe "test" do
+    it "should call solve" do
+      @level.instance_variable_get("@solution").should_receive(:call) 
+      @level.test
+    end  
   end
 
 

@@ -29,7 +29,7 @@ describe Githug::Game do
     @game.play_level
   end
 
-  describe "solve" do
+  describe "play_level" do
 
     it "should echo congratulations if the level is solved" do
       @level.stub(:solve).and_return(true)
@@ -62,9 +62,17 @@ describe Githug::Game do
   end
 
 
-  describe "dry run" do
-    it "should play the game without altering the profile" do
-      pending
+  describe "test_level" do
+    it "Should output Valid solution if the solution is valid" do
+      @level.stub(:test).and_return(true) 
+      Githug::UI.should_receive(:success).with("Valid solution")
+      @game.test_level(@level)
+    end
+   
+    it "Should output Invalid solution if the solution is invalid" do
+      @level.stub(:test).and_return(false) 
+      Githug::UI.should_receive(:error).with("Invalid solution")
+      @game.test_level(@level)
     end
   end
 

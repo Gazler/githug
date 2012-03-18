@@ -13,12 +13,22 @@ module Githug
     class << self
       
       def load(level_name)
+        path = "#{File.dirname(__FILE__)}/../../levels/#{level_name}.rb"
+        setup(path)
+      end
+
+      def load_from_file(path)
+        setup(path)
+      end
+
+      def setup(path)
+        level_name = File.basename(path, File.extname(path))
+        #Remove .rb extension, WTB a better way to do this
+        level_path = path[0..-4]
         level = new
-        level_path = "#{File.dirname(__FILE__)}/../../levels/#{level_name}"
-        location = "#{level_path}.rb"
-        return false unless File.exists?(location)
-        level.instance_eval(File.read(location))
-        level.level_no = LEVELS.index(level_name)
+        return false unless File.exists?(path)
+        level.instance_eval(File.read(path))
+        level.level_no = LEVELS.index(level_name) || 1
         level.level_path = level_path
         level
       end
@@ -76,6 +86,10 @@ module Githug
       @solution.call
     rescue
       false
+    end
+
+    def test
+      @solution.call
     end
 
     def show_hint

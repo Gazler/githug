@@ -40,6 +40,18 @@ describe Githug::CLI do
     lambda {@cli.make_directory}.should raise_error(SystemExit)
   end
 
+  describe "test" do
+    it "should perform a test run of the level" do
+      level = mock
+      game = mock
+      @cli.stub(:make_directory)
+      Githug::Level.should_receive(:load_from_file).with("/foo/bar/test/level.rb").and_return(level)  
+      Githug::Game.stub(:new).and_return(game)
+      game.should_receive(:test_level).with(level)
+      @cli.test("/foo/bar/test/level.rb")
+    end
+  end
+
   describe "level methods" do
     before(:each) do
       @level = mock
@@ -47,6 +59,7 @@ describe Githug::CLI do
       @profile.stub(:level).and_return(1)
       Githug::Profile.stub(:load).and_return(@profile)
       Githug::Level.stub(:load).and_return(@level)
+      Githug::Level.stub(:load_from_file).with("/foo/bar/level.rb").and_return(@level)
     end
 
     it "should call the hint method on the level" do
@@ -69,9 +82,16 @@ describe Githug::CLI do
         Githug::Level.stub(:load).and_return(false)
         @level.should_not_receive(:setup_level)
         @level.should_not_receive(:full_description)
-        Githug::UI.should_not_receive(:word_box).with("Githug")
-        Githug::UI.should_not_receive(:puts).with("resetting level")
+        Githug::UI.should_receive(:error).with("Level does not exist")
         @cli.reset
+      end
+
+      it "should reset the level with a path" do
+        @level.should_receive(:setup_level)
+        @level.should_receive(:full_description)
+        Githug::UI.should_receive(:word_box).with("Githug")
+        Githug::UI.should_receive(:puts).with("resetting level")
+        @cli.reset("/foo/bar/level.rb")
       end
     end  
 

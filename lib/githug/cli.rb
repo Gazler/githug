@@ -15,6 +15,16 @@ module Githug
       game.play_level
     end
 
+    desc :test, "Test a level from a file path"
+
+    def test(path = nil)
+      UI.word_box("Githug")
+      make_directory
+      level = Level.load_from_file(path)  
+      game = Game.new
+      game.test_level(level)
+    end
+
     desc :hint, "Get a hint for the current level"
 
     def hint
@@ -25,12 +35,19 @@ module Githug
 
     desc :reset, "Reset the current level"
 
-    def reset
-      if level = load_level
-        UI.word_box("Githug")
+    def reset(path = nil)
+      if path
+        level = Level.load_from_file(path)
+      else
+        level = load_level
+      end
+      UI.word_box("Githug")
+      if level
         UI.puts("resetting level")
         level.setup_level
         level.full_description
+      else
+        UI.error("Level does not exist")
       end
     end
 

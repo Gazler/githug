@@ -34,9 +34,13 @@ module Githug
       end
     end
 
-    def dry_run(level)
-      level = Level.load(level)
-
+    def test_level(level)
+      UI.puts level.full_description
+      if level.test
+        UI.success "Valid solution"
+      else
+        UI.error "Invalid solution"
+      end
     end
 
     def level_bump
