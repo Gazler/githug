@@ -47,7 +47,7 @@ describe Githug::CLI do
       @cli.stub(:make_directory)
       Githug::Level.should_receive(:load_from_file).with("/foo/bar/test/level.rb").and_return(level)  
       Githug::Game.stub(:new).and_return(game)
-      game.should_receive(:test_level).with(level)
+      game.should_receive(:test_level).with(level, anything)
       @cli.test("/foo/bar/test/level.rb")
     end
   end

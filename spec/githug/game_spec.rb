@@ -64,15 +64,20 @@ describe Githug::Game do
 
   describe "test_level" do
     it "Should output Valid solution if the solution is valid" do
-      @level.stub(:test).and_return(true) 
+      @level.stub(:solve).and_return(true) 
       Githug::UI.should_receive(:success).with("Valid solution")
       @game.test_level(@level)
     end
    
     it "Should output Invalid solution if the solution is invalid" do
-      @level.stub(:test).and_return(false) 
+      @level.stub(:solve).and_return(false) 
       Githug::UI.should_receive(:error).with("Invalid solution")
       @game.test_level(@level)
+    end
+
+    it "should call test when errors is true" do
+      @level.should_receive(:test)
+      @game.test_level(@level, true)
     end
   end
 

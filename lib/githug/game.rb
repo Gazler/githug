@@ -34,9 +34,11 @@ module Githug
       end
     end
 
-    def test_level(level)
+    def test_level(level, errors = nil)
       UI.puts level.full_description
-      if level.test
+      method = :solve
+      method = :test if errors
+      if level.send(method)
         UI.success "Valid solution"
       else
         UI.error "Invalid solution"

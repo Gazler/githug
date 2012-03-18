@@ -16,13 +16,14 @@ module Githug
     end
 
     desc :test, "Test a level from a file path"
+    method_option :errors, :type => :boolean, :default => false
 
-    def test(path = nil)
+    def test(path)
       UI.word_box("Githug")
       make_directory
       level = Level.load_from_file(path)  
       game = Game.new
-      game.test_level(level)
+      game.test_level(level, options[:errors])
     end
 
     desc :hint, "Get a hint for the current level"
