@@ -52,6 +52,26 @@ module Githug
       end
     end
 
+    desc :enhance, "Enable enhanced githug mode"
+
+    def enhance
+      if RUBY_PLATFORM =~ /darwin/i
+        lines = [
+        'Never gonna give you up,',
+        'Never gonna let you down,',
+        'Never gonna run around, and desert you.',
+        'Never gonna make you cry,',
+        'Never gonna say goodbye,',
+        'Never gonna tell a lie, and hurt you.'
+        ]
+        UI.puts "Enabling enhanced mode. Please wait..."
+        system "say #{lines.join(' ')}"
+        UI.puts "Enhancement complete!"
+      else
+        UI.puts "Sorry, enhanced mode is not supported on your system."
+      end
+    end
+
     no_tasks do
 
       def load_level
