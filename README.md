@@ -23,6 +23,8 @@ Githug has 4 commands:
 
 ##Contributing
 
+If you want to suggest a level or make a level that has been suggested, check out [the wiki](https://github.com/Gazler/githug/wiki).
+
  Get yourself on the [contributors list](https://github.com/Gazler/githug/contributors) by doing the following:
 
  * Fork the repository
