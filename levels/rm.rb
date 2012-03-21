@@ -5,6 +5,7 @@ description "A file has been removed from this repository, however the file was 
 setup do
   repo.init
   file = File.new("deleteme.rb", "w") 
+	file.close
   repo.add("deleteme.rb")
   repo.commit_all("Added a temp file")
   File.delete("deleteme.rb")
