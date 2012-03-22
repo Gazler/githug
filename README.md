@@ -38,6 +38,7 @@ If you want to suggest a level or make a level that has been suggested, check ou
  * A better way of returning from the solution block
  * A follow up to the level, more information on a specific command, etc.
  * More levels!
+ * [Windows support](https://github.com/Gazler/githug/wiki/Windows-Support)
 
 ##Writing Levels
 

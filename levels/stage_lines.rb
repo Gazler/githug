@@ -1,4 +1,4 @@
-difficulty 3
+difficulty 4
 
 description "You've made changes within a single file that belong to two different features, but niether of the changes are yet staged. Stage and commit only the changes belonging to the first feature."
 
