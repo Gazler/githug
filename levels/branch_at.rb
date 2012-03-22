@@ -15,9 +15,7 @@ setup do
 end
 
 solution do
-  solved = false
-  solved = true if repo.branches.map(&:name).include?("test_branch") and (repo.commits("test_branch").last.message ==  "Updating file1")
-  solved
+  repo.branches.map(&:name).include?("test_branch") and (repo.commits("test_branch").last.message ==  "Updating file1")
 end
 
 hint do
