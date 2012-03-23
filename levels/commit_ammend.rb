@@ -10,7 +10,8 @@ setup do
 end
 
 solution do
-  repo.commits.length == 2 && repo.commits.first.stats.files.length == 2
+		
+  repo.commits.length == 2 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
 end
 
 hint do
