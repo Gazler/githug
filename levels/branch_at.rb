@@ -15,9 +15,9 @@ setup do
 end
 
 solution do
-  solved = false
-  solved = true if repo.branches.map(&:name).include?("test_branch") and (repo.commits("test_branch").last.message ==  "Updating file1")
-  solved
+  return false unless repo.branches.map(&:name).include?("test_branch")
+  repo.commits("test_branch").each { |commit| return false if commit.message ==  "Updating file1 again" }
+  true
 end
 
 hint do
