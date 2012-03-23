@@ -1,17 +1,17 @@
-#Githug
+# Githug
 Git Your Game On [![Build Status](https://secure.travis-ci.org/Gazler/githug.png?branch=master)](http://travis-ci.org/Gazler/githug)
 
-##About
+## About
 Githug is designed to give you a practical way of learning git.  It has a series of levels, each utilizing git commands to ensure a correct answer.
 
-##Installation
+## Installation
 To install Githug
 
     gem install githug
 
 After the gem is installed, you can run `githug` where you will be prompted to create a directory.  Githug should work on Linux and OS X.
 
-##Commands
+## Commands
 
 Githug has 4 commands:
 
@@ -21,7 +21,7 @@ Githug has 4 commands:
  * test - Used to test levels in development, please see the Testing Levels section.
 
 
-##Contributing
+## Contributing
 
 If you want to suggest a level or make a level that has been suggested, check out [the wiki](https://github.com/Gazler/githug/wiki).
 
@@ -33,13 +33,14 @@ If you want to suggest a level or make a level that has been suggested, check ou
  * Make sure your level works (covered below)
  * Submit a pull request
 
-##Todo List
+## Todo List
 
  * A better way of returning from the solution block
  * A follow up to the level, more information on a specific command, etc.
  * More levels!
+ * [Windows support](https://github.com/Gazler/githug/wiki/Windows-Support)
 
-##Writing Levels
+## Writing Levels
 
 Githug has a DSL for writing levels
 
@@ -105,7 +106,7 @@ This will copy the contents of a repository specified in the levels folder for y
 
 After doing this, your level should be able to copy the contents from that git repository and use those for your level.  You can see the "blame" level for an example of this.
 
-##Testing Levels
+## Testing Levels
 
 The easiest way to test a level is:
 
