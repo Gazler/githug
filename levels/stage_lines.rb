@@ -1,6 +1,6 @@
 difficulty 4
 
-description "You've made changes within a single file that belong to two different features, but neither of the changes are yet staged. Stage and commit only the changes belonging to the first feature."
+description "You've made changes within a single file that belong to two different features, but neither of the changes are yet staged. Stage only the changes belonging to the first feature."
 
 setup do
   repo.init
@@ -25,5 +25,5 @@ solution do
 end
 
 hint do
-  puts "Read about the -p flag which can be passed to the 'add' command; man git-add. After that have a look the options available while using 'add -p' mode to manupulate hunks."
+  puts "You might want to try to manipulate the hunks of the diff to choose which lines of the diff get staged. Read about the flags which can be passed to the 'add' command; man git-add."
 end
