@@ -71,14 +71,40 @@ describe Githug::UI do
     @ui.ask("foo?").should be_false
   end
 
-  it "should print out a success message in green" do
-    @ui.success("success")
-    @out.string.should eql("\033[32msuccess\033[0m\n")
+  describe "Non Windows Platform" do
+    before(:each) do
+      ENV.stub(:[]).with("OS").and_return(nil)
+    end
+
+    it "should print out a success message in green" do
+      @ui.success("success")
+      @out.string.should eql("\033[32msuccess\033[0m\n")
+    end
+
+    it "should print out a error message in red" do
+      @ui.error("error")
+      @out.string.should eql("\033[31merror\033[0m\n")
+    end
+
   end
 
-  it "should print out a error message in red" do
-    @ui.error("error")
-    @out.string.should eql("\033[31merror\033[0m\n")
+  describe "Non Windows Platform" do
+    
+    before(:each) do
+      ENV.stub(:[]).with("OS").and_return("Windows_NT")
+    end
+
+    it "should print out a success message in white" do
+      @ui.success("success")
+      @out.string.should eql("success\n")
+    end
+
+    it "should print out a error message in white" do
+      @ui.error("error")
+      @out.string.should eql("error\n")
+    end
+
   end
+
   
 end
