@@ -6,7 +6,8 @@ module Githug
               "clone_to_folder", "ignore", "status", "rm", "rm_cached", "rename",
               "log", "tag",  "commit_ammend", "reset", "checkout_file", "remote",
               "remote_url", "pull", "remote_add", "diff", "blame", "branch", "checkout",
-              "branch_at", "merge", "rename_commit", "squash", "stage_lines", "contribute"]
+              "branch_at", "merge", "rename_commit", "squash", "merge_squash", 
+              "stage_lines", "contribute"]
 
     attr_accessor :level_no, :level_path
     
