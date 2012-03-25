@@ -51,6 +51,7 @@ module Githug
       end
 
       def colorize(text, color_code)
+	return puts text if ENV['OS'] && ENV['OS'].downcase.include?("windows")
         puts "#{color_code}#{text}\033[0m"
       end
 
