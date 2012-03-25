@@ -18,7 +18,10 @@ setup do
 end
 
 solution do
-  (repo.commits[1].message == "First commit" && repo.commits[2].message == "Second commit" && repo.commits[3].message == "Third commit")
+  return false unless repo.commits[2].message == "First commit"
+  return false unless repo.commits[1].message == "Second commit"
+  return false unless repo.commits[0].message == "Third commit"
+  true
 end
 
 hint do
