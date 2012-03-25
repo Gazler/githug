@@ -20,6 +20,10 @@ Githug has 4 commands:
  * reset - Reset the current level
  * test - Used to test levels in development, please see the Testing Levels section.
 
+## Change Log
+
+The change log is available on the wiki.  [Change log](https://github.com/Gazler/githug/wiki/Change-Log)
+
 
 ## Contributing
 
