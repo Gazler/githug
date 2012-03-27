@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 ea3dbcc5e2d2359698c3606b0ec44af9f76def54 Andrey <aslushnikov@gmail.com> 1332886832 +0400	commit (initial): Initial commit
+ea3dbcc5e2d2359698c3606b0ec44af9f76def54 b30c6a965415df6aef5f2903f9892fa5481152fc Andrey <aslushnikov@gmail.com> 1332886882 +0400	commit: Added a hardcore math module
+b30c6a965415df6aef5f2903f9892fa5481152fc 232d266a78d5ef7196f1ede14972ccf7ee19e587 Andrey <aslushnikov@gmail.com> 1332886949 +0400	commit: Renamed project.js -> herdcore-math.js
+232d266a78d5ef7196f1ede14972ccf7ee19e587 6edea632d9540e060bca97dda0897df2b7da0ec0 Andrey <aslushnikov@gmail.com> 1332887008 +0400	commit: Added fancy branded output
+6edea632d9540e060bca97dda0897df2b7da0ec0 ea3dbcc5e2d2359698c3606b0ec44af9f76def54 Andrey <aslushnikov@gmail.com> 1332887015 +0400	checkout: moving from master to ea3dbcc
+ea3dbcc5e2d2359698c3606b0ec44af9f76def54 ea3dbcc5e2d2359698c3606b0ec44af9f76def54 Andrey <aslushnikov@gmail.com> 1332887030 +0400	checkout: moving from ea3dbcc5e2d2359698c3606b0ec44af9f76def54 to new-feature
+ea3dbcc5e2d2359698c3606b0ec44af9f76def54 58a8c8edcfdd00c6d8cce9aada8f987a1677571f Andrey <aslushnikov@gmail.com> 1332887081 +0400	commit: Added a stub for the feature
+58a8c8edcfdd00c6d8cce9aada8f987a1677571f cfd8ce38c22c5fe83cc04e23f94646464f20d990 Andrey <aslushnikov@gmail.com> 1332887151 +0400	commit: README.md
+cfd8ce38c22c5fe83cc04e23f94646464f20d990 ca32a6dac7b6f97975edbe19a4296c2ee7682f68 Andrey <aslushnikov@gmail.com> 1332887177 +0400	commit (amend): Filled in README.md with proper input
+ca32a6dac7b6f97975edbe19a4296c2ee7682f68 4a1961bce62840eaef9c4392fe5cc799e38c9b7b Andrey <aslushnikov@gmail.com> 1332887238 +0400	commit: Fixed feature
+4a1961bce62840eaef9c4392fe5cc799e38c9b7b ea2a47c19b85fc321e2737ddc49db3deeba3a1b5 Andrey <aslushnikov@gmail.com> 1332887315 +0400	commit: some small fixes
+ea2a47c19b85fc321e2737ddc49db3deeba3a1b5 6edea632d9540e060bca97dda0897df2b7da0ec0 Andrey <aslushnikov@gmail.com> 1332887329 +0400	checkout: moving from new-feature to master
+6edea632d9540e060bca97dda0897df2b7da0ec0 ea2a47c19b85fc321e2737ddc49db3deeba3a1b5 Andrey <aslushnikov@gmail.com> 1332887695 +0400	checkout: moving from master to new-feature
+ea2a47c19b85fc321e2737ddc49db3deeba3a1b5 6edea632d9540e060bca97dda0897df2b7da0ec0 Andrey <aslushnikov@gmail.com> 1332887737 +0400	checkout: moving from new-feature to master
