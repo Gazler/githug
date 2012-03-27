@@ -7,7 +7,11 @@ module Githug
 
     class << self
       def load
-        self.new(settings)
+        profile_settings = settings
+        profile = self.new(profile_settings)
+        I18n.locale = profile_settings[:locale]
+        I18n.enforce_available_locales = false
+        profile
       end
 
       private
@@ -19,6 +23,7 @@ module Githug
 
       def defaults
         {
+          :locale => :en,
           :level => nil,
           :current_attempts => 0,
           :current_hint_index => 0,

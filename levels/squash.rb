@@ -24,6 +24,4 @@ solution do
   repo.commits.length == 2
 end
 
-hint do
-  puts "Take a look the `-i` flag of the rebase command."
-end
+hints ["Take a look the `-i` flag of the rebase command."]

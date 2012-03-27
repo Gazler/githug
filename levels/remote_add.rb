@@ -11,6 +11,4 @@ solution do
   result.include?("https://github.com/githug/githug")
 end
 
-hint do
-  puts "You can run `git remote --help` for the man pages."
-end
+hints ["You can run `git remote --help` for the man pages."]

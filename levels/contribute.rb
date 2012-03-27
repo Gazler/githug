@@ -20,6 +20,4 @@ solution do
   contributor
 end
 
-hint do
-  puts "Forking the repository would be a good start!"
-end
+hints ["Forking the repository would be a good start!"]

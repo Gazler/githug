@@ -1,6 +1,7 @@
 module Githug
   class Level
     include UI
+    include I18n
 
     LEVELS = [nil, "init", "config", "add", "commit", "clone",
               "clone_to_folder", "ignore", "include", "status",
@@ -36,10 +37,10 @@ module Githug
 
         return false unless File.exists?(path)
 
-        level.instance_eval(File.read(path))
         level.level_name = File.basename(path, File.extname(path))
         level.level_no = LEVELS.index(level.level_name) || 1
         level.level_path = level_path
+        level.instance_eval(File.read(path))
         level
       end
 
@@ -56,6 +57,9 @@ module Githug
 
     def description(description)
       @description = description
+      if I18n.locale != :en && I18n.exists?("level.#{level_name}.description")
+        @description = I18n.t("level.#{level_name}.description")
+      end
     end
 
     def solution(&block)
@@ -73,13 +77,15 @@ module Githug
 
     def hints(hints)
       @hints = hints
+      if I18n.locale != :en && I18n.exists?("level.#{level_name}.hints")
+        @hints = I18n.t("level.#{level_name}.hints")
+      end
     end
 
     def full_description
       UI.puts
-      UI.puts "Name: #{level_name}"
-      UI.puts "Level: #{level_no}"
-      UI.puts "Difficulty: #{"*"*@difficulty}"
+      UI.puts "#{I18n.t("githug.level.level")} #{level_no}"
+      UI.puts "#{I18n.t("githug.level.difficulty")} #{"*"*@difficulty}"
       UI.puts
       UI.puts @description
       UI.puts
@@ -120,7 +126,7 @@ module Githug
       elsif @hint
         @hint.call
       else
-        UI.puts("No hints available for this level.")
+        UI.puts("githug.level.no_hints")
       end
     end
   end

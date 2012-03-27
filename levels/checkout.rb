@@ -13,6 +13,4 @@ solution do
   true
 end
 
-hint do
-  puts "Try looking up `git checkout` and `git branch`."
-end
+hints ["Try looking up `git checkout` and `git branch`."]

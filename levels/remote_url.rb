@@ -12,6 +12,4 @@ solution do
   "https://github.com/githug/not_a_repo" == request("What is the url of the remote repository?")
 end
 
-hint do
-  puts "You can run `git remote --help` for the man pages."
-end
+hints ["You can run `git remote --help` for the man pages."]

@@ -25,6 +25,4 @@ solution do
     `git log --format="%s"`.split.join("").match /Third.*Second.*First.*Initial/
 end
 
-hint do
-  puts "Take a look the `-i` flag of the rebase command."
-end
+hints ["Take a look the `-i` flag of the rebase command."]

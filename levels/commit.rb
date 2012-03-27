@@ -12,6 +12,4 @@ solution do
   true
 end
 
-hint do
-  puts "You must include a message when you commit."
-end
+hints ["You must include a message when you commit."]

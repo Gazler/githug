@@ -13,6 +13,4 @@ solution do
   repo.status["oldfile.txt"].type == "D" && repo.status["newfile.txt"].type == "A" && repo.status["oldfile.txt"].stage.nil?
 end
 
-hint do
-  puts "Take a look at `git mv`."
-end
+hints ["Take a look at `git mv`."]

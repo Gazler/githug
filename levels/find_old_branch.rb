@@ -10,6 +10,4 @@ solution do
   true
 end
 
-hint do
-  puts "Ever played with the `git reflog` command?"
-end
+hints ["Ever played with the `git reflog` command?"]

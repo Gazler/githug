@@ -25,6 +25,4 @@ solution do
   valid
 end
 
-hint do
-  puts "You may have noticed there is a file named `.gitignore` in the repository."
-end
+hints ["You may have noticed there is a file named `.gitignore` in the repository."]

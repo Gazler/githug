@@ -11,6 +11,4 @@ solution do
   true
 end
 
-hint do
-  puts "You are looking for the difference since your last commit.  Don't forget that running `git` on its own will list the possible commands."
-end
+hints ["You are looking for the difference since your last commit.  Don't forget that running `git` on its own will list the possible commands."]

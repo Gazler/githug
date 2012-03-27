@@ -13,6 +13,4 @@ solution do
     repo.tags.first.name == "new_tag"
 end
 
-hint do
-    puts "Take a look at `git tag`."
-end
+hints ["Take a look at `git tag`."]

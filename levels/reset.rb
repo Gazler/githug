@@ -17,6 +17,4 @@ solution do
   true
 end
 
-hint do
-  puts "You can get some useful information for git status, it will tell you the command you need to run."
-end
+hints ["You can get some useful information for git status, it will tell you the command you need to run."]

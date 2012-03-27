@@ -21,6 +21,4 @@ solution do
   true
 end
 
-hint do
-  puts "You are looking for a command to identify the status of the repository."
-end
+hints ["You are looking for a command to identify the status of the repository."]

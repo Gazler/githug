@@ -13,6 +13,4 @@ solution do
   repo.commits.last.id_abbrev == request("What is the hash of the most recent commit?")[0..6]
 end
 
-hint do
-  puts "You need to investigate the logs.  There is probably a command for doing that!"
-end
+hints ["You need to investigate the logs.  There is probably a command for doing that!"]

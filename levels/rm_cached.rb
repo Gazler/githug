@@ -13,6 +13,4 @@ solution do
   (repo.status.files["deleteme.rb"].nil? || repo.status.files["deleteme.rb"].stage.nil?) && File.exists?("deleteme.rb")
 end
 
-hint do
-  puts "You may need to use more than one command to complete this.  You have checked your staging area in a previous level.  Don't forget to run `git` for a list of commands."
-end
+hints ["You may need to use more than one command to complete this.  You have checked your staging area in a previous level.  Don't forget to run `git` for a list of commands."]

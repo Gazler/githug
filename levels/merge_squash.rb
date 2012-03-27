@@ -43,6 +43,4 @@ solution do
   result
 end
 
-hint do
-  puts "Take a look at the `--squash` option of the merge command. Don't forget to commit the merge!"
-end
+hints ["Take a look at the `--squash` option of the merge command. Don't forget to commit the merge!"]

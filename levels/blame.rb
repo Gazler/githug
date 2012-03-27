@@ -10,6 +10,4 @@ solution do
   request("Who made the commit with the password?").downcase == offender.downcase
 end
 
-hint do
-  puts "You want to research the `git blame` command."
-end
+hints ["You want to research the `git blame` command."]
