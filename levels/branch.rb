@@ -10,7 +10,4 @@ solution do
   repo.branches.map(&:name).include?("test_code")
 end
 
-hint do
-  puts "git branch is what you want to investigate"
-end
-
+hints ["git branch is what you want to investigate"]

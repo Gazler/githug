@@ -11,6 +11,4 @@ solution do
   repo.commits.last.id_abbrev == "1797a7c"
 end
 
-hint do
-  puts "Check out the remote repositories and research `git pull`."
-end
+hints ["Check out the remote repositories and research `git pull`."]

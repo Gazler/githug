@@ -24,6 +24,4 @@ solution do
   true
 end
 
-hint do
-  puts "Take a look the -i flag of the rebase command."
-end
+hints ["Take a look the -i flag of the rebase command."]

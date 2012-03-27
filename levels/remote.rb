@@ -11,6 +11,4 @@ solution do
   "my_remote_repo" == request("What is the name of the remote repository?")
 end
 
-hint do
-  puts "You are looking for a remote.  You can run `git` for a list of commands"
-end
+hints ["You are looking for a remote.  You can run `git` for a list of commands"]

@@ -8,6 +8,7 @@ module Githug
     class << self
       def load
         settings = {
+          :locale => :en,
           :level => nil,
           :current_attempts => 0,
           :current_hint_index => 0,
@@ -16,6 +17,7 @@ module Githug
         }
 
         settings.merge! YAML::load(File.open(PROFILE_FILE)) if File.exists?(PROFILE_FILE)
+        I18n.locale = settings[:locale]
 
         self.new(settings)
       end

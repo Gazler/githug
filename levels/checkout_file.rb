@@ -20,6 +20,4 @@ solution do
   repo.status.files["config.rb"].type != "M" && repo.commits.length == 2
 end
 
-hint do
-  puts "You will need to do some research on the checkout command for this one."
-end
+hints ["You will need to do some research on the checkout command for this one."]

@@ -9,6 +9,4 @@ solution do
 	File.exists?("file1")	&& File.exists?("file2") 
 end
 
-hint do
-  puts "You want to research the `git merge` command"
-end
+hints ["You want to research the `git merge` command"]
