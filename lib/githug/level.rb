@@ -7,7 +7,7 @@ module Githug
               "rename", "log", "tag",  "commit_ammend", "reset",
               "checkout_file", "remote", "remote_url", "pull", "remote_add",
               "diff", "blame", "branch", "checkout", "branch_at", "merge",
-              "rename_commit", "squash", "merge_squash", "reorder",
+              "cherry-pick", "rename_commit", "squash", "merge_squash", "reorder",
               "stage_lines", "find_old_branch", "contribute"]
 
     attr_accessor :level_no, :level_path
