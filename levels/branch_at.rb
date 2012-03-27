@@ -20,6 +20,4 @@ solution do
   true
 end
 
-hint do
-  puts "Just like creating a branch, but you have to pass an extra argument"
-end
+hints ["Just like creating a branch, but you have to pass an extra argument"]

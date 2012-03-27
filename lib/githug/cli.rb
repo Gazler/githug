@@ -6,7 +6,7 @@ module Githug
 
     default_task :play
 
-    desc :play, "Initialize the game"
+    desc :play, I18n.t("githug.cli.tasks.play")
 
     def play
       UI.word_box("Githug")
@@ -15,7 +15,7 @@ module Githug
       game.play_level
     end
 
-    desc :test, "Test a level from a file path"
+    desc :test, I18n.t("githug.cli.tasks.test")
     method_option :errors, :type => :boolean, :default => false
 
     def test(path)
@@ -26,7 +26,7 @@ module Githug
       game.test_level(level, options[:errors])
     end
 
-    desc :hint, "Get a hint for the current level"
+    desc :hint, I18n.t("githug.cli.tasks.hint")
 
     def hint
       if level = load_level
@@ -34,7 +34,7 @@ module Githug
       end
     end
 
-    desc :reset, "Reset the current level"
+    desc :reset, I18n.t("githug.cli.tasks.reset")
 
     def reset(path = nil)
       if path
@@ -44,11 +44,11 @@ module Githug
       end
       UI.word_box("Githug")
       if level
-        UI.puts("resetting level")
+        UI.puts I18n.t("githug.cli.reset.resetting")
         level.setup_level
         level.full_description
       else
-        UI.error("Level does not exist")
+        UI.error I18n.t("githug.cli.reset.does_not_exist")
       end
     end
 
@@ -62,12 +62,12 @@ module Githug
 
       def make_directory
         if File.exists?("./git_hug") 
-          UI.puts "Please change into the git_hug directory"
+          UI.puts I18n.t("githug.cli.make_directory.change_dir")
           exit
         end
 
         unless File.basename(Dir.pwd) == "git_hug"
-          if UI.ask("No githug directory found, do you wish to create one?")
+          if UI.ask I18n.t("githug.cli.make_directory.no_dir_found")
             Dir.mkdir("./git_hug")
             Dir.chdir("git_hug")
             File.open(".gitignore", "w") do |file|
@@ -75,7 +75,7 @@ module Githug
               file.write(".gitignore")
             end
           else
-            UI.puts("Exiting")
+            UI.puts I18n.t("githug.cli.make_directory.exiting")
             exit
           end
         end

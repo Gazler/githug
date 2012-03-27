@@ -14,6 +14,4 @@ solution do
   repo.commits.length == 2 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
 end
 
-hint do
-  puts "Running `git commit --help` will display the man page and possible flags."
-end
+hints ["Running `git commit --help` will display the man page and possible flags."]

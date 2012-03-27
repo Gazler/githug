@@ -17,6 +17,4 @@ solution do
   repo.commits[1].message == "First commit"
 end
 
-hint do
-  puts "Take a look the -i flag of the rebase command."
-end
+hints ["Take a look the -i flag of the rebase command."]
