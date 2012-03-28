@@ -72,6 +72,7 @@ module Githug
             Dir.chdir("git_hug")
             File.open(".gitignore", "w") do |file|
               file.write(".profile.yml")
+              file.write(".gitignore")
             end
           else
             UI.puts("Exiting")
