@@ -1,5 +1,5 @@
 difficulty 4
-description "You have been working on a branch but got distracted by a major issue and forgot the name of it. Switch back to that branch"
+description "You have been working on a branch but got distracted by a major issue and forgot the name of it. Find out which one it was and switch back to that branch"
 
 setup do
   init_from_level
