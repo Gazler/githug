@@ -10,7 +10,7 @@ setup do
 end
 
 solution do
-  repo.commits.last.id_abbrev == request("What are the first 7 characters of the hash of the most recent commit?") 
+  repo.commits.first.id_abbrev == request("What are the first 7 characters of the hash of the most recent commit?") 
 end
 
 hint do
