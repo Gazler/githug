@@ -21,7 +21,7 @@ setup do
 end
 
 solution do
-  `git diff --staged` =~ /\+This change belongs to the first feature/ && `git diff` =~ /\+This change belongs to the second feature/
+  `git diff --no-color --staged` =~ /\+This change belongs to the first feature/ && `git diff --no-color` =~ /\+This change belongs to the second feature/
 end
 
 hint do
