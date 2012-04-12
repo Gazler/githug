@@ -21,7 +21,7 @@ setup do
 end
 
 solution do
-  `git diff --staged` =~ /\+This change belongs to the first feature/ && `git diff` =~ /\+This change belongs to the second feature/
+  `git diff --no-color --staged` =~ /\+This change belongs to the first feature/ && `git diff --no-color` =~ /\+This change belongs to the second feature/
 end
 
 hints ["You might want to try to manipulate the hunks of the diff to choose which lines of the diff get staged. Read about the flags which can be passed to the 'add' command; man git-add."]

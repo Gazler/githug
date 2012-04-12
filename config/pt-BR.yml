@@ -1,0 +1,199 @@
+pt-BR:
+  githug:
+    cli:
+      tasks:
+        play: Inicializa o jogo
+        test: Testa o nível de um caminho dado
+        hint: Mostra as dicas para o nível atual
+        reset: Reinicia o nível atual
+
+      reset:
+        resetting: reiniciando nível
+        does_not_exist: Nível inexistente
+
+      make_directory:
+        change_dir: Por favor, vá para o diretorio git_hug
+        no_dir_found: Diretório do githug não encontrado, você gostaria de cria-lo?
+        exiting: Terminado
+
+    game:
+      play_level:
+        welcome: Bem-vindo ao Githug
+        success: Parabéns, você passou de nível!
+        failure: Ops, sua solução está incorreta
+        hint_prompt: Lembre-se que você pode digitar `githug hint` para obter ajuda e `githug reset` para reiniciar o nível atual
+
+      test_level:
+        valid: Solução válida
+        invalid: Solução inválida
+
+    level:
+      level: "Nível:"
+      difficulty: "Dificuldade:"
+      no_hints: Não há dicas para esse nível
+
+  level:
+    init:
+      description: Inicialize um repositório vazio
+      hints:
+        - Digite `git` para ver a lista dos comandos disponíveis
+
+    add:
+      description: Há um arquivo chamado README neste diretório. Você deve adicioná-lo a área de staging
+      hints:
+        - Digite `git` para ver a lista dos comandos disponíveis
+
+    commit:
+      description: O arquivo README foi adicionado a sua área de staging. Agora realize o commit
+      hints:
+        - Você precisa informar uma mensagem de commit
+
+    config:
+      description: Configure o seu nome e e-mail no git. Isso é importante para que os seus commits possam ser identificados
+      hints:
+        - Essas opções de configuração. Você deve executar `git help config` caso esteja empacado
+
+    clone:
+      description: Clone o repositório https://github.com/Gazler/cloneme
+      hints:
+        - Você deve dar uma olhada neste site: https://github.com/Gazler/cloneme
+
+    clone_to_folder:
+      description: Clone o repositório https://github.com/Gazler/cloneme no diretório 'my_cloned_repo'
+      hints:
+        - Este nível é parecido com o anterior, `git clone` possui argumentos opcionais.
+
+    ignore:
+      description: O editor de texto 'vim' cria arquivos terminando em .swp (arquivos swap) para todos os arquivos abertos nele. Nós não queremos esses arquivos sujando o controle de versões. Faça o repositório ignorar aquivos .swp.
+      hints:
+        - Você deve ter percebido que há um arquivo chamado .gitignore no repositório
+
+    status:
+      description: Há alguns arquivos no repositório e um deles está untracked, que arquivo é este?
+      hints:
+        - Você está procurando por um comando para identificar o status no repositório.
+
+    rm:
+      description: Um arquivo foi removido do repositório, porém não foi removido do git. Descubra qual foi e o remova.
+      hints:
+        - Você pode precisar de mais de um comando para completar este nível. Lembre-se que você checou sua área de staging em um dos níveis anteriores. Não esqueça de executar `git` para ver uma lista de comandos.
+
+    rm_cached:
+      description: "Um arquivo (deleteme.rb) foi adicionado acidentalmente na sua área de staging. Descubra este arquivo e o remova da área de staging. Importante: não remova o arquivo do sistema de arquivos mas somente do git."
+      hints:
+        - Você pode precisar de mais de um comando para completar este nível. Lembre-se que você checou sua área de staging em um dos níveis anteriores. Não esqueça de executar `git` para ver uma lista de comandos.
+
+    rename:
+      description: Há um arquivo chamado oldfile.txt que precisa ser renomeado para newfile.txt. Você também precisa adicioná-lo ao stage.
+      hints:
+        - Dê uma olhada no comando `git mv`
+
+    log:
+      description: Você deverá informar o pelos 7 primeiros caracteres do hash do commit mais recente. É necessário investigar os logs do repositório para isso.
+      hints:
+        - Você precisa olhar os logs. Provavelmente há um comando para isso.
+
+    tag:
+      description: Nós temos um repostiório e precisamos adicionar uma tag ao commit atual com o nome new_tag
+      hints:
+        - Dê uma olhada no comando `git tag`
+
+    commit_ammend:
+      description: O arquivo README foi comitado, mas esqueceram de adicionar o arquivo `forgotten_file.rb` ao commit. Adicione o arquivo ao stage e faça um ammend o commit anterior para incluí-lo.
+      hints:
+        - Executando `git commit --help` irá mostrar o manual do commando e suas possíveis opções.
+
+    reset:
+      description: Existem dois arquivos para serem comitados. O objetivo é adicionar cada arquivo num commit separado, porém ambos foram adicionado sem querer. Remova o arquivo `to_commit_second` do área de stage usando o comando reset.
+      hint:
+        - Você pode encontrar informações sobre `git status`. Isso irá ajudar a descobri o comando a ser executado.
+
+    checkout_file:
+      description: Um arquivo foi modificado mas você não gostaría de mante-lo. Faça checkout do arquivo `config.rb` para o estado do último commit.
+      hint:
+        - Você precisará pesquisar sobre o comando checkout.
+
+    remote:
+      description: Este projeto tem um repositório remoto. Descubra qual ele é.
+      hints:
+        - Você está procurando por um remoto. Tente executar `git` para ver uma lista de possíveis comandos.
+
+    remote_url:
+      description: O repositório remoto tem uma URL associada a ele. Por favor informe a URL do remote_location.
+      hints:
+        - Você pode executar `git remote --help` para acessar o manual.
+
+    pull:
+      description: Você precisa fazer pull das modificações do repositório origin.
+      hints:
+        - Faça checkout dos repositórios remotos e pesquise sobre o comando `git pull`.
+
+    remote_add:
+      description: Adicione um repositório remoto chamado `origin` com a URL `https://github.com/githug/githug`
+      hints:
+        - Você pode executar `git remote --help` para mais informações.
+
+    diff:
+      description: Houveram modificações no arquivo app.rb desde o seu último commit. Descubra qual linha foi modificada.
+      hints:
+        - Você está procurando pela diferença desde o seu último commit. Não esqueça que ao executar `git` será mostrada uma lista de comandos possíveis.
+
+    blame:
+      description: Alguém colocou um password dentro do arquivo `config.rb`. Descubra quem foi.
+      hints:
+        - Você pode pesquisar sobre o comando `git blame`
+
+    branch:
+      description: Você quer mexer num código que possivelmente pode quebrar outras coisas. Crie o branch chamado test_code
+      hints:
+        - "`git branch` é o comando que você precisa investigar"
+
+    checkout:
+      description: Crie um branch chamado `my_branch` e vá para ele. Você deverá criar um branch como no nível anterior.
+      hints:
+        - Dê uma olhada nos comandos `git checkout` e `git branch`.
+
+    branch_at:
+      description: Você esqueceu de criar um branch no commit anterior e fez um novo commit depois dele. Crie um branch `test_branch` no penultimo commit.
+      hints:
+        - É bem parecido com a criação de um novo branch, mas você precisará um argumento extra.
+
+    merge:
+      description: Há um arquivo no branch `feature`; Vamos fazer um merge dele no branch master.
+      hints:
+        - Você pode pesquisar sobre o comando `git merge`
+
+    rename_commit:
+      description: Corrija o erro de digitação na mensagem do seu primeiro commit.
+      hints:
+        - Dê uma olhada na opção de rebase `-i` do comando `git rebase`.
+
+    squash:
+      description: Você comitou várias vezes mas gostaria que todas as modificações fossem um único commit.
+      hints:
+        - Dê uma olhada na opção `-i` do comando `git rebase`.
+
+    merge_squash:
+      description: Faça um merge de todos os commits do branch `long-feature-branch` como sendo um único commit.
+      hints:
+        - Dê uma olhada na opção `--squash` do commando de merge. Não se esqueça de commitar o merge.
+
+    reorder:
+      description: Você realizou commit várias vezes mas na ordem errada. Por favor, reordene seus commits.
+      hints:
+        - Dê uma olhada na opção `-i` do comando `git rebase`.
+
+    stage_lines:
+      description: Você fez modificações num arquivo que pertencem a duas funcionalidades diferentes, porém nenhuma dessas modifcações está na área de stage. Adicione ao stage somente as modificações que pertencem à primeira funcionalidade.
+      hints:
+        - Você pode tentar manipular pedaços do diff para escolher quais linhas serão adicionadas ao stage. Leia sobre as opções que podem ser passadas para o comando `git add`.
+
+    find_old_branch:
+      description: Você estava trabalhando num branch que foi distraído por um problema mais importante e terminou esquecendo o nome do branch original. Volte para este branch.
+      hints:
+        - Já brincou com o comando `git reflog`?
+
+    contribute:
+      description: Este é o último nível, o objetivo é contribuir para o repositório realizando pull requests no Github. Perceba que este nível foi projetado para encorajar você fazer contribuições válidas ao Githug e não para testar suas habilidades em criar pull requests. As contribuições mais necessárias são novos níveis, conserto de bugs e melhorias na documentação.
+      hints:
+        - Fazer um fork do repositório pode ser um bom ponto de partida.

@@ -6,3 +6,4 @@ pkg/*
 .rvmrc
 git_hug/*
 .profile.yml
+bin
