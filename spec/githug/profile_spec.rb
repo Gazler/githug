@@ -3,16 +3,17 @@ require 'spec_helper'
 describe Githug::Profile do
 
   it "should load the profile" do
-    settings = {:level => 1, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
+    settings = {:locale => :en, :level => 1, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
     File.should_receive(:exists?).with(Githug::Profile::PROFILE_FILE).and_return(true)
     File.should_receive(:open).with(Githug::Profile::PROFILE_FILE).and_return("settings")
     YAML.should_receive(:load).with("settings").and_return(settings)
+    I18n.should_receive(:locale=).with(:en)
     Githug::Profile.should_receive(:new).with(settings)
     Githug::Profile.load
   end
 
   it "should load the defaults if the file does not exist" do
-    defaults = {:level => nil, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
+    defaults = {:locale => :en, :level => nil, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
     File.should_receive(:exists?).with(Githug::Profile::PROFILE_FILE).and_return(false)
     Githug::Profile.should_receive(:new).with(defaults)
     Githug::Profile.load

@@ -52,6 +52,27 @@ end
       Githug::Level.load(1).should eql(false)
     end
 
+    describe "internationalization" do
+
+      it "should have a different description if a translation is availble" do
+        I18n.stub(:locale).and_return(:de)
+        I18n.stub(:exists?).and_return(true)
+        I18n.stub(:t)
+        I18n.should_receive(:t).with("level.init.description").and_return("Ein Test Beschreibung")
+        level = Githug::Level.load("init")
+        level.instance_variable_get("@description").should eql("Ein Test Beschreibung")
+      end
+
+      it "should use the English translation if none is available" do
+        I18n.stub(:locale).and_return(:de)
+        I18n.stub(:exists?).and_return(false)
+        I18n.should_not_receive(:t)
+        level = Githug::Level.load("init")
+        level.instance_variable_get("@description").should eql("A test description")
+      end
+
+    end
+
   end
 
   describe "load_from_file" do

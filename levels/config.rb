@@ -23,6 +23,4 @@ solution do
   valid
 end
 
-hint do
-  puts "These settings are config settings.  You should run `git help config` if you are stuck"
-end
+hints ["These settings are config settings.  You should run `git help config` if you are stuck"]
