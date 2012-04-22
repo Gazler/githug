@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 ea3dbcc5e2d2359698c3606b0ec44af9f76def54 Andrey <aslushnikov@gmail.com> 1332886832 +0400	commit (initial): Initial commit
+ea3dbcc5e2d2359698c3606b0ec44af9f76def54 b30c6a965415df6aef5f2903f9892fa5481152fc Andrey <aslushnikov@gmail.com> 1332886882 +0400	commit: Added a hardcore math module
+b30c6a965415df6aef5f2903f9892fa5481152fc 232d266a78d5ef7196f1ede14972ccf7ee19e587 Andrey <aslushnikov@gmail.com> 1332886949 +0400	commit: Renamed project.js -> herdcore-math.js
+232d266a78d5ef7196f1ede14972ccf7ee19e587 6edea632d9540e060bca97dda0897df2b7da0ec0 Andrey <aslushnikov@gmail.com> 1332887008 +0400	commit: Added fancy branded output
