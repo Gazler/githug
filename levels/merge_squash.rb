@@ -8,7 +8,7 @@ setup do
   repo.add        "file1"
   repo.commit_all "First commit"
 
-  repo.git.native :checkout, {b: true}, 'long-feature-branch'
+  repo.git.native :checkout, {"b" => true}, 'long-feature-branch'
   File.open("file3", 'w') { |f| f << "some feature\n" }
   repo.add        "file3"
   repo.commit_all "Developing new features"
