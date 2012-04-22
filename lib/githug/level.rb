@@ -8,7 +8,7 @@ module Githug
               "checkout_file", "remote", "remote_url", "pull", "remote_add",
               "diff", "blame", "branch", "checkout", "branch_at", "merge",
               "cherry-pick", "rename_commit", "squash", "merge_squash", "reorder",
-              "stage_lines", "find_old_branch", "contribute"]
+              "stage_lines", "find_old_branch", "revert", "contribute"]
 
     attr_accessor :level_no, :level_path
     
