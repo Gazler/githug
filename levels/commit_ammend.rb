@@ -11,7 +11,7 @@ end
 
 solution do
 		
-  repo.commits.length == 2 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
+  repo.commits.length == 1 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
 end
 
 hint do

@@ -3,6 +3,9 @@ description "Create and switch to a new branch called 'my_branch'.  You will nee
 
 setup do
   repo.init
+  FileUtils.touch("README")
+  repo.add("README")
+  repo.commit_all("initial commit")
 end
 
 solution do

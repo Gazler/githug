@@ -18,8 +18,8 @@ setup do
 end
 
 solution do
-  return false unless repo.commits[3].message == "Second commit"
-  return false unless repo.commits[2].message == "First commit"
+  return false unless repo.commits[3].message == "First commit"
+  return false unless repo.commits[2].message == "Second commit"
   return false unless repo.commits[1].message == "Bad commit"
   return false unless repo.commits[0].message.split("\n").first == "Revert \"Bad commit\""
   true
