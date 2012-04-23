@@ -18,11 +18,15 @@ setup do
 end
 
 solution do
-  return false unless repo.commits[3].message == "First commit"
-  return false unless repo.commits[2].message == "Second commit"
-  return false unless repo.commits[1].message == "Bad commit"
-  return false unless repo.commits[0].message.split("\n").first == "Revert \"Bad commit\""
-  true
+  retVal = false
+  retVal = true if repo.commits.length > 3 &&
+    repo.commits[3].message == "First commit" &&
+    repo.commits[2].message == "Second commit" &&
+    repo.commits[1].message == "Bad commit" &&
+    repo.commits[0].message.split("\n").first == "Revert \"Bad commit\""
+  retVal = true if repo.commits[1].message == "First commit" &&
+    repo.commits[0].message == "Second commit"
+  retVal
 end
 
 hint do
