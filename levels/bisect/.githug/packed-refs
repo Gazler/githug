@@ -1,0 +1,6 @@
+# pack-refs with: peeled 
+94e162b505bc2290fb67764357a625192f8a4e8a refs/bisect/bad
+bfb16eec1081387b586dc8009ef422cfff60b622 refs/bisect/good-bfb16eec1081387b586dc8009ef422cfff60b622
+c0a1cdff8dd63948a5fc41f5871681c5b133c053 refs/bisect/good-c0a1cdff8dd63948a5fc41f5871681c5b133c053
+f608824888b83bbedc1f658be7496ffea467a8fb refs/bisect/good-f608824888b83bbedc1f658be7496ffea467a8fb
+f351ca63a759f56bb26924fd566294eb23455c71 refs/heads/master
