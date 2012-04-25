@@ -2,7 +2,7 @@ difficulty 2
 description "The README file has been committed, but it looks like the file `forgotten_file.rb` was missing from the commit.  Add the file and amend your previous commit to include it."
 
 setup do
-  repo.init
+  repo.init(false)
   FileUtils.touch("README")
   repo.add("README")
   repo.commit_all("Initial commit")
@@ -11,7 +11,7 @@ end
 
 solution do
 		
-  repo.commits.length == 2 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
+  repo.commits.length == 1 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
 end
 
 hint do
