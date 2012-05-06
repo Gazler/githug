@@ -134,7 +134,44 @@ describe Githug::Level do
 
   end
 
-  describe "#hint" do
+  describe "request" do
+    describe "When the language is English" do
+      it "should delegate to UI.request with the same message" do
+        I18n.stub(:locale).and_return(:en)
+        Githug::UI.should_receive(:request).with("A request")
+        subject.request("A request")
+      end
+    end
+
+    describe "When the language is not English" do
+      before(:each) do
+        I18n.stub(:locale).and_return(:de)
+        I18n.stub(:t)
+      end
+
+      describe "when the translation is missing" do
+        it "should delegate to UI.request with the same message" do
+          I18n.stub(:exists?).and_return(false)
+          Githug::UI.should_receive(:request).with("A request")
+          subject.request("A request")
+        end
+      end
+
+      describe "when the translation is present" do
+        it "should delegate to UI.request with the translated" do
+          I18n.stub(:exists?).and_return(true)
+          I18n.should_receive(:t).with("level.test_level.requests").and_return(["Translated Request 1", "Translated Request 2"])
+          Githug::UI.should_receive(:request).with("Translated Request 1")
+          subject.request("A request")
+          Githug::UI.should_receive(:request).with("Translated Request 2")
+          subject.request("Another request")
+        end
+      end
+
+    end
+  end
+
+  describe "hint" do
 
     let(:profile) { mock.as_null_object }
 

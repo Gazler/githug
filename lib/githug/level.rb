@@ -110,7 +110,16 @@ module Githug
       _solution
     end
 
-    def show_hint
+    def request(msg)
+      if I18n.locale != :en && I18n.exists?("level.#{level_name}.requests")
+        @requests ||= I18n.t("level.#{level_name}.requests")
+        @request_index = @request_index ? @request_index + 1 : 0
+        UI.request(@requests[@request_index])
+      else
+        UI.request(msg)
+      end
+    end
+def show_hint
       UI.word_box("Githug")
       profile = Profile.load
       current_hint_index = profile.current_hint_index
