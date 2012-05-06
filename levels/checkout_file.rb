@@ -17,7 +17,7 @@ setup do
 end
 
 solution do
-  repo.status.files["config.rb"].type != "M" && repo.commits.length == 2
+  repo.status.files["config.rb"].type != "M" && repo.commits.length == 1
 end
 
 hints ["You will need to do some research on the checkout command for this one."]

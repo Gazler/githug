@@ -8,7 +8,7 @@ setup do
   repo.add        "file1"
   repo.commit_all "First commit"
 
-  repo.git.native :checkout, {b: true}, 'long-feature-branch'
+  repo.git.native :checkout, {"b" => true}, 'long-feature-branch'
   File.open("file3", 'w') { |f| f << "some feature\n" }
   repo.add        "file3"
   repo.commit_all "Developing new features"
@@ -32,7 +32,7 @@ solution do
   result = true
 
   # Check the number of commits in the repo (should be 4 - including initial .gitignore).
-  result = false unless repo.commits.size == 4
+  result = false unless repo.commits.size == 3
   
   # Check if changes from all the commits from long-feature-branch are included.
   file = File.open('file3')

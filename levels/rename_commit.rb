@@ -3,6 +3,9 @@ description "Correct the typo in the message of your first commit."
 
 setup do
   repo.init
+  FileUtils.touch "README"
+  repo.add        "README"
+  repo.commit_all "Initial commit"
 
   FileUtils.touch "file1"
   repo.add        "file1"

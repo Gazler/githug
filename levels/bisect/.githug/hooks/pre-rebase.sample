@@ -65,7 +65,7 @@ then
 	fi
 else
 	not_in_next=`git rev-list --pretty=oneline ^${publish} "$topic"`
-	/opt/local/bin/perl5.12 -e '
+	/usr/bin/perl -e '
 		my $topic = $ARGV[0];
 		my $msg = "* $topic has commits already merged to public branch:\n";
 		my (%not_in_next) = map {
@@ -90,6 +90,7 @@ fi
 
 exit 0
 
+<<\DOC_END
 ################################################################
 
 This sample hook safeguards topic branches that have been
@@ -167,3 +168,5 @@ To compute (2):
 	git rev-list master..topic
 
 	if this is empty, it is fully merged to "master".
+
+DOC_END

@@ -3,6 +3,8 @@ description "You want to work on a piece of code that has the potential to break
 
 setup do
   repo.init
+  FileUtils.touch("README")
+  repo.add "README"
   repo.commit_all("Initial commit")
 end
 

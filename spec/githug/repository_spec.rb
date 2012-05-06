@@ -62,21 +62,9 @@ describe Githug::Repository do
   end
 
   describe "init" do
-    before(:each) do
+    it "should not add and commit gitignore if prompted" do
       @repo = mock 
       Grit::Repo.should_receive(:init).with(".").and_return(@repo)
-    end
-
-    it "should initialize an empty repository and add .gitignore" do
-      @repo.should_receive(:add).with(".gitignore")
-      @repo.should_receive(:commit_all).with("added .gitignore")
-      @repository.init
-    end
-
-    it "should not add and commit gitignore if prompted" do
-      @repo.should_not_receive(:add).with(".gitignore")
-      @repo.should_not_receive(:add).with(".profile.yml")
-      @repo.should_not_receive(:commit).with("added .gitignore")
       @repository.init(false)
     end
   end

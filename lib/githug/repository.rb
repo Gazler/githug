@@ -22,12 +22,8 @@ module Githug
       !@grit.nil?
     end
 
-    def init(gitignore = true)
+    def init(*args)
       @grit = Grit::Repo.init(".")
-      if gitignore
-        @grit.add(".gitignore")
-        @grit.commit_all("added .gitignore")
-      end
     end
 
     def method_missing(method, *args, &block)

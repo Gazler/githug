@@ -4,6 +4,10 @@ description "You have committed several times but in the wrong order. Please reo
 setup do
   repo.init
 
+  FileUtils.touch "README"
+  repo.add        "README"
+  repo.commit_all "Initial Setup"
+
   FileUtils.touch "file1"
   repo.add        "file1"
   repo.commit_all "First commit"
