@@ -52,6 +52,9 @@ pt-BR:
       description: Configure o seu nome e e-mail no git. Isso é importante para que os seus commits possam ser identificados
       hints:
         - Essas opções de configuração. Você deve executar `git help config` caso esteja empacado
+      requests:
+        - What is your name?
+        - What is your email?
 
     clone:
       description: Clone o repositório https://github.com/Gazler/cloneme
