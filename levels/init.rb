@@ -1,5 +1,5 @@
 difficulty 1
-description "Initialize an empty repository"
+description "A new directory, git_hug, has been created; initialize an empty repository in it"
 
 solution do
   repo.valid?
