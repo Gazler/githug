@@ -9,7 +9,7 @@ setup do
 
   FileUtils.touch "file1"
   repo.add        "file1"
-  repo.commit_all "First commmit"
+  repo.commit_all "First coommit"
 
   FileUtils.touch "file2"
   repo.add        "file2"
