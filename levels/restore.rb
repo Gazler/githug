@@ -1,5 +1,5 @@
 difficulty 4
-description "You decided to delete your latest commit by running `git checkout HEAD^`.  (Not a smart thing to do.)  You then change your mind, and want that commit back.  Restore the deleted commit."
+description "You decided to delete your latest commit by running `git reset --hard HEAD^`.  (Not a smart thing to do.)  You then change your mind, and want that commit back.  Restore the deleted commit."
 
 setup do
   repo.init
@@ -15,7 +15,7 @@ setup do
   repo.add        'file3'
   repo.commit_all 'Restore this commit'
 
-  repo.git.native :checkout, {}, 'HEAD^'
+  repo.git.native :reset, { "hard" => true }, 'HEAD^'
 end
 
 solution do
