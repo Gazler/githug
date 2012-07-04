@@ -10,11 +10,20 @@ module Githug
     end
 
     def reset
-      dont_delete = ["..", ".", ".gitignore", ".profile.yml"]
+      dont_delete = ["..", ".", ".profile.yml"]
       if File.basename(Dir.pwd) == "git_hug"
         Dir.entries(Dir.pwd).each do |file|
           FileUtils.rm_rf(file) unless dont_delete.include?(file) 
         end
+      end
+      create_gitignore
+    end
+
+    def create_gitignore
+      Dir.chdir("git_hug") if File.exists?("./git_hug")
+      File.open(".gitignore", "w") do |file|
+        file.puts(".profile.yml")
+        file.puts(".gitignore")
       end
     end
 

@@ -70,10 +70,6 @@ module Githug
           if UI.ask("No githug directory found, do you wish to create one?")
             Dir.mkdir("./git_hug")
             Dir.chdir("git_hug")
-            File.open(".gitignore", "w") do |file|
-              file.puts(".profile.yml")
-              file.puts(".gitignore")
-            end
           else
             UI.puts("Exiting")
             exit

@@ -6,6 +6,7 @@ describe Githug::Repository do
     @grit = mock
     Grit::Repo.stub(:new).and_return(@grit) 
     @repository = Githug::Repository.new
+    @repository.stub(:create_gitignore)
   end
 
   describe "initialize" do
@@ -47,6 +48,17 @@ describe Githug::Repository do
       FileUtils.should_receive(:rm_rf).with("README")
       FileUtils.should_receive(:rm_rf).with(".git")
       @repository.reset
+    end
+  end
+
+
+  describe "create_gitignore" do
+    it "should create a gitignore" do
+      @repository.unstub(:create_gitignore)
+      File.stub(:exists?).and_return(true) 
+      Dir.should_receive(:chdir).with("git_hug")
+      File.should_receive(:open).with(".gitignore", "w")
+      @repository.create_gitignore
     end
   end
 

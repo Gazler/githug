@@ -24,6 +24,7 @@ module Githug
         setup(path)
       end
 
+
       def setup(path)
         level_name = File.basename(path, File.extname(path))
         #Remove .rb extension, WTB a better way to do this

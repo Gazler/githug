@@ -19,7 +19,6 @@ describe Githug::CLI do
     Githug::UI.stub(:ask).and_return(true) 
     Dir.should_receive(:mkdir).with("./git_hug")
     Dir.should_receive(:chdir).with("git_hug")
-    File.should_receive(:open).with(".gitignore", "w").and_return(true)
     @cli.make_directory
   end
 
