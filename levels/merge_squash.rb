@@ -32,7 +32,7 @@ solution do
   result = true
 
   # Check the number of commits in the repo (should be 4 - including initial .gitignore).
-  result = false unless repo.commits.size == 3
+  result = false unless repo.commits.size == 4
   
   # Check if changes from all the commits from long-feature-branch are included.
   file = File.open('file3')
