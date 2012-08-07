@@ -31,8 +31,9 @@ module Githug
       !@grit.nil?
     end
 
-    def init(*args)
-      @grit = Grit::Repo.init(".")
+    # Initialize a Git repo. If the repo already exists, do nothing.
+    def init(location = ".")
+      @grit = Grit::Repo.init(location)
     end
 
     def method_missing(method, *args, &block)
