@@ -77,7 +77,7 @@ describe Githug::Repository do
     it "should not add and commit gitignore if prompted" do
       @repo = mock 
       Grit::Repo.should_receive(:init).with(".").and_return(@repo)
-      @repository.init(false)
+      @repository.init
     end
   end
 
