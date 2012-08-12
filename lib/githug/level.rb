@@ -6,7 +6,7 @@ module Githug
               "clone_to_folder", "ignore", "status", "rm", "rm_cached",
               "rename", "log", "tag",  "commit_amend", "reset",
               "checkout_file", "remote", "remote_url", "pull", "remote_add",
-              "diff", "blame", "branch", "checkout", "branch_at", "merge",
+              "push", "diff", "blame", "branch", "checkout", "branch_at", "merge",
               "cherry-pick", "rename_commit", "squash", "merge_squash", "reorder",
               "bisect", "stage_lines", "find_old_branch", "revert", "restore",
               "contribute"]
