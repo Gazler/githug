@@ -1,25 +1,21 @@
-0000000000000000000000000000000000000000 b066349076e2b71e3b71cfeb1ba88af99cc036f6 Robert Bittle <guywithnose@gmail.com> 1335144302 -0400	commit (initial): First commit
-b066349076e2b71e3b71cfeb1ba88af99cc036f6 15c915b17ee502c80df64aff04da024c17ac9da0 Robert Bittle <guywithnose@gmail.com> 1335144302 -0400	commit: Bad commit
-15c915b17ee502c80df64aff04da024c17ac9da0 d9882afd25595d7d6dc8ead68c68e4f00c94c9b2 Robert Bittle <guywithnose@gmail.com> 1335144302 -0400	commit: Second commit
-d9882afd25595d7d6dc8ead68c68e4f00c94c9b2 b066349076e2b71e3b71cfeb1ba88af99cc036f6 Robert Bittle <guywithnose@gmail.com> 1335144309 -0400	checkout: moving from master to b066349076e2b71e3b71cfeb1ba88af99cc036f6
-b066349076e2b71e3b71cfeb1ba88af99cc036f6 bed2d266fa44b56968a17f1e2d409b306032bd6d Robert Bittle <guywithnose@gmail.com> 1335144309 -0400	rebase -i (pick): Second commit
-bed2d266fa44b56968a17f1e2d409b306032bd6d b066349076e2b71e3b71cfeb1ba88af99cc036f6 Robert Bittle <guywithnose@gmail.com> 1335175555 -0400	HEAD~1: updating HEAD
-b066349076e2b71e3b71cfeb1ba88af99cc036f6 f608824888b83bbedc1f658be7496ffea467a8fb Robert Bittle <guywithnose@gmail.com> 1335177947 -0400	commit (amend): First commit
-f608824888b83bbedc1f658be7496ffea467a8fb d406b1b8bc269c9aef9127299e83947220e7a9b0 Robert Bittle <guywithnose@gmail.com> 1335178003 -0400	commit: Another Commit
-d406b1b8bc269c9aef9127299e83947220e7a9b0 0b194f30d6867522d1666590087e6c0b5e20dc93 Robert Bittle <guywithnose@gmail.com> 1335178095 -0400	commit: Another Commit
-0b194f30d6867522d1666590087e6c0b5e20dc93 98d617d3bdf0b6c59d6177233acb4b9fd54b7aac Robert Bittle <guywithnose@gmail.com> 1335178214 -0400	commit: Another Commit
-98d617d3bdf0b6c59d6177233acb4b9fd54b7aac 89d27c5f4680cd21028947be75c33a68511decb9 Robert Bittle <guywithnose@gmail.com> 1335178242 -0400	commit: Another Commit
-89d27c5f4680cd21028947be75c33a68511decb9 e8dd08d5aabb62b56c80320672cd8d42e2b8954d Robert Bittle <guywithnose@gmail.com> 1335178263 -0400	commit: Another Commit
-e8dd08d5aabb62b56c80320672cd8d42e2b8954d c0a1cdff8dd63948a5fc41f5871681c5b133c053 Robert Bittle <guywithnose@gmail.com> 1335178286 -0400	commit: Another Commit
-c0a1cdff8dd63948a5fc41f5871681c5b133c053 bfb16eec1081387b586dc8009ef422cfff60b622 Robert Bittle <guywithnose@gmail.com> 1335178306 -0400	commit: Another Commit
-bfb16eec1081387b586dc8009ef422cfff60b622 94e162b505bc2290fb67764357a625192f8a4e8a Robert Bittle <guywithnose@gmail.com> 1335178330 -0400	commit: Another Commit
-94e162b505bc2290fb67764357a625192f8a4e8a 4145057e11ab90109c95882b1f40d560da408bfa Robert Bittle <guywithnose@gmail.com> 1335178341 -0400	commit: Another Commit
-4145057e11ab90109c95882b1f40d560da408bfa c1b80f5ed4995cda8e19027f0776351af6b76703 Robert Bittle <guywithnose@gmail.com> 1335178357 -0400	commit: Another Commit
-c1b80f5ed4995cda8e19027f0776351af6b76703 36da01fb0571360b0e1170f0cb46e74f72927cda Robert Bittle <guywithnose@gmail.com> 1335178376 -0400	commit: Another Commit
-36da01fb0571360b0e1170f0cb46e74f72927cda 7f8406e742c5281ec2c9bc3c6cc69dc6ba5311fd Robert Bittle <guywithnose@gmail.com> 1335178390 -0400	commit: Another Commit
-7f8406e742c5281ec2c9bc3c6cc69dc6ba5311fd f351ca63a759f56bb26924fd566294eb23455c71 Robert Bittle <guywithnose@gmail.com> 1335178407 -0400	commit: Another Commit
-f351ca63a759f56bb26924fd566294eb23455c71 c0a1cdff8dd63948a5fc41f5871681c5b133c053 Robert Bittle <guywithnose@gmail.com> 1335178499 -0400	checkout: moving from master to c0a1cdff8dd63948a5fc41f5871681c5b133c053
-c0a1cdff8dd63948a5fc41f5871681c5b133c053 4145057e11ab90109c95882b1f40d560da408bfa Robert Bittle <guywithnose@gmail.com> 1335178506 -0400	checkout: moving from c0a1cdff8dd63948a5fc41f5871681c5b133c053 to 4145057e11ab90109c95882b1f40d560da408bfa
-4145057e11ab90109c95882b1f40d560da408bfa 94e162b505bc2290fb67764357a625192f8a4e8a Robert Bittle <guywithnose@gmail.com> 1335178506 -0400	checkout: moving from 4145057e11ab90109c95882b1f40d560da408bfa to 94e162b505bc2290fb67764357a625192f8a4e8a
-94e162b505bc2290fb67764357a625192f8a4e8a bfb16eec1081387b586dc8009ef422cfff60b622 Robert Bittle <guywithnose@gmail.com> 1335178506 -0400	checkout: moving from 94e162b505bc2290fb67764357a625192f8a4e8a to bfb16eec1081387b586dc8009ef422cfff60b622
-bfb16eec1081387b586dc8009ef422cfff60b622 f351ca63a759f56bb26924fd566294eb23455c71 Robert Bittle <guywithnose@gmail.com> 1335182458 -0400	reset: moving to master
+f351ca63a759f56bb26924fd566294eb23455c71 f608824888b83bbedc1f658be7496ffea467a8fb Florian Sesser <fs@it-agenten.com> 1348697815 +0200	reset: moving to f608824888b83bbedc1f658be7496ffea467a8fb
+f608824888b83bbedc1f658be7496ffea467a8fb f608824888b83bbedc1f658be7496ffea467a8fb Florian Sesser <fs@it-agenten.com> 1348697842 +0200	checkout: moving from master to hacklschorsch
+f608824888b83bbedc1f658be7496ffea467a8fb 80a9b3d94237f982b6c9052e6d56b930f18a4ef5 Florian Sesser <fs@it-agenten.com> 1348697952 +0200	cherry-pick: Another Commit
+80a9b3d94237f982b6c9052e6d56b930f18a4ef5 8c992afff5e16c97f4ef82d58671a3403d734086 Florian Sesser <fs@it-agenten.com> 1348697967 +0200	cherry-pick: Another Commit
+8c992afff5e16c97f4ef82d58671a3403d734086 49774ea84ae3723cc4fac75521435cc04d56b657 Florian Sesser <fs@it-agenten.com> 1348698291 +0200	cherry-pick: Another Commit
+49774ea84ae3723cc4fac75521435cc04d56b657 e060c0d789288fda946f91254672295230b2de9d Florian Sesser <fs@it-agenten.com> 1348698316 +0200	cherry-pick: Another Commit
+e060c0d789288fda946f91254672295230b2de9d ffb097e3edfa828afa565eeceee6b506b3f2a131 Florian Sesser <fs@it-agenten.com> 1348698720 +0200	commit: Another Commit
+ffb097e3edfa828afa565eeceee6b506b3f2a131 2e1735d5bef6db0f3e325051a179af280f05573a Florian Sesser <fs@it-agenten.com> 1348698824 +0200	commit: Another Commit
+2e1735d5bef6db0f3e325051a179af280f05573a ccddb96f824a0e929f5fecf55c0f4479552246f3 Florian Sesser <fs@it-agenten.com> 1348698884 +0200	commit: Another Commit
+ccddb96f824a0e929f5fecf55c0f4479552246f3 a530e7ed25173d0800cfe33cc8915e5929209b8e Florian Sesser <fs@it-agenten.com> 1348698911 +0200	commit: Another Commit
+a530e7ed25173d0800cfe33cc8915e5929209b8e fdbfc0d403e5ac0b2659cbfa2cbb061fcca0dc2a Florian Sesser <fs@it-agenten.com> 1348699468 +0200	commit: Another Commit
+fdbfc0d403e5ac0b2659cbfa2cbb061fcca0dc2a 5d1eb75377072c5c6e5a1b0ac4159181ecc4edff Florian Sesser <fs@it-agenten.com> 1348699592 +0200	commit: Another Commit
+5d1eb75377072c5c6e5a1b0ac4159181ecc4edff 9f54462abbb991b167532929b34118113aa6c52e Florian Sesser <fs@it-agenten.com> 1348699604 +0200	cherry-pick: Another Commit
+9f54462abbb991b167532929b34118113aa6c52e 7c03a99ba384572c216769f0273b5baf3ba83694 Florian Sesser <fs@it-agenten.com> 1348699614 +0200	cherry-pick: Another Commit
+7c03a99ba384572c216769f0273b5baf3ba83694 5db7a7cb90e745e2c9dbdd84810ccc7d91d92e72 Florian Sesser <fs@it-agenten.com> 1348699625 +0200	cherry-pick: Another Commit
+5db7a7cb90e745e2c9dbdd84810ccc7d91d92e72 18ed2ac1522a014412d4303ce7c8db39becab076 Florian Sesser <fs@it-agenten.com> 1348699635 +0200	cherry-pick: Another Commit
+18ed2ac1522a014412d4303ce7c8db39becab076 bb736ddd9b83d6296d23444a2ab3b0d2fa6dfb81 Florian Sesser <fs@it-agenten.com> 1348699648 +0200	cherry-pick: Another Commit
+bb736ddd9b83d6296d23444a2ab3b0d2fa6dfb81 888386c77c957dc52f3113f2483663e3132559d4 Florian Sesser <fs@it-agenten.com> 1348699657 +0200	cherry-pick: Another Commit
+888386c77c957dc52f3113f2483663e3132559d4 028763b396121e035f672ef5af75d2dcb1cc8146 Florian Sesser <fs@it-agenten.com> 1348699668 +0200	cherry-pick: Another Commit
+028763b396121e035f672ef5af75d2dcb1cc8146 979576184c5ec9667cf7593cf550c420378e960f Florian Sesser <fs@it-agenten.com> 1348699679 +0200	cherry-pick: Another Commit
+979576184c5ec9667cf7593cf550c420378e960f 12628f463f4c722695bf0e9d603c9411287885db Florian Sesser <fs@it-agenten.com> 1348699693 +0200	cherry-pick: Another Commit
