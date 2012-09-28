@@ -3,3 +3,5 @@
 	filemode = true
 	bare = false
 	logallrefupdates = true
+[pack]
+	deltaCacheSize = 1
