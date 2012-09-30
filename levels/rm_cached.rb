@@ -3,7 +3,7 @@ difficulty 2
 description "A file (deleteme.rb) has accidentally been added to your staging area, find out which file and remove it from the staging area.  *NOTE* Do not remove the file system, only from git."
 
 setup do
-  repo.init(false)
+  repo.init
   FileUtils.touch("deleteme.rb")
   repo.add(".gitignore")
   repo.add("deleteme.rb")
