@@ -7,7 +7,7 @@ setup do
 end
 
 solution do
-  "94e162b" == request("What are the first 7 characters of the hash of the commit that introduced the bug?")
+  "18ed2ac" == request("What are the first 7 characters of the hash of the commit that introduced the bug?")
 end
 
 hint do
