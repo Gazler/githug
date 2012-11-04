@@ -9,7 +9,7 @@ module Githug
               "push", "diff", "blame", "branch", "checkout", "checkout_tag",
               "branch_at", "merge", "cherry-pick", "rename_commit", "squash",
               "merge_squash", "reorder", "bisect", "stage_lines",
-              "find_old_branch", "revert", "restore", "contribute"]
+              "find_old_branch", "revert", "restore", "conflict", "contribute"]
 
     attr_accessor :level_no, :level_path
     

@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 306868e3258be1f35ae43db71e3a6d7edf42ffe7 Thameera Senanayaka <thameera123@gmail.com> 1352041121 +0530	commit (initial): Initial commit
+306868e3258be1f35ae43db71e3a6d7edf42ffe7 40e20a455ac2731ad25c297b03aa543d7eedf6ab Thameera Senanayaka <thameera123@gmail.com> 1352041153 +0530	commit: Added two lines
+40e20a455ac2731ad25c297b03aa543d7eedf6ab 306868e3258be1f35ae43db71e3a6d7edf42ffe7 Thameera Senanayaka <thameera123@gmail.com> 1352041162 +0530	checkout: moving from master to mybranch
+306868e3258be1f35ae43db71e3a6d7edf42ffe7 50a127cb066eb903a6fa59d71802c10cb442fb3b Thameera Senanayaka <thameera123@gmail.com> 1352041213 +0530	commit: Added lines
+50a127cb066eb903a6fa59d71802c10cb442fb3b 75179304f4fab00613f08a9412b6cb0965bfa564 Thameera Senanayaka <thameera123@gmail.com> 1352041234 +0530	commit: Added comment
+75179304f4fab00613f08a9412b6cb0965bfa564 40e20a455ac2731ad25c297b03aa543d7eedf6ab Thameera Senanayaka <thameera123@gmail.com> 1352041240 +0530	checkout: moving from mybranch to master
