@@ -6,10 +6,10 @@ module Githug
               "clone_to_folder", "ignore", "status", "rm", "rm_cached",
               "rename", "log", "tag",  "commit_amend", "reset", "reset_soft",
               "checkout_file", "remote", "remote_url", "pull", "remote_add",
-              "push", "diff", "blame", "branch", "checkout", "branch_at", "merge",
-              "cherry-pick", "rename_commit", "squash", "merge_squash", "reorder",
-              "bisect", "stage_lines", "find_old_branch", "revert", "restore",
-              "contribute"]
+              "push", "diff", "blame", "branch", "checkout", "checkout_tag",
+              "branch_at", "merge", "cherry-pick", "rename_commit", "squash",
+              "merge_squash", "reorder", "bisect", "stage_lines",
+              "find_old_branch", "revert", "restore", "contribute"]
 
     attr_accessor :level_no, :level_path
     
