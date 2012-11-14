@@ -11,5 +11,5 @@ solution do
 end
 
 hint do
-  puts ["The fastest way to find the bug is with bisect.", "Start bisect with a good and bad commit, then run git bisect run make test."]
+  puts ["The fastest way to find the bug is with bisect.", "Don't forget to start bisect first, identify a good or bad commit, then run git bisect run make test."]
 end
