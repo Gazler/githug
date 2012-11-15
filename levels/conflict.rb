@@ -19,5 +19,5 @@ solution do
 end
 
 hint do
-  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Take a look at the sections on merge conflicts in 'git merge'.", "Remove the unnecessary lines in poem.txt."]
+  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Look 'through the looking glass'", "Take a look at the sections on merge conflicts in 'git merge'.", "Remove the unnecessary lines in poem.txt."]
 end
