@@ -49,40 +49,45 @@ Githug has a DSL for writing levels
 
 An example level:
 
-    difficulty 1
-    description "There is a file in your folder called README, you should add it to your staging area"
+```ruby
+difficulty 1
+description "There is a file in your folder called README, you should add it to your staging area"
 
-    setup do
-      repo.init
-      FileUtils.touch("README")
-    end
+setup do
+  repo.init
+  FileUtils.touch("README")
+end
 
-    solution do
-      return false unless repo.status.files.keys.include?("README")
-      return false if repo.status.files["README"].untracked
-      true
-    end
+solution do
+  return false unless repo.status.files.keys.include?("README")
+  return false if repo.status.files["README"].untracked
+  true
+end
 
-    hint do
-      puts "You can type `git` in your shell to get a list of available git commands"
-    end
+hint do
+  puts "You can type `git` in your shell to get a list of available git commands"
+end
+```
 
  `difficulty`, `description` and `solution` are required.
 
 You can also include multiple hints like this:
 
-    hints [
-      "You can type `git` in your shell to get a list of available git commands",
-      "Check the man for `git add`"]
+```ruby
+hints [
+  "You can type `git` in your shell to get a list of available git commands",
+  "Check the man for `git add`"]
+```
 
  **note** Because `solution` is a Proc, you cannot prematurely return out of it and as a result, must put an explicit return on the last line of the solution block.
 
-
-    solution do
-      solved = false
-      solved = true if repo.valid?
-      solved
-    end
+```ruby
+solution do
+  solved = false
+  solved = true if repo.valid?
+  solved
+end
+```
 
  By default, `setup` will remove all files from the game folder.  You do not need to include a setup method if you don't want an initial git repository (if you are testing `git init` or only checking an answer.)
  
@@ -93,9 +98,11 @@ You can also include multiple hints like this:
 
 Another method exists called `init_from_level` and it is used like so:
 
-    setup do
-      init_from_level
-    end
+```ruby
+setup do
+  init_from_level
+end
+```
 
 This will copy the contents of a repository specified in the levels folder for your level.  For example, if your level is called "merge" then it will copy the contents of the "merge" folder.  it is recommended that you do the following steps:
 
