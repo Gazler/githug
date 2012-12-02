@@ -1,0 +1,32 @@
+add some lyrics
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   lyrics.txt
+#
+diff --git a/lyrics.txt b/lyrics.txt
+new file mode 100644
+index 0000000..85e560a
+--- /dev/null
++++ b/lyrics.txt
+@@ -0,0 +1,13 @@
++Down in Louisiana in that sunny clime,
++They play a class of music that is super fine,
++And it makes no difference if its rain or shine,
++You can hear that that jazz band music playing all the time.
++It sounds so peculiar cause the music's queer.
++How its sweet vibration seem to fill the air.
++Then to you the whole world seems to be in rhyme.
++You want nothing else but jazz-band music all the time.
++
++Ev'ry one that's nigh
++Never seems to sigh,
++Hear them loudly cry:
++Oh!
