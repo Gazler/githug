@@ -33,11 +33,6 @@ describe Githug::UI do
     @ui.gets.should == "bar\n"
   end
 
-  it "should make a line" do
-    @ui.line
-    @out.string.should eql("*"*80+"\n")
-  end
-
   it "should make a wordbox" do
     word_box = <<-eof
 ********************************************************************************
@@ -48,6 +43,13 @@ describe Githug::UI do
     @out.string.should eql(word_box)
   end
 
+  it "should print a correct wordbox for uneven msg length" do
+    @ui.word_box("odd",80)
+    printed = @out.string.lines
+    first_size = printed.first.chomp.length
+
+    printed.map{ |line| line.chomp.length.should eq(first_size) }
+  end
 
   it "should request text input" do
     @in.puts "bar"
