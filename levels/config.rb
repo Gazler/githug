@@ -8,8 +8,8 @@ end
 solution do
 
   valid = false
- 
-  name = request("What is your name?")  
+
+  name = request("What is your name?")
   email = request("What is your email?")
   config_name = repo.config["user.name"]
   config_email = repo.config["user.email"]

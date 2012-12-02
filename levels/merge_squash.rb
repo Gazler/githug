@@ -20,9 +20,9 @@ setup do
   File.open("file3", 'a') { |f| f << "and awesomer!\n" }
   repo.add        "file3"
   repo.commit_all "Time"
-  
+
   repo.git.native :checkout, {}, 'master'
-  
+
   FileUtils.touch "file2"
   repo.add        "file2"
   repo.commit_all "Second commit"
@@ -33,13 +33,13 @@ solution do
 
   # Check the number of commits in the repo (should be 4 - including initial .gitignore).
   result = false unless repo.commits.size == 3
-  
+
   # Check if changes from all the commits from long-feature-branch are included.
   file = File.open('file3')
   result = false unless file.readline =~ /some feature/
   result = false unless file.readline =~ /getting awesomer/
   result = false unless file.readline =~ /and awesomer!/
-  
+
   result
 end
 

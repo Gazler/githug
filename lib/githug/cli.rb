@@ -21,7 +21,7 @@ module Githug
     def test(path)
       UI.word_box("Githug")
       make_directory
-      level = Level.load_from_file(path)  
+      level = Level.load_from_file(path)
       game = Game.new
       game.test_level(level, options[:errors])
     end
@@ -61,7 +61,7 @@ module Githug
 
 
       def make_directory
-        if File.exists?("./git_hug") 
+        if File.exists?("./git_hug")
           UI.puts "Please change into the git_hug directory"
           exit
         end

@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'grit'
 
 describe Githug::Level do
-  
+
   before(:each) do
     @file = <<-eof
 difficulty 1
@@ -26,7 +26,7 @@ end
     File.stub(:read).and_return(@file)
     @level = Githug::Level.load("init")
     @repo = mock
-    @repo.stub(:reset) 
+    @repo.stub(:reset)
     Githug::Repository.stub(:new).and_return(@repo)
     Githug::UI.stub(:puts)
     Githug::UI.stub(:print)
@@ -38,7 +38,7 @@ end
 
 
   describe "load" do
-    
+
     it "should load the level" do
       File.stub(:dirname).and_return("")
       File.should_receive(:read).with('/../../levels/init.rb').and_return(@file)
@@ -80,13 +80,13 @@ end
 
 
   describe "solve" do
-    
+
     it "should solve the problem" do
       @level.solve.should eql(false)
     end
 
     it "should return true if the requirements have been met" do
-      Grit::Repo.stub(:new).and_return(true) 
+      Grit::Repo.stub(:new).and_return(true)
       @level.solve.should eql(true)
     end
 
@@ -94,9 +94,9 @@ end
 
   describe "test" do
     it "should call solve" do
-      @level.instance_variable_get("@solution").should_receive(:call) 
+      @level.instance_variable_get("@solution").should_receive(:call)
       @level.test
-    end  
+    end
   end
 
 
@@ -115,7 +115,7 @@ end
   describe "setup" do
 
     it "should call setup" do
-      @level.setup_level.should eql("test") 
+      @level.setup_level.should eql("test")
     end
 
     it "should not call the setup if none exists" do
@@ -124,10 +124,10 @@ end
     end
 
   end
-  
+
 
   describe "repo" do
-      
+
     it "should initialize a repository when repo is called" do
       @level.repo.should equal(@repo)
       Githug::Repository.should_not_receive(:new)
@@ -135,14 +135,14 @@ end
     end
 
     it "should call reset on setup_level" do
-      @repo.should_receive(:reset) 
+      @repo.should_receive(:reset)
       @level.setup_level
     end
 
   end
 
   describe "hint" do
-    
+
     before(:each) do
       @profile = mock.as_null_object
       Githug::Profile.stub(:load).and_return(@profile)
@@ -152,10 +152,10 @@ end
     it "should return sequential hint if there are multiple" do
       @level.should_receive(:puts).ordered.with("this is hint 1")
       @level.show_hint
-      
+
       @level.should_receive(:puts).ordered.with("this is hint 2")
       @level.show_hint
-      
+
       @level.should_receive(:puts).ordered.with("this is hint 1")
       @level.show_hint
     end
@@ -163,7 +163,7 @@ end
     it "should display a hint if there are not multiple" do
       @level.instance_variable_set("@hints", nil)
       @level.should_receive(:puts).with("this is a hint")
-      @level.show_hint 
+      @level.show_hint
     end
 
     it "should not call the hint if none exist" do
@@ -174,9 +174,9 @@ end
 
   describe "init_from_level" do
     it "should copy the files from the level folder" do
-      FileUtils.should_receive(:cp_r).with("#{@level.level_path}/.", ".") 
+      FileUtils.should_receive(:cp_r).with("#{@level.level_path}/.", ".")
       FileUtils.should_receive(:mv).with(".githug", ".git")
       @level.init_from_level
-    end  
+    end
   end
 end

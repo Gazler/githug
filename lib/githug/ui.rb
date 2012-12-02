@@ -5,7 +5,7 @@ module Githug
     @@in_stream = STDIN
 
     class << self
-      
+
       def out_stream=(out)
         @@out_stream = out
       end
@@ -45,7 +45,7 @@ module Githug
         print("#{msg} ")
         gets.chomp
       end
-      
+
       def ask(msg)
         request("#{msg} [yn] ") == 'y'
       end

@@ -3,7 +3,7 @@ class Config
   def initialize(name, password = nil, options = {})
     @name = name
     @password = password || "i<3evil"
-    
+
     if options[:downcase]
       @name.downcase!
     end
