@@ -26,19 +26,10 @@ module Githug
         @@in_stream.gets
       end
 
-      def line
-        puts("*"*80)
-      end
-
-      def word_box(string)
-        space_length = (80/2) - ((string.length/2)+1)
-        line
-        print "*"
-        print " "*space_length
-        print string
-        print " "*space_length
-        puts "*"
-        line
+      def word_box(string,width=80,char='*')
+        puts char*width
+        puts "#{char}#{string.center(width-2)}#{char}"
+        puts char*width
       end
 
       def request(msg)
