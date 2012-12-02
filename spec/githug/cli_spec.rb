@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'githug/cli'
 
 describe Githug::CLI do
-  
+
   before(:each) do
     game = mock.as_null_object
     @cli = Githug::CLI.new
@@ -11,12 +11,12 @@ describe Githug::CLI do
 
   it "should print the logo" do
     Githug::UI.should_receive(:word_box).with("Githug")
-    @cli.stub(:make_directory) 
+    @cli.stub(:make_directory)
     @cli.play
   end
 
   it "should create a directory if one does not exist" do
-    Githug::UI.stub(:ask).and_return(true) 
+    Githug::UI.stub(:ask).and_return(true)
     Dir.should_receive(:mkdir).with("./git_hug")
     Dir.should_receive(:chdir).with("git_hug")
     @cli.make_directory
@@ -25,16 +25,16 @@ describe Githug::CLI do
   it "should not make a directory if you are in the game directory" do
     Dir.stub(:pwd).and_return("/home/git_hug")
     Githug::UI.should_not_receive(:ask)
-    @cli.make_directory 
+    @cli.make_directory
   end
 
   it "should exit if the user selects no" do
-    Githug::UI.stub(:ask).and_return(false) 
+    Githug::UI.stub(:ask).and_return(false)
     lambda {@cli.make_directory}.should raise_error(SystemExit)
   end
 
   it "should prompt to change into the directory if it exists" do
-    File.stub(:exists?).and_return(true) 
+    File.stub(:exists?).and_return(true)
     Githug::UI.should_receive(:puts).with("Please change into the git_hug directory")
     lambda {@cli.make_directory}.should raise_error(SystemExit)
   end
@@ -44,7 +44,7 @@ describe Githug::CLI do
       level = mock
       game = mock
       @cli.stub(:make_directory)
-      Githug::Level.should_receive(:load_from_file).with("/foo/bar/test/level.rb").and_return(level)  
+      Githug::Level.should_receive(:load_from_file).with("/foo/bar/test/level.rb").and_return(level)
       Githug::Game.stub(:new).and_return(game)
       game.should_receive(:test_level).with(level, anything)
       @cli.test("/foo/bar/test/level.rb")
@@ -67,8 +67,8 @@ describe Githug::CLI do
     end
 
     describe "reset" do
-      
-      
+
+
       it "should reset the current level" do
         @level.should_receive(:setup_level)
         @level.should_receive(:full_description)
@@ -92,8 +92,8 @@ describe Githug::CLI do
         Githug::UI.should_receive(:puts).with("resetting level")
         @cli.reset("/foo/bar/level.rb")
       end
-    end  
+    end
 
   end
-  
+
 end

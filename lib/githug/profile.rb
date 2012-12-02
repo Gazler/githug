@@ -12,7 +12,7 @@ module Githug
           :current_attempts => 0,
           :current_hint_index => 0,
           :current_levels => [],
-          :completed_levels => [] 
+          :completed_levels => []
         }
 
         settings.merge! YAML::load(File.open(PROFILE_FILE)) if File.exists?(PROFILE_FILE)

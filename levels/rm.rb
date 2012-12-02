@@ -4,7 +4,7 @@ description "A file has been removed from the working tree, however the file was
 
 setup do
   repo.init
-  file = File.new("deleteme.rb", "w") 
+  file = File.new("deleteme.rb", "w")
 	file.close
   repo.add("deleteme.rb")
   repo.commit_all("Added a temp file")

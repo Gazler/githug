@@ -13,12 +13,12 @@ describe Githug::UI do
   end
 
   it "should put to the stream" do
-    @ui.puts("hello") 
+    @ui.puts("hello")
     @out.string.should eql("hello\n")
   end
 
   it "should print an empty line with no arguments" do
-    @ui.puts 
+    @ui.puts
     @out.string.should eql("\n")
   end
 
@@ -60,12 +60,12 @@ describe Githug::UI do
     @ui.should_receive(:request).with('foo? [yn] ').and_return('y')
     @ui.ask("foo?").should be_true
   end
-  
+
   it "should ask for yes/no and return false when no" do
     @ui.stub(:request).and_return('n')
     @ui.ask("foo?").should be_false
   end
-  
+
   it "should ask for yes/no and return false for any input" do
     @ui.stub(:request).and_return('aklhasdf')
     @ui.ask("foo?").should be_false
@@ -89,7 +89,7 @@ describe Githug::UI do
   end
 
   describe "Non Windows Platform" do
-    
+
     before(:each) do
       ENV.stub(:[]).with("OS").and_return("Windows_NT")
     end
@@ -106,5 +106,5 @@ describe Githug::UI do
 
   end
 
-  
+
 end

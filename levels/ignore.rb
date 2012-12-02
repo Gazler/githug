@@ -8,7 +8,7 @@ end
 solution do
 
   valid = false
- 
+
 
   File.open(".gitignore", "r") do |file|
     while line = file.gets

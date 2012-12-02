@@ -13,7 +13,7 @@ solution do
   # Reset config - see issue #74
   file = File.open(".git/config", "w") do |file|
     file.puts("[format]")
-    file.puts(" pretty = medium") 
+    file.puts(" pretty = medium")
   end
   repo.commits.length == 1 && Grit::CommitStats.find_all(repo, repo.commits.first.sha).first[1].files.length == 2
 end

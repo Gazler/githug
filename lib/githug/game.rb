@@ -16,7 +16,7 @@ module Githug
       else
         level = Level.load(profile.level)
         if solve && level
-          if level.solve  
+          if level.solve
             UI.success "Congratulations, you have solved the level"
             level_bump
           else
