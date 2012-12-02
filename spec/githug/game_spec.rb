@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Githug::Game do
-  
+
   before(:each) do
     @profile = mock.as_null_object
     Githug::Profile.stub(:new).and_return(@profile)
@@ -64,13 +64,13 @@ describe Githug::Game do
 
   describe "test_level" do
     it "Should output Valid solution if the solution is valid" do
-      @level.stub(:solve).and_return(true) 
+      @level.stub(:solve).and_return(true)
       Githug::UI.should_receive(:success).with("Valid solution")
       @game.test_level(@level)
     end
-   
+
     it "Should output Invalid solution if the solution is invalid" do
-      @level.stub(:solve).and_return(false) 
+      @level.stub(:solve).and_return(false)
       Githug::UI.should_receive(:error).with("Invalid solution")
       @game.test_level(@level)
     end
@@ -88,9 +88,9 @@ describe Githug::Game do
   end
 
   it "should call setup_level for the next level" do
-    @level.should_receive(:setup_level)  
+    @level.should_receive(:setup_level)
     @profile.stub(:level=)
     @game.level_bump
   end
-  
+
 end

@@ -34,16 +34,16 @@ describe Githug::Profile do
   describe "level_bump" do
     before(:each) do
       @profile = Githug::Profile.load
-      @levels = Githug::Level::LEVELS 
+      @levels = Githug::Level::LEVELS
       Githug::Level::LEVELS = ["init", "add", "rm", "rm_cached", "diff"]
       @profile.level = "init"
       @profile.should_receive(:save)
     end
-      
+
     after(:each) do
       Githug::Level::LEVELS = @levels
     end
-      
+
     it "should bump the level" do
       @profile.level_bump.should eql("add")
     end
@@ -61,5 +61,5 @@ describe Githug::Profile do
     end
   end
 
-  
+
 end

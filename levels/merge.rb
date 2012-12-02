@@ -6,7 +6,7 @@ setup do
 end
 
 solution do
-	File.exists?("file1")	&& File.exists?("file2") 
+	File.exists?("file1")	&& File.exists?("file2")
 end
 
 hint do

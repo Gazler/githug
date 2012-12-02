@@ -4,13 +4,13 @@ description "You will be asked for the first 7 chars of the hash of most recent 
 
 setup do
   repo.init
-  file = File.new("newfile.rb", "w") 
+  file = File.new("newfile.rb", "w")
   repo.add("newfile.rb")
   repo.commit_all("THIS IS THE COMMIT YOU ARE LOOKING FOR!")
 end
 
 solution do
-  repo.commits.last.id_abbrev == request("What are the first 7 characters of the hash of the most recent commit?") 
+  repo.commits.last.id_abbrev == request("What are the first 7 characters of the hash of the most recent commit?")
 end
 
 hint do

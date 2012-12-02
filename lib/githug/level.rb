@@ -12,9 +12,9 @@ module Githug
               "find_old_branch", "revert", "restore", "conflict", "contribute"]
 
     attr_accessor :level_no, :level_path
-    
+
     class << self
-      
+
       def load(level_name)
         path = "#{File.dirname(__FILE__)}/../../levels/#{level_name}.rb"
         setup(path)
@@ -57,7 +57,7 @@ module Githug
     end
 
     def setup(&block)
-      @setup = block 
+      @setup = block
     end
 
     def hint(&hint)

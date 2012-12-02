@@ -12,7 +12,7 @@ end
 
 solution do
 
-  name = request("What is the full file name of the untracked file?")  
+  name = request("What is the full file name of the untracked file?")
 
   if name != "database.yml"
     return false
