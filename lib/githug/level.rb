@@ -27,10 +27,11 @@ module Githug
 
       def setup(path)
         level_name = File.basename(path, File.extname(path))
-        #Remove .rb extension, WTB a better way to do this
-        level_path = path[0..-4]
-        level = new
+        level_path = path.chomp(File.extname(path))
+        level = self.new
+
         return false unless File.exists?(path)
+
         level.instance_eval(File.read(path))
         level.level_no = LEVELS.index(level_name) || 1
         level.level_path = level_path
