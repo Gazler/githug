@@ -79,9 +79,14 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
-  it "should coplete the rm cached level" do
+  it "should complete the rm cached level" do
     file_name = `git status | grep "new file" | cut -d " " -f 5`
     `git rm --cached #{file_name}`
+    `githug`.should be_solved
+  end
+
+  it "should complete the stash level" do
+    `git stash save`
     `githug`.should be_solved
   end
 
