@@ -85,6 +85,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the stash level" do
+    `git stash save`
+    `githug`.should be_solved
+  end
+
   it "should complete the rename level" do
     `git mv oldfile.txt newfile.txt`
     `githug`.should be_solved
