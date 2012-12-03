@@ -7,7 +7,7 @@ end
 
 solution do
   return false if `git stash list` !~ /stash@\{0\}/
-  return false if repo.status.changed.keys.include? "lyrics.txt"
+  return false if repo.status.changed.to_a.flatten.include? "lyrics.txt"
   true
 end
 
