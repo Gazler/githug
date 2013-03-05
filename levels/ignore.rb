@@ -3,6 +3,10 @@ description "The text editor 'vim' creates files ending in .swp (swap files) for
 
 setup do
   repo.init
+  FileUtils.touch("README.swp")
+  file = File.open(".git/config", "w") do |file|
+    file.puts "[core]\nexcludesfile="
+  end
 end
 
 solution do
