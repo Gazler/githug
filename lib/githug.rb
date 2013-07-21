@@ -1,4 +1,8 @@
 require 'grit'
+
+require "githug/extensions/grit/ruby1.9"
+
+
 require "githug/version"
 
 require 'githug/ui'
