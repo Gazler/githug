@@ -4,3 +4,6 @@ rvm:
   - 1.9.2
   - 1.9.3
   - 2.0.0
+before_install:
+  - git config user.email 'user@example.com'
+  - git config user.name 'Test User'

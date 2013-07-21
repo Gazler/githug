@@ -30,8 +30,6 @@ describe "The Game" do
 
   it "should complete the init level" do
     `git init`
-    `git config user.email "user@example.com"`
-    `git config user.name "Test User"`
     `githug`.should be_solved
   end
 
