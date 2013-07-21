@@ -20,8 +20,6 @@ describe "The Game" do
     `gem install pkg/githug-#{Githug::VERSION}.gem`
     FileUtils.rm_rf("/tmp/git_hug")
     Dir.chdir("/tmp")
-    `git config user.email "you@example.com"`
-    `git config user.name "Your name"`
     `echo "y" | githug`
     Dir.chdir("/tmp/git_hug")
   end
@@ -32,6 +30,8 @@ describe "The Game" do
 
   it "should complete the init level" do
     `git init`
+    `git config user.email "user@example.com"`
+    `git config user.name "Test User"`
     `githug`.should be_solved
   end
 
