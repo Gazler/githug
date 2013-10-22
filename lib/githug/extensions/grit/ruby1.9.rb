@@ -14,4 +14,8 @@ class String
   end
 end
 
+if Object.const_defined?(:PACK_IDX_SIGNATURE)
+  Object.send(:remove_const, :PACK_IDX_SIGNATURE)
+end
+
 PACK_IDX_SIGNATURE = "\377tOc".b
