@@ -59,9 +59,12 @@ setup do
 end
 
 solution do
-  return false unless repo.status.files.keys.include?("README")
-  return false if repo.status.files["README"].untracked
-  true
+  solved = true
+
+  solved = false unless repo.status.files.keys.include?("README")
+  solved = false if repo.status.files["README"].untracked
+
+  solved
 end
 
 hint do
