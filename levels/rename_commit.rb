@@ -1,5 +1,5 @@
 difficulty 3
-description "Correct the typo in the message of your first commit."
+description "Correct the typo in the message of your first (non-root) commit."
 
 setup do
   repo.init
