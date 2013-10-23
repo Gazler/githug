@@ -7,7 +7,7 @@ module Githug
               "stash", "rename", "log", "tag",  "commit_amend", "reset",
               "reset_soft", "checkout_file", "remote", "remote_url", "pull",
               "remote_add", "push", "diff", "blame", "branch", "checkout",
-              "checkout_tag", "branch_at", "merge", "cherry-pick",
+              "checkout_tag", "branch_at", "merge", "repack", "cherry-pick",
               "rename_commit", "squash", "merge_squash", "reorder", "bisect",
               "stage_lines", "find_old_branch", "revert", "restore",
               "conflict", "contribute"]

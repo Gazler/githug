@@ -183,6 +183,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the repack level" do
+    `git repack -d`
+    `githug`.should be_solved
+  end
+
   it "should complete the cherry-pick level" do
     commit = `git log new-feature --oneline  -n 3 | tail -1 | cut -d " " -f 1`
     `git cherry-pick #{commit}`
