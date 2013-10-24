@@ -172,6 +172,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the checkout_tag_over_branch level" do
+    `git checkout tags/v1.2`
+    `githug`.should be_solved
+  end
+
   it "should complete the branch_at level" do
     commit = `git log HEAD~1 --pretty=short | head -1 | cut -d " " -f 2`
     `git branch test_branch #{commit}`
