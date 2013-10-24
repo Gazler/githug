@@ -124,9 +124,9 @@ After doing this, your level should be able to copy the contents from that git r
 The easiest way to test a level is:
 
  * change into your git_hug repository
- * Run `githug reset PATH_TO_YOUR_LEVEL
+ * Run `githug reset PATH_TO_YOUR_LEVEL`
  * Solve the level
- * Run `githug test PATH_TO_YOUR_LEVEL
+ * Run `githug test PATH_TO_YOUR_LEVEL`
 
 Please note that the `githug test` command can be run as `githug test --errors` to get an error stacktrace from your solve method.
 
