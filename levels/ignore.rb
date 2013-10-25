@@ -26,5 +26,5 @@ solution do
 end
 
 hint do
-  puts "You may have noticed there is a file named .gitignore in the repository"
+  puts "You may have noticed there is a file named .gitignore in the repository."
 end

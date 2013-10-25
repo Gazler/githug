@@ -14,5 +14,5 @@ solution do
 end
 
 hint do
-    puts "Take a look at `git tag`"
+    puts "Take a look at `git tag`."
 end

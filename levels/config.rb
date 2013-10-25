@@ -1,5 +1,5 @@
 difficulty 1
-description "Set up your git name and email, this is important so that your commits can be identified"
+description "Set up your git name and email, this is important so that your commits can be identified."
 
 setup do
   repo.init
@@ -24,5 +24,5 @@ solution do
 end
 
 hint do
-  puts "These settings are config settings.  You should run `git help config` if you are stuck"
+  puts "These settings are config settings.  You should run `git help config` if you are stuck."
 end

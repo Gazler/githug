@@ -60,5 +60,5 @@ solution do
 end
 
 hint do
-  puts "Take a look at 'git fetch', 'git pull', and 'git push'"
+  puts "Take a look at 'git fetch', 'git pull', and 'git push'."
 end

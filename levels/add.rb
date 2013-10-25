@@ -1,6 +1,6 @@
 difficulty 1
-description "There is a file in your folder called README, you should add it to your staging area
-Note: You start each level with a new repo. Don't look for files from the previous one"
+description "There is a file in your folder called README, you should add it to your staging area.
+Note: You start each level with a new repo. Don't look for files from the previous one."
 
 setup do
   repo.init
@@ -14,5 +14,5 @@ solution do
 end
 
 hint do
-  puts "You can type `git` in your shell to get a list of available git commands"
+  puts "You can type `git` in your shell to get a list of available git commands."
 end
