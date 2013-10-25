@@ -1,6 +1,6 @@
 difficulty 2
 
-description "You will be asked for the first 7 chars of the hash of most recent commit.  You will need to investigate the logs of the repository for this."
+description "You will be asked for the hash of most recent commit.  You will need to investigate the logs of the repository for this."
 
 setup do
   repo.init
@@ -10,7 +10,7 @@ setup do
 end
 
 solution do
-  repo.commits.last.id_abbrev == request("What are the first 7 characters of the hash of the most recent commit?")
+  repo.commits.last.id_abbrev == request("What is the hash of the most recent commit?")[0..6]
 end
 
 hint do
