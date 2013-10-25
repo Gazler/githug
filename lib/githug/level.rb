@@ -114,7 +114,7 @@ module Githug
       elsif @hint
         @hint.call
       else
-        UI.puts("No hints available for this level")
+        UI.puts("No hints available for this level.")
       end
     end
   end
