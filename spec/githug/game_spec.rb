@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Githug::Game do
 
-  let(:profile) { mock(level: 1, 
-                       current_attempts: 0).as_null_object }
+  let(:profile) { mock(:level => 1, 
+                       :current_attempts => 0).as_null_object }
   let(:game) { Githug::Game.new }
-  let(:level) { mock(full_description:nil, setup_level: nil) }
+  let(:level) { mock(:full_description => nil, :setup_level => nil) }
 
   before(:each) do
     Githug::Profile.stub(:new).and_return(profile)
