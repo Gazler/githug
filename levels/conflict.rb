@@ -13,11 +13,11 @@ solution do
 
   txt = `cat poem.txt`
   solved = false if txt =~ /[<>=]/
-  solved = false unless txt =~ /cool poem/
+  solved = false if txt =~ /cool poem/
 
   solved
 end
 
 hint do
-  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Take a look at the sections on merge conflicts in 'git merge'.", "Remove the unnecessary lines in poem.txt."]
+  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Take a look at the sections on merge conflicts in 'git merge'.", "Remove the unnecessary lines in poem.txt, leaving the correct version of the poem."]
 end
