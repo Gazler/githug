@@ -46,9 +46,9 @@ solution do
 
   # a bit hacky solution to get tags from remote
   remote_tags=
-    repo.git.raw_git_call("git ls-remote --tags -q", repo.git.git_file_index)
-      .first
-      .split("\n")
+    repo.git.raw_git_call("git ls-remote --tags -q", repo.git.git_file_index).
+      first.
+      split("\n")
 
   # see if we have the correct tag in the remote
   remote_tags.each do |t|
