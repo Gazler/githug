@@ -10,19 +10,13 @@ setup do
 end
 
 solution do
-
-  valid = false
-
-
   File.open(".gitignore", "r") do |file|
     while line = file.gets
       if line.chomp == "*.swp"
-        valid = true
+        return true
       end
     end
   end
-
-  valid
 end
 
 hint do

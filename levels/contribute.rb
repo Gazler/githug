@@ -7,17 +7,14 @@ solution do
   puts "Cloning repository to #{location}"
   `git clone https://github.com/Gazler/githug #{location}`
 
-  contributor = false
-
   repo = Grit::Repo.new(location)
   repo.commits('master', false).each do |commit|
     if commit.author.name == repo.config["user.name"]
       if commit.author.email == repo.config["user.email"]
-        contributor = true
+        return true
       end
     end
   end
-  contributor
 end
 
 hint do
