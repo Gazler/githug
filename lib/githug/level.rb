@@ -55,8 +55,7 @@ module Githug
     end
 
     def solution(&block)
-      singleton = class << self; self end
-      singleton.send :define_method, :_solution, &block
+      @solution = block
     end
 
     def setup(&block)
@@ -90,7 +89,7 @@ module Githug
     end
 
     def solve
-      _solution
+      @solution.call
     rescue
       false
     end

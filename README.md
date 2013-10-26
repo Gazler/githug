@@ -59,10 +59,12 @@ setup do
 end
 
 solution do
-  return false unless repo.status.files.keys.include?("README")
-  return false if repo.status.files["README"].untracked
+  solved = true
 
-  true
+  solved = false unless repo.status.files.keys.include?("README")
+  solved = false if repo.status.files["README"].untracked
+
+  solved
 end
 
 hint do
@@ -78,6 +80,16 @@ You can also include multiple hints like this:
 hints [
   "You can type `git` in your shell to get a list of available git commands",
   "Check the man for `git add`"]
+```
+
+ **note** Because `solution` is a Proc, you cannot prematurely return out of it and as a result, must put an explicit return on the last line of the solution block.
+
+```ruby
+solution do
+  solved = false
+  solved = true if repo.valid?
+  solved
+end
 ```
 
  By default, `setup` will remove all files from the game folder.  You do not need to include a setup method if you don't want an initial git repository (if you are testing `git init` or only checking an answer.)
