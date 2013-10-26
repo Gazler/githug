@@ -104,6 +104,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the push_tags level" do
+    `git push origin master --tags`
+    `githug`.should be_solved
+  end
+
   it "should complete the commit_amend level" do
     `git add forgotten_file.rb`
     `git commit --amend -C HEAD`
