@@ -12,7 +12,7 @@ module Githug
               "stage_lines", "find_old_branch", "revert", "restore",
               "conflict", "contribute"]
 
-    attr_accessor :level_no, :level_path
+    attr_accessor :level_no, :level_path, :level_name
 
     class << self
 
@@ -30,14 +30,14 @@ module Githug
       end
 
       def setup(path)
-        level_name = File.basename(path, File.extname(path))
         level_path = path.chomp(File.extname(path))
         level = self.new
 
         return false unless File.exists?(path)
 
         level.instance_eval(File.read(path))
-        level.level_no = LEVELS.index(level_name) || 1
+        level.level_name = File.basename(path, File.extname(path))
+        level.level_no = LEVELS.index(level.level_name) || 1
         level.level_path = level_path
         level
       end
@@ -75,6 +75,7 @@ module Githug
 
     def full_description
       UI.puts
+      UI.puts "Name: #{level_name}"
       UI.puts "Level: #{level_no}"
       UI.puts "Difficulty: #{"*"*@difficulty}"
       UI.puts
