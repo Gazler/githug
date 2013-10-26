@@ -13,11 +13,12 @@ After the gem is installed, you can run `githug` where you will be prompted to c
 
 ## Commands
 
-Githug has 4 commands:
+Githug has 5 commands:
 
  * play - This is the default command and it will check your solution for the current level.
  * hint - Gives you a hint (if available) for the current level
- * reset - Reset the current level
+ * reset - Reset the current level or reset the level to a given name
+ * load - Load a level from a file given its path
  * test - Used to test levels in development, please see the Testing Levels section.
 
 ## Change Log
@@ -124,7 +125,7 @@ After doing this, your level should be able to copy the contents from that git r
 The easiest way to test a level is:
 
  * change into your git_hug repository
- * Run `githug reset PATH_TO_YOUR_LEVEL`
+ * Run `githug load PATH_TO_YOUR_LEVEL`
  * Solve the level
  * Run `githug test PATH_TO_YOUR_LEVEL`
 
