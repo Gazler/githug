@@ -5,7 +5,7 @@ solution do
   location = "/tmp/githug"
   FileUtils.rm_rf(location)
   puts "Cloning repository to #{location}"
-  `git clone git@github.com:Gazler/githug.git #{location}`
+  `git clone https://github.com/Gazler/githug #{location}`
 
   contributor = false
 
