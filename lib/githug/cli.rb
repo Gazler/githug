@@ -63,6 +63,17 @@ module Githug
       UI.puts(list_with_numbers)
     end
 
+    desc :load, "Load a level from a file"
+
+    def load(path = nil)
+      level = Level.load_from_file(path)
+      return UI.Error("Level does not exist") unless level
+      UI.word_box("Githug")
+      UI.puts("resetting level")
+      level.setup_level
+      level.full_description
+    end
+
     no_tasks do
 
       def load_level
