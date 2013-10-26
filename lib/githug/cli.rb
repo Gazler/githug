@@ -36,9 +36,9 @@ module Githug
 
     desc :reset, "Reset the current level"
 
-    def reset(path = nil)
-      if path
-        level = Level.load_from_file(path)
+    def reset(level_name = nil)
+      if level_name
+        level = Level.load(level_name)
       else
         level = load_level
       end
