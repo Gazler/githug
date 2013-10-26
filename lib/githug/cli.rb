@@ -52,6 +52,17 @@ module Githug
       end
     end
 
+    desc :levels, "List all of the levels"
+
+    def levels
+      list_without_nil = Level.list - [nil]
+      list_with_numbers = list_without_nil.each_with_index.map do |name, index| 
+        number = index + 1
+        "#" + number.to_s + ": " + name if name
+      end
+      UI.puts(list_with_numbers)
+    end
+
     no_tasks do
 
       def load_level

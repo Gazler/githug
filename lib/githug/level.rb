@@ -25,6 +25,9 @@ module Githug
         setup(path)
       end
 
+      def list
+        return LEVELS
+      end
 
       def setup(path)
         level_name = File.basename(path, File.extname(path))
