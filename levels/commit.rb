@@ -1,5 +1,5 @@
 difficulty 1
-description "The README file has been added to your staging area, now commit it."
+description "The `README` file has been added to your staging area, now commit it."
 
 setup do
   repo.init

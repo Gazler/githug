@@ -1,6 +1,6 @@
 difficulty 2
 
-description "You need to fix a bug in the version 1.2 of your app. Checkout the tag v1.2 (Note: There is also a branch named v1.2)"
+description "You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2` (Note: There is also a branch named `v1.2`)"
 
 setup do
   repo.init
@@ -42,5 +42,5 @@ solution do
 end
 
 hint do
-  puts "You should think about specifying you're after the tag named v1.2 (think tags/)"
+  puts "You should think about specifying you're after the tag named `v1.2` (think `tags/`)"
 end

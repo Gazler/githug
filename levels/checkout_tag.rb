@@ -1,6 +1,6 @@
 difficulty 2
 
-description "You need to fix a bug in the version 1.2 of your app. Checkout the tag v1.2"
+description "You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`"
 
 setup do
   repo.init
