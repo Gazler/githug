@@ -1,3 +1,14 @@
-Added comment
+Updated the poem
 
-Signed-off-by: Thameera Senanayaka <thameera123@gmail.com>
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Author:    Thameera Senanayaka <thameera123@gmail.com>
+# Committer: Alex <snooz@localhost.localdomain>
+#
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD^1 <file>..." to unstage)
+#
+#	modified:   poem.txt
+#
