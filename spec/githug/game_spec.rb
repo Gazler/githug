@@ -25,7 +25,7 @@ describe Githug::Game do
     level.should_not_receive(:solve)
     profile.stub(:level).and_return(nil)
     profile.should_receive(:level_bump)
-    Githug::UI.should_receive(:puts).with("Welcome to Githug")
+    Githug::UI.should_receive(:puts).with("Welcome to Githug!")
     game.play_level
   end
 
@@ -34,7 +34,7 @@ describe Githug::Game do
     it "should echo congratulations if the level is solved" do
       level.stub(:solve).and_return(true)
       profile.should_receive(:level_bump)
-      Githug::UI.should_receive(:success).with("Congratulations, you have solved the level")
+      Githug::UI.should_receive(:success).with("Congratulations, you have solved the level!")
       game.play_level
     end
 
@@ -55,7 +55,7 @@ describe Githug::Game do
       profile.stub(:current_attempts).and_return(3)
       level.stub(:solve).and_return(false)
       Githug::UI.should_receive(:error).with("Sorry, this solution is not quite right!")
-      Githug::UI.should_receive(:error).with("Don't forget you can type `githug hint` for a hint and `githug reset` to reset the current level")
+      Githug::UI.should_receive(:error).with("Don't forget you can type `githug hint` for a hint and `githug reset` to reset the current level.")
       game.play_level
     end
 
