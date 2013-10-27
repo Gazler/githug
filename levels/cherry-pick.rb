@@ -1,5 +1,5 @@
 difficulty 3
-description "Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in README file, and you want this commit to be on the master as well"
+description "Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well"
 
 setup do
     init_from_level

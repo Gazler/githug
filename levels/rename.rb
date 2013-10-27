@@ -1,6 +1,6 @@
 difficulty 3
 
-description "We have a file called oldfile.txt. We want to rename it to newfile.txt and stage this change."
+description "We have a file called `oldfile.txt`. We want to rename it to `newfile.txt` and stage this change."
 
 setup do
   repo.init

@@ -13,6 +13,6 @@ solution do
 end
 
 hint do
-  puts "git branch is what you want to investigate"
+  puts "`git branch` is what you want to investigate"
 end
 

@@ -1,5 +1,5 @@
 difficulty 2
-description "There have been modifications to the app.rb file since your last commit.  Find out which line has changed."
+description "There have been modifications to the `app.rb` file since your last commit.  Find out which line has changed."
 
 setup do
   init_from_level
