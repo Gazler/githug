@@ -12,12 +12,12 @@ solution do
   solved = false unless repo.commits("master")[0].parents.length == 2
 
   txt = `cat poem.txt`
-  solved = false if txt =~ /[<>=]/
-  solved = false unless txt =~ /cool poem/
+  solved = false if txt =~ /[<>=|]/
+  solved = false unless txt =~ /Sat on a wall/
 
   solved
 end
 
 hint do
-  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Take a look at the sections on merge conflicts in `git merge`.", "Remove the unnecessary lines in `poem.txt`."]
+  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Take a look at the sections on merge conflicts in 'git merge'.", "Remove the unnecessary lines in `poem.txt`, so only the correct poem remains."]
 end
