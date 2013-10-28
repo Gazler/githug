@@ -1,5 +1,5 @@
 difficulty 1
-description "There is a file in your folder called README, you should add it to your staging area.
+description "There is a file in your folder called `README`, you should add it to your staging area
 Note: You start each level with a new repo. Don't look for files from the previous one."
 
 setup do

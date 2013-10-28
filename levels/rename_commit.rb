@@ -21,5 +21,5 @@ solution do
 end
 
 hint do
-  puts "Take a look the -i flag of the rebase command."
+  puts "Take a look the `-i` flag of the rebase command."
 end

@@ -59,5 +59,5 @@ solution do
 end
 
 hint do
-  puts "Take a look at '--tags' flag of 'git push'"
+  puts "Take a look at `--tags` flag of `git push`"
 end

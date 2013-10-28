@@ -18,5 +18,5 @@ solution do
 end
 
 hint do
-  puts "What are some options you can use with 'git reset'?"
+  puts "What are some options you can use with `git reset`?"
 end

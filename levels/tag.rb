@@ -1,6 +1,6 @@
 difficulty 2
 
-description "We have a git repo and we want to tag the current commit with new_tag."
+description "We have a git repo and we want to tag the current commit with `new_tag`."
 
 setup do
     repo.init
