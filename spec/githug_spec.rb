@@ -2,7 +2,7 @@ require 'spec_helper'
 
 RSpec::Matchers.define :be_solved do
   match do |actual|
-    !actual.match("Congratulations, you have solved the level").nil?
+    !actual.match("Congratulations, you have solved the level!").nil?
   end
 end
 

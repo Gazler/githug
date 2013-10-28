@@ -10,14 +10,14 @@ module Githug
     def play_level
       solve = true
       if profile.level.nil?
-        UI.puts("Welcome to Githug")
+        UI.puts("Welcome to Githug!")
         solve = false
         level_bump
       else
         level = Level.load(profile.level)
         if solve && level
           if level.solve
-            UI.success "Congratulations, you have solved the level"
+            UI.success "Congratulations, you have solved the level!"
             level_bump
           else
             UI.error "Sorry, this solution is not quite right!"
@@ -25,7 +25,7 @@ module Githug
             profile.save
 
             if (profile.current_attempts > 2 && profile.current_attempts % 3 == 0)
-              UI.error "Don't forget you can type `githug hint` for a hint and `githug reset` to reset the current level"
+              UI.error "Don't forget you can type `githug hint` for a hint and `githug reset` to reset the current level."
             end
 
             UI.puts level.full_description

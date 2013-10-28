@@ -1,5 +1,5 @@
 difficulty 3
-description "You forgot to branch at the previous commit and made a commit on top of it. Create branch 'test_branch' at the commit before the last"
+description "You forgot to branch at the previous commit and made a commit on top of it. Create branch 'test_branch' at the commit before the last."
 
 setup do
   repo.init
@@ -21,5 +21,5 @@ solution do
 end
 
 hint do
-  puts "Just like creating a branch, but you have to pass an extra argument"
+  puts "Just like creating a branch, but you have to pass an extra argument."
 end

@@ -1,5 +1,5 @@
 difficulty 4
-description "You have committed several times but in the wrong order. Please reorder your commits"
+description "You have committed several times but in the wrong order. Please reorder your commits."
 
 setup do
   repo.init

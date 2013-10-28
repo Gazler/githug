@@ -1,5 +1,5 @@
 difficulty 2
-description "Optimise how your repository is packaged ensuring that redundant packs are removed"
+description "Optimise how your repository is packaged ensuring that redundant packs are removed."
 
 setup do
   repo.init
@@ -15,5 +15,5 @@ solution do
 end
 
 hint do
-  puts "You want to research the `git repack` command"
+  puts "You want to research the `git repack` command."
 end

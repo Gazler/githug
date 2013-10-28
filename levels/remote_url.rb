@@ -1,6 +1,6 @@
 difficulty 2
 
-description "The remote repositories have a url associated to them.  Please enter the url of remote_location"
+description "The remote repositories have a url associated to them.  Please enter the url of remote_location."
 
 setup do
   repo.init
@@ -13,5 +13,5 @@ solution do
 end
 
 hint do
-  puts "You can run `git remote --help` for the man pages"
+  puts "You can run `git remote --help` for the man pages."
 end

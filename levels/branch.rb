@@ -1,5 +1,5 @@
 difficulty 1
-description "You want to work on a piece of code that has the potential to break things, create the branch test_code"
+description "You want to work on a piece of code that has the potential to break things, create the branch test_code."
 
 setup do
   repo.init
@@ -13,6 +13,6 @@ solution do
 end
 
 hint do
-  puts "git branch is what you want to investigate"
+  puts "git branch is what you want to investigate."
 end
 

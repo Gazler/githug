@@ -12,5 +12,5 @@ solution do
 end
 
 hint do
-  puts "You are looking for a remote.  You can run `git` for a list of commands"
+  puts "You are looking for a remote.  You can run `git` for a list of commands."
 end

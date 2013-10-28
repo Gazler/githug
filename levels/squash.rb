@@ -1,5 +1,5 @@
 difficulty 4
-description "You have committed several times but would like all those changes to be one commit"
+description "You have committed several times but would like all those changes to be one commit."
 
 setup do
   repo.init
@@ -25,5 +25,5 @@ solution do
 end
 
 hint do
-  puts "Take a look the -i flag of the rebase command"
+  puts "Take a look the -i flag of the rebase command."
 end
