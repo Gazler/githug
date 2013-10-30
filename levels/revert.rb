@@ -1,5 +1,6 @@
 difficulty 4
-description "You have committed several times but want to undo the middle commit."
+description "You have committed several times but want to undo the middle commit.
+All commits have been pushed, so you can't change existing history."
 
 setup do
   repo.init
@@ -24,8 +25,6 @@ solution do
     repo.commits[2].message == "Second commit" &&
     repo.commits[1].message == "Bad commit" &&
     repo.commits[0].message.split("\n").first == "Revert \"Bad commit\""
-  valid = true if repo.commits[1].message == "First commit" &&
-    repo.commits[0].message == "Second commit"
   valid
 end
 
