@@ -150,7 +150,7 @@ describe "The Game" do
 
   it "should complete the push level" do
     `git rebase origin/master`
-    `git push origin`
+    `git push origin master`
     `githug`.should be_solved
   end
 
