@@ -42,6 +42,9 @@ setup do
   Dir.chdir cwd
   `git remote add origin #{tmpdir}/.git`
   `git fetch origin`
+
+  # config so push selects upstream correctly
+  `git config push.default matching`
 end
 
 solution do
