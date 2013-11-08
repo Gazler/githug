@@ -33,17 +33,6 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
-  it "should complete the add level" do
-    `git add README`
-    `githug`.should be_solved
-  end
-
-  it "should complete the commit level" do
-    `git commit -m "test message"`
-    `githug`.should be_solved
-  end
-
-
   it "should complete the config level" do
     skip_level #The CI server does not have git config set
     #full_name = `git config --get user.name`.chomp
@@ -52,6 +41,16 @@ describe "The Game" do
     #f.puts(full_name)
     #f.puts(email)
     #f.close
+  end
+
+  it "should complete the add level" do
+    `git add README`
+    `githug`.should be_solved
+  end
+
+  it "should complete the commit level" do
+    `git commit -m "test message"`
+    `githug`.should be_solved
   end
 
   it "should complete the clone level" do
