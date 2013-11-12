@@ -161,10 +161,6 @@ describe "The Game" do
     `echo "spider man" | githug`.should be_solved
   end
 
-  it "should complete the grep level" do
-    `echo "4" | githug`.should be_solved
-  end
-
   it "should complete the branch level" do
     `git branch test_code`
     `githug`.should be_solved
@@ -205,6 +201,10 @@ describe "The Game" do
     commit = `git log new-feature --oneline  -n 3 | tail -1 | cut -d " " -f 1`
     `git cherry-pick #{commit}`
     `githug`.should be_solved
+  end
+
+  it "should complete the grep level" do
+    `echo "4" | githug`.should be_solved
   end
 
   it "should complete the rename_commit level" do
