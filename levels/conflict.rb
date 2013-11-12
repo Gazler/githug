@@ -11,7 +11,7 @@ solution do
   solved = false unless repo.head.name == "master"
   solved = false unless repo.commits("master")[0].parents.length == 2
 
-  txt = `cat poem.txt`
+  txt = File.read("poem.txt")
   solved = false if txt =~ /[<>=|]/
   solved = false unless txt =~ /Sat on a wall/
 
