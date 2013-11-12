@@ -17,8 +17,8 @@ Githug has 5 commands:
 
  * play - This is the default command and it will check your solution for the current level.
  * hint - Gives you a hint (if available) for the current level
- * reset - Reset the current level or reset the level to a given name
- * load - Load a level from a file given its path
+ * reset - Reset the current level or reset the level to a given name or path
+ * levels - List all of the levels
  * test - Used to test levels in development, please see the Testing Levels section.
 
 ## Change Log

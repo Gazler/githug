@@ -85,6 +85,15 @@ describe Githug::CLI do
         @cli.reset
       end
 
+      it "should reset the level with a level name" do
+        @level.should_receive(:setup_level)
+        @level.should_receive(:full_description)
+        Githug::Level.should_receive(:load).with("add").and_return(@level)
+        Githug::UI.should_receive(:word_box).with("Githug")
+        Githug::UI.should_receive(:puts).with("resetting level")
+        @cli.reset("add")
+      end
+
       it "should reset the level with a path" do
         @level.should_receive(:setup_level)
         @level.should_receive(:full_description)
@@ -94,6 +103,15 @@ describe Githug::CLI do
       end
     end
 
+  end
+
+  describe "levels" do
+
+    it "should should print the levels and their numbers" do
+      Githug::Level.stub(:list).and_return(["commit", "add"])
+      Githug::UI.should_receive(:puts).with(["#1: commit", "#2: add"])
+      @cli.levels
+    end
   end
 
 end

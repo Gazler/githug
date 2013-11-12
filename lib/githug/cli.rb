@@ -36,12 +36,8 @@ module Githug
 
     desc :reset, "Reset the current level"
 
-    def reset(level_name = nil)
-      if level_name
-        level = Level.load(level_name)
-      else
-        level = load_level
-      end
+    def reset(path = nil)
+      level = load_level(path)
       UI.word_box("Githug")
       if level
         UI.puts("resetting level")
@@ -55,28 +51,21 @@ module Githug
     desc :levels, "List all of the levels"
 
     def levels
-      list_without_nil = Level.list - [nil]
-      list_with_numbers = list_without_nil.each_with_index.map do |name, index| 
-        number = index + 1
-        "#" + number.to_s + ": " + name if name
+      list_with_numbers = Level.list.each.with_index(1).map do |name, index|
+        "##{index}: #{name}"
       end
       UI.puts(list_with_numbers)
     end
 
-    desc :load, "Load a level from a file"
-
-    def load(path = nil)
-      level = Level.load_from_file(path)
-      return UI.Error("Level does not exist") unless level
-      UI.word_box("Githug")
-      UI.puts("resetting level")
-      level.setup_level
-      level.full_description
-    end
-
     no_tasks do
 
-      def load_level
+      def load_level(path = nil)
+        return load_level_from_profile unless path
+        return Level.load(path) if Level.list.include?(path)
+        Level.load_from_file(path)
+      end
+
+      def load_level_from_profile
         profile = Profile.load
         Level.load(profile.level)
       end

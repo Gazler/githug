@@ -54,6 +54,12 @@ end
 
   end
 
+  describe "list" do
+    it "should list the levels without nil" do
+      Githug::Level.list.should eql(Githug::Level::LEVELS - [nil])
+    end
+  end
+
   describe "load_from_file" do
     it "should load the level" do
       File.stub(:dirname).and_return("")

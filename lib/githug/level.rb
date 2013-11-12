@@ -26,7 +26,7 @@ module Githug
       end
 
       def list
-        return LEVELS
+        return LEVELS - [nil]
       end
 
       def setup(path)
