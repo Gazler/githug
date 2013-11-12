@@ -51,8 +51,8 @@ module Githug
     desc :levels, "List all of the levels"
 
     def levels
-      list_with_numbers = Level.list.each.with_index(1).map do |name, index|
-        "##{index}: #{name}"
+      list_with_numbers = Level.list.each_with_index.map do |name, index|
+        "##{index + 1}: #{name}"
       end
       UI.puts(list_with_numbers)
     end
