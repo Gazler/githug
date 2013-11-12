@@ -161,6 +161,10 @@ describe "The Game" do
     `echo "spider man" | githug`.should be_solved
   end
 
+  it "should complete the grep level" do
+    `echo "4" | githug`.should be_solved
+  end
+
   it "should complete the branch level" do
     `git branch test_code`
     `githug`.should be_solved
