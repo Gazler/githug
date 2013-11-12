@@ -2,42 +2,37 @@ fr:
   githug: 
     cli:
       tasks:
-        play: Initialize the game
-        test: Test a level from a file path
-        hint: Get a hint for the current level
-        reset: Reset the current level
+        play: Initialiser le jeu
+        test: Tester un niveau depuis un chemin de fichier
+        hint: Obtenir un indice pour le niveau actuel
+        reset: Redémarrer le niveau actuel
 
       reset:
-        resetting: resetting level
-        does_not_exist: Level does not exist
+        resetting: Redémarrage du niveau
+        does_not_exist: Niveau n'existe pas
 
       make_directory:
-        change_dir: Please change into the git_hug directory
-        no_dir_found: No githug directory found, do you wish to create one?
-        exiting: Exiting
+        change_dir: Merci de passer dans le dossier git_hug
+        no_dir_found: Aucun dossier githug trouvé, voulez-vous en créer un ?
+        exiting: Fermeture
 
     game:
       play_level:
-        welcome: Welcome to Githug
-        success: Congratulations, you have solved the level
-        failure: "Sorry, this solution is not quite right!"
-        hint_prompt: Don't forget you can type `githug hint` for a hint and `githug reset` to reset the current level
+        welcome: Bienvenue sur Githug
+        success: Félicitations, vous avez résolu ce niveau
+        failure: "Désolé, cette solution n'est pas tout à fait juste !"
+        hint_prompt: N'oubliez pas que vous pouvez taper `githug hint` pour un indice et `githug reset` pour redémarrer le niveau actuel
 
       test_level:
-        valid: Valid solution
-        invalid: Invalid solution
+        valid: Solution valide
+        invalid: Solution invalide
 
     level:
-      level: "Level:"
-      difficulty: "Difficulty:"
-      no_hints: No hints available for this level
+      level: "Niveau :"
+      difficulty: "Difficulté :"
+      no_hints: Aucun indice disponible pour ce niveau
 
 
 
 
-  level:
-    init:
-      description: level 1
-      hints: 
-        - "First Hint"
-        - "Second Hint"
+
