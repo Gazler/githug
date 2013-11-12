@@ -19,6 +19,7 @@ Githug has 4 commands:
  * hint - Gives you a hint (if available) for the current level
  * reset - Reset the current level
  * test - Used to test levels in development, please see the Testing Levels section.
+ * jump `level` - Mark all levels from the current one up to `level` as completed
 
 ## Change Log
 

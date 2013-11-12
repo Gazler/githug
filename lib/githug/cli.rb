@@ -52,6 +52,20 @@ module Githug
       end
     end
 
+    desc :jump, "Jump to a particular level"
+
+    def jump (level = 1)
+      profile = Profile.load
+      cur_level = Level::LEVELS.index(profile.level)
+      bumps = level.to_i - cur_level.to_i
+      bumps.times do |n|
+        profile.level_bump
+      end
+      new_level = load_level
+      new_level.setup_level
+      new_level.full_description
+    end
+
     no_tasks do
 
       def load_level
