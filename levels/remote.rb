@@ -1,6 +1,6 @@
 difficulty 2
 
-description "This projects has a remote repository.  Identify it."
+description "This project has a remote repository.  Identify it."
 
 setup do
   repo.init
