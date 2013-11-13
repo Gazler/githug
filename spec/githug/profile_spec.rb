@@ -31,35 +31,53 @@ describe Githug::Profile do
     profile.save
   end
 
-  describe "level_bump" do
+  describe "level methods" do
+
+    let(:profile) { Githug::Profile.load }
+
     before(:each) do
-      @profile = Githug::Profile.load
+      profile.stub(:save)
       @levels = Githug::Level::LEVELS
       Githug::Level::LEVELS = ["init", "add", "rm", "rm_cached", "diff"]
-      @profile.level = "init"
-      @profile.should_receive(:save)
+      profile.level = "init"
     end
 
     after(:each) do
       Githug::Level::LEVELS = @levels
     end
 
-    it "should bump the level" do
-      @profile.level_bump.should eql("add")
+    describe "level_bump" do
+
+
+      it "should bump the level" do
+        profile.should_receive(:set_level).with("add")
+        profile.level_bump
+      end
+
+      it "should reset the current_attempts" do
+        profile.current_attempts = 1
+        profile.level_bump
+        profile.current_attempts.should eql(0)
+      end
+
+      it "should set the level to the first incomplete level" do
+        profile.settings.stub(:[]).with(:level).and_return("rm_cached")
+        profile.settings.stub(:[]).with(:completed_levels).and_return(["init", "add"])
+        profile.level_bump.should eql("rm")
+      end
     end
 
-    it "should reset the current_attempts" do
-      @profile.current_attempts = 1
-      @profile.level_bump
-      @profile.current_attempts.should eql(0)
+    describe "set_level" do
+
+      it "should set the level" do
+        profile.should_receive(:save)
+        profile.should_receive(:reset!)
+        profile.set_level("rm")
+        profile.settings[:level].should eql("rm")
+      end
+
     end
 
-    it "should set the level to the first incomplete level" do
-      @profile.settings.stub(:[]).with(:level).and_return("rm_cached")
-      @profile.settings.stub(:[]).with(:completed_levels).and_return(["init", "add"])
-      @profile.level_bump.should eql("rm")
-    end
   end
-
 
 end

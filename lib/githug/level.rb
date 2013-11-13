@@ -100,7 +100,7 @@ module Githug
     end
 
     def test
-      @solution.call
+      _solution
     end
 
     def show_hint

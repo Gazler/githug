@@ -61,8 +61,14 @@ module Githug
 
       def load_level(path = nil)
         return load_level_from_profile unless path
-        return Level.load(path) if Level.list.include?(path)
+        return load_level_from_name(path) if Level.list.include?(path)
         Level.load_from_file(path)
+      end
+
+      def load_level_from_name(name)
+        profile = Profile.load
+        profile.set_level(name)
+        Level.load(name)
       end
 
       def load_level_from_profile

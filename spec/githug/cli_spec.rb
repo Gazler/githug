@@ -88,6 +88,9 @@ describe Githug::CLI do
       it "should reset the level with a level name" do
         @level.should_receive(:setup_level)
         @level.should_receive(:full_description)
+        profile = mock
+        Githug::Profile.stub(:load).and_return(profile)
+        profile.should_receive(:set_level).with("add")
         Githug::Level.should_receive(:load).with("add").and_return(@level)
         Githug::UI.should_receive(:word_box).with("Githug")
         Githug::UI.should_receive(:puts).with("resetting level")

@@ -41,23 +41,29 @@ module Githug
       end
     end
 
+    def set_level(name)
+      settings[:level] = name
+      reset!
+      save
+    end
+
     def level_bump
       levels = Level::LEVELS
       level_no = levels.index(settings[:level])
 
       settings[:completed_levels] << level
-
       settings[:current_levels] = levels
-
-      settings[:current_attempts] = 0
-
-      settings[:current_hint_index] = 0
-
       next_level = (levels - settings[:completed_levels]).first || levels.last
 
-      settings[:level] = next_level
-      save
+      set_level(next_level)
       next_level
+    end
+
+    private
+
+    def reset!
+      settings[:current_attempts] = 0
+      settings[:current_hint_index] = 0
     end
 
 
