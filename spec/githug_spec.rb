@@ -1,7 +1,9 @@
+require 'date'
 require 'spec_helper'
 
 RSpec::Matchers.define :be_solved do
   match do |actual|
+    puts actual
     !actual.match("Congratulations, you have solved the level!").nil?
   end
 end
@@ -111,6 +113,14 @@ describe "The Game" do
   it "should complete the commit_amend level" do
     `git add forgotten_file.rb`
     `git commit --amend -C HEAD`
+    `githug`.should be_solved
+  end
+
+  it "should complete the commit_in_future level" do
+    authored_date = DateTime.now + 14
+    authored_date = authored_date.rfc2822
+
+    `git commit -m "Test of future date" --date="#{authored_date}"`
     `githug`.should be_solved
   end
 
