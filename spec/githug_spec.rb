@@ -1,4 +1,3 @@
-require 'date'
 require 'spec_helper'
 
 RSpec::Matchers.define :be_solved do
@@ -116,7 +115,7 @@ describe "The Game" do
   end
 
   it "should complete the commit_in_future level" do
-    authored_date = DateTime.now + 14
+    authored_date = Time.now + 14
     authored_date = authored_date.rfc2822
 
     `git commit -m "Test of future date" --date="#{authored_date}"`
