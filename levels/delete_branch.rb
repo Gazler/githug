@@ -6,6 +6,7 @@ setup do
   FileUtils.touch("README")
   repo.add "README"
   repo.commit_all("Initial commit")
+  repo.branch("delete_me")
 end
 
 solution do
