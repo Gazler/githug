@@ -1,4 +1,5 @@
 difficulty 2
+
 description "You have created too many branches for your project. There is an old branch in your repo called 'delete_me', you should delete it."
 
 setup do
@@ -6,11 +7,12 @@ setup do
   FileUtils.touch("README")
   repo.add "README"
   repo.commit_all("Initial commit")
-  repo.head 
+  repo.git.native :checkout, {"b" => true}, 'delete_me'
+  repo.git.native :checkout, {}, 'master'
 end
 
 solution do
-  return true unless repo.branches.map(&:name).include("delete_me")
+  return true unless repo.branches.map(&:name).include?('delete_me')
 end
 
 hint do
