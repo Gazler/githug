@@ -1,8 +1,2 @@
-*.gem
-.bundle
-Gemfile.lock
-pkg/*
-*.swp
-.rvmrc
-git_hug/*
 .profile.yml
+.gitignore
