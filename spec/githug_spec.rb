@@ -195,6 +195,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the delete_branch level" do
+    'git branch -d delete_me'
+    'githug'.should be_solved
+  end
+
   it "should commit the merge level" do
     `git merge feature`
     `githug`.should be_solved
