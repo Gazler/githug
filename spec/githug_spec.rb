@@ -72,6 +72,10 @@ describe "The Game" do
     `git ls-files --other --exclude-standard | githug`.should be_solved
   end
 
+  it "should complete the number files committed level" do
+    `git ls-files --other --exclude-standard | githug`.should be_solved
+  end
+
   it "should complete the rm level" do
     file_name = `git status | grep deleted | cut -d " " -f 5`
     `git rm #{file_name}`
