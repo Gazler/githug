@@ -46,7 +46,7 @@ solution do
 
   # a bit hacky solution to get tags from remote
   remote_tags=
-    repo.git.raw_git_call("git ls-remote --tags -q", repo.git.git_file_index).
+    repo.git.raw_git_call("git ls-remote --tags .", repo.git.git_file_index).
       first.
       split("\n")
 
