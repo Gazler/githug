@@ -72,7 +72,7 @@ describe "The Game" do
     `git ls-files --other --exclude-standard | githug`.should be_solved
   end
 
-  it "should complete the number files committed level" do
+  it "should complete the number of files committed level" do
     `git ls-files --other --exclude-standard | githug`.should be_solved
   end
 
