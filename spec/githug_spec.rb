@@ -205,6 +205,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the fetch level" do
+    `git fetch`
+    `githug`.should be_solved
+  end
+
   it "should complete the repack level" do
     `git repack -d`
     `githug`.should be_solved
