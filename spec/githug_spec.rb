@@ -73,7 +73,7 @@ describe "The Game" do
   end
 
   it "should complete the number of files committed level" do
-    `git ls-files --other --exclude-standard | githug`.should be_solved
+    `git diff --name-only --cached | wc -l | githug`.should be_solved
   end
 
   it "should complete the rm level" do
