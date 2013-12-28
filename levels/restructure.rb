@@ -1,6 +1,6 @@
 difficulty 3
 
-description "You realize that your project need to be restructured.  Make a new folder named `src`, and move the .html file into this folder."
+description "You added some files to your repository, but now realize that your project needs to be restructured.  Make a new folder named `src`, and move all of the .html files into this folder."
 
 setup do
   repo.init
@@ -8,10 +8,26 @@ setup do
   FileUtils.touch("index.html")
   repo.add("index.html")
   repo.commit_all("adding index page.")
+
+  FileUtils.touch("about.html")
+  repo.add("about.html")
+  repo.commit_all("adding about page.")
+
+  FileUtils.touch("contact.html")
+  repo.add("contact.html")
+  repo.commit_all("adding contact page.")
 end
 
 solution do
-  repo.status["index.html"].type == "D" && repo.status["index.html"].stage.nil? && repo.status["src/index.html"].type == "A"
+  repo.status["index.html"].type == "D" &&
+  repo.status["index.html"].stage.nil? &&
+  repo.status["src/index.html"].type == "A" &&
+  repo.status["about.html"].type == "D" &&
+  repo.status["about.html"].stage.nil? &&
+  repo.status["src/about.html"].type == "A" &&
+  repo.status["contact.html"].type == "D" &&
+  repo.status["contact.html"].stage.nil? &&
+  repo.status["src/contact.html"].type == "A"
 end
 
 hint do
