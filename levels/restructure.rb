@@ -19,15 +19,10 @@ setup do
 end
 
 solution do
-  repo.status["index.html"].type == "D" &&
-  repo.status["index.html"].stage.nil? &&
-  repo.status["src/index.html"].type == "A" &&
-  repo.status["about.html"].type == "D" &&
-  repo.status["about.html"].stage.nil? &&
-  repo.status["src/about.html"].type == "A" &&
-  repo.status["contact.html"].type == "D" &&
-  repo.status["contact.html"].stage.nil? &&
-  repo.status["src/contact.html"].type == "A"
+  index = repo.status["index.html"].type == "D" && repo.status["index.html"].stage.nil? && repo.status["src/index.html"].type == "A"
+  about = repo.status["about.html"].type == "D" && repo.status["about.html"].stage.nil? && repo.status["src/about.html"].type == "A"
+  contact = repo.status["contact.html"].type == "D" && repo.status["contact.html"].stage.nil? && repo.status["src/contact.html"].type == "A"
+  index && about && contact
 end
 
 hint do
