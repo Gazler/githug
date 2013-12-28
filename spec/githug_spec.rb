@@ -67,6 +67,11 @@ describe "The Game" do
     `echo "*.swp" >> .gitignore`
     `githug`.should be_solved
   end
+  
+  it "should complete the include level" do
+    `echo "*.a\n!lib.a" >> .gitignore`
+    `githug`.should be_solved
+  end
 
   it "should complete the status level" do
     `git ls-files --other --exclude-standard | githug`.should be_solved
