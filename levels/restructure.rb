@@ -3,6 +3,7 @@ difficulty 3
 description "Your project`s a bit cluttered, and needs to be restructured.  Make two new folders named `database` and `src`.  Then move the *.sql files to the `database` folder, and move the *.html files to the `src` folder."
 
 setup do
+  init_from_level
   repo.init
 
   FileUtils.touch("index.html")
