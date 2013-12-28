@@ -4,7 +4,7 @@ module Githug
 
     LEVELS = [nil, "init", "config", "add", "commit", "clone",
               "clone_to_folder", "ignore", "status", "number_of_files_committed", "rm", "rm_cached",
-              "stash", "rename", "log", "tag", "push_tags", "commit_amend",
+              "stash", "rename", "restructure", "log", "tag", "push_tags", "commit_amend",
               "commit_in_future", "reset", "reset_soft", "checkout_file", "remote",
               "remote_url", "pull", "remote_add", "push", "diff", "blame", "branch",
               "checkout", "checkout_tag", "checkout_tag_over_branch", "branch_at", "delete_branch", 
