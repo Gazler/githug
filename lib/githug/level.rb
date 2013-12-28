@@ -3,7 +3,7 @@ module Githug
     include UI
 
     LEVELS = [nil, "init", "config", "add", "commit", "clone",
-              "clone_to_folder", "ignore", "status", "number_of_files_committed", "rm", "rm_cached",
+              "clone_to_folder", "ignore", "include", "status", "number_of_files_committed", "rm", "rm_cached",
               "stash", "rename", "log", "tag", "push_tags", "commit_amend",
               "commit_in_future", "reset", "reset_soft", "checkout_file", "remote",
               "remote_url", "pull", "remote_add", "push", "diff", "blame", "branch",
