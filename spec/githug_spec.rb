@@ -204,6 +204,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the push_branch level" do
+    `git push origin test_branch`
+    `githug`.should be_solved
+  end
+
   it "should commit the merge level" do
     `git merge feature`
     `githug`.should be_solved
