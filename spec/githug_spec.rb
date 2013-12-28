@@ -94,6 +94,12 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "should complete the restructure level" do
+    `mkdir database src`
+    `git mv *.sql database`
+    `git mv *.html src`
+  end
+
   it "should complete the log level" do
     `git log --pretty=short | grep commit | cut -c 8-14 | githug`.should be_solved
   end
