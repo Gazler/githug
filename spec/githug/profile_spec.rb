@@ -2,33 +2,39 @@ require 'spec_helper'
 
 describe Githug::Profile do
 
-  it "should load the profile" do
-    settings = {:level => 1, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
-    File.should_receive(:exists?).with(Githug::Profile::PROFILE_FILE).and_return(true)
-    File.should_receive(:open).with(Githug::Profile::PROFILE_FILE).and_return("settings")
-    YAML.should_receive(:load).with("settings").and_return(settings)
-    Githug::Profile.should_receive(:new).with(settings)
-    Githug::Profile.load
+  describe ".load" do
+    it "loads the profile" do
+      settings = {:level => 1, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
+      File.should_receive(:exists?).with(Githug::Profile::PROFILE_FILE).and_return(true)
+      File.should_receive(:open).with(Githug::Profile::PROFILE_FILE).and_return("settings")
+      YAML.should_receive(:load).with("settings").and_return(settings)
+      Githug::Profile.should_receive(:new).with(settings)
+      Githug::Profile.load
+    end
+
+    it "loads the defaults if the file does not exist" do
+      defaults = {:level => nil, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
+      File.should_receive(:exists?).with(Githug::Profile::PROFILE_FILE).and_return(false)
+      Githug::Profile.should_receive(:new).with(defaults)
+      Githug::Profile.load
+    end
   end
 
-  it "should load the defaults if the file does not exist" do
-    defaults = {:level => nil, :current_attempts => 0, :current_hint_index => 0, :current_levels => [], :completed_levels => []}
-    File.should_receive(:exists?).with(Githug::Profile::PROFILE_FILE).and_return(false)
-    Githug::Profile.should_receive(:new).with(defaults)
-    Githug::Profile.load
-  end
-
-  it "should allow method acces to getters and setters" do
+  it "allows method acces to getters and setters" do
     profile = Githug::Profile.load
     profile.level.should eql(nil)
     profile.level = 1
     profile.level.should eql(1)
   end
 
-  it "should save the file" do
-    profile = Githug::Profile.load
-    File.should_receive(:open).with(Githug::Profile::PROFILE_FILE, "w")
-    profile.save
+  describe ".save" do
+
+    it "saves the file" do
+      profile = Githug::Profile.load
+      File.should_receive(:open).with(Githug::Profile::PROFILE_FILE, "w")
+      profile.save
+    end
+
   end
 
   describe "level methods" do
@@ -46,30 +52,29 @@ describe Githug::Profile do
       Githug::Level::LEVELS = @levels
     end
 
-    describe "level_bump" do
+    describe "#level_bump" do
 
-
-      it "should bump the level" do
+      it "bumps the level" do
         profile.should_receive(:set_level).with("add")
         profile.level_bump
       end
 
-      it "should reset the current_attempts" do
+      it "resets the current_attempts" do
         profile.current_attempts = 1
         profile.level_bump
         profile.current_attempts.should eql(0)
       end
 
-      it "should set the level to the first incomplete level" do
+      it "sets the level to the first incomplete level" do
         profile.settings.stub(:[]).with(:level).and_return("rm_cached")
         profile.settings.stub(:[]).with(:completed_levels).and_return(["init", "add"])
         profile.level_bump.should eql("rm")
       end
     end
 
-    describe "set_level" do
+    describe "#set_level" do
 
-      it "should set the level" do
+      it "sets the level" do
         profile.should_receive(:save)
         profile.should_receive(:reset!)
         profile.set_level("rm")
