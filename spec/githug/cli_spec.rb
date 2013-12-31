@@ -35,7 +35,7 @@ describe Githug::CLI do
   it "prompts to change into the directory if it exists" do
     File.stub(:exists?).and_return(true)
     Githug::UI.should_receive(:puts).with("Please change into the git_hug directory")
-    lambda {subject.make_directory}.should raise_error(SystemExit)
+    lambda {subject.check_githug_directory!}.should raise_error(SystemExit)
   end
 
   describe "#test" do

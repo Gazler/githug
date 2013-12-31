@@ -11,8 +11,7 @@ module Githug
     def play
       UI.word_box("Githug")
       make_directory
-      game = Game.new
-      game.play_level
+      Game.new.play_level
     end
 
     desc :test, "Test a level from a file path"
@@ -22,8 +21,7 @@ module Githug
       UI.word_box("Githug")
       make_directory
       level = Level.load_from_file(path)
-      game = Game.new
-      game.test_level(level, options[:errors])
+      Game.new.test_level(level, options[:errors])
     end
 
     desc :hint, "Get a hint for the current level"
@@ -78,19 +76,20 @@ module Githug
 
 
       def make_directory
+        check_githug_directory!
+        return if File.basename(Dir.pwd) == "git_hug"
+        unless UI.ask("No githug directory found, do you wish to create one?")
+          UI.puts("Exiting")
+          exit
+        end
+        Dir.mkdir("./git_hug")
+        Dir.chdir("git_hug")
+      end
+
+      def check_githug_directory!
         if File.exists?("./git_hug")
           UI.puts "Please change into the git_hug directory"
           exit
-        end
-
-        unless File.basename(Dir.pwd) == "git_hug"
-          if UI.ask("No githug directory found, do you wish to create one?")
-            Dir.mkdir("./git_hug")
-            Dir.chdir("git_hug")
-          else
-            UI.puts("Exiting")
-            exit
-          end
         end
       end
 

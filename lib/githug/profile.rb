@@ -7,18 +7,26 @@ module Githug
 
     class << self
       def load
-        settings = {
+        self.new(settings)
+      end
+
+      private
+
+      def settings
+        return defaults unless File.exists?(PROFILE_FILE)
+        defaults.merge(YAML::load(File.open(PROFILE_FILE)))
+      end
+
+      def defaults
+        {
           :level => nil,
           :current_attempts => 0,
           :current_hint_index => 0,
           :current_levels => [],
           :completed_levels => []
         }
-
-        settings.merge! YAML::load(File.open(PROFILE_FILE)) if File.exists?(PROFILE_FILE)
-
-        self.new(settings)
       end
+
     end
 
 
@@ -48,24 +56,25 @@ module Githug
     end
 
     def level_bump
-      levels = Level::LEVELS
-      level_no = levels.index(settings[:level])
-
       settings[:completed_levels] << level
       settings[:current_levels] = levels
-      next_level = (levels - settings[:completed_levels]).first || levels.last
-
       set_level(next_level)
-      next_level
     end
 
     private
+
+    def levels
+      Level::LEVELS
+    end
+
+    def next_level
+      (levels - settings[:completed_levels]).first || levels.last
+    end
 
     def reset!
       settings[:current_attempts] = 0
       settings[:current_hint_index] = 0
     end
-
 
   end
 end

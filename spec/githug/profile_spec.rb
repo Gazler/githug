@@ -66,9 +66,10 @@ describe Githug::Profile do
       end
 
       it "sets the level to the first incomplete level" do
-        profile.settings.stub(:[]).with(:level).and_return("rm_cached")
-        profile.settings.stub(:[]).with(:completed_levels).and_return(["init", "add"])
-        profile.level_bump.should eql("rm")
+        profile.level = "rm_cached"
+        profile.completed_levels = ["init", "add"]
+        profile.level_bump
+        profile.level.should eql("rm")
       end
     end
 
