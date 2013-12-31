@@ -10,7 +10,7 @@ describe Githug::CLI do
 
   it "prints the logo" do
     Githug::UI.should_receive(:word_box).with("Githug")
-    subject.stub(:make_directory)
+    subject.stub(:make_directory!)
     subject.play
   end
 
@@ -18,18 +18,18 @@ describe Githug::CLI do
     Githug::UI.stub(:ask).and_return(true)
     Dir.should_receive(:mkdir).with("./git_hug")
     Dir.should_receive(:chdir).with("git_hug")
-    subject.make_directory
+    subject.make_directory!
   end
 
   it "does not create a directory if you are in the game directory" do
     Dir.stub(:pwd).and_return("/home/git_hug")
     Githug::UI.should_not_receive(:ask)
-    subject.make_directory
+    subject.make_directory!
   end
 
   it "exits if the user selects no" do
     Githug::UI.stub(:ask).and_return(false)
-    lambda {subject.make_directory}.should raise_error(SystemExit)
+    lambda {subject.prompt_githug_directory!}.should raise_error(SystemExit)
   end
 
   it "prompts to change into the directory if it exists" do
@@ -42,7 +42,7 @@ describe Githug::CLI do
     it "performs a test run of the level" do
       level = mock
       game = mock
-      subject.stub(:make_directory)
+      subject.stub(:make_directory!)
       Githug::Level.should_receive(:load_from_file).with("/foo/bar/test/level.rb").and_return(level)
       Githug::Game.stub(:new).and_return(game)
       game.should_receive(:test_level).with(level, anything)
