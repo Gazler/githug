@@ -1,29 +1,23 @@
 module Githug
   module UI
 
-    @@out_stream = STDOUT
-    @@in_stream = STDIN
-
     class << self
 
-      def out_stream=(out)
-        @@out_stream = out
-      end
+      attr_accessor :out_stream, :in_stream
 
-      def in_stream=(in_stream)
-        @@in_stream = in_stream
-      end
+      @out_stream = STDOUT
+      @in_stream = STDIN
 
       def puts(string = "")
-        @@out_stream.puts(string)
+        out_stream.puts(string)
       end
 
       def print(string)
-        @@out_stream.print(string)
+        out_stream.print(string)
       end
 
       def gets
-        @@in_stream.gets
+        in_stream.gets
       end
 
       def word_box(string,width=80,char='*')
