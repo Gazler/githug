@@ -22,10 +22,7 @@ setup do
 end
 
 solution do
-  return false unless repo.commits[2].message == "First commit"
-  return false unless repo.commits[1].message == "Second commit"
-  return false unless repo.commits[0].message == "Third commit"
-  true
+    `git log --format="%s"`.split.join("").match /Third.*Second.*First.*Initial/
 end
 
 hint do
