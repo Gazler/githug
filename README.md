@@ -1,24 +1,24 @@
 # Githug
 Git Your Game On [![Build Status](https://travis-ci.org/Gazler/githug.png?branch=master)](https://travis-ci.org/Gazler/githug) [![Code Climate](https://codeclimate.com/github/Gazler/githug.png)](https://codeclimate.com/github/Gazler/githug)
 ## About
-Githug is designed to give you a practical way of learning git.  It has a series of levels, each utilizing git commands to ensure a correct answer.
+Githug is designed to give you a practical way of learning git.  It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
 
 ## Installation
-To install Githug
+To install Githug, run
 
     gem install githug
 
-After the gem is installed, you can run `githug` where you will be prompted to create a directory.  Githug should work on Linux, OS X and Windows.
+After the gem is installed, run `githug`.  You will be prompted to create a directory. Githug should work on Linux, OS X and Windows.
 
 ## Commands
 
 Githug has 5 commands:
 
- * play - This is the default command and it will check your solution for the current level.
+ * play - The default command, checks your solution for the current level
  * hint - Gives you a hint (if available) for the current level
  * reset - Reset the current level or reset the level to a given name or path
- * levels - List all of the levels
- * test - Used to test levels in development, please see the Testing Levels section.
+ * levels - List all the levels
+ * test - Test levels in development (please see the "Testing Levels" section below)
 
 ## Change Log
 
@@ -27,7 +27,7 @@ The change log is available on the wiki.  [Change log](https://github.com/Gazler
 
 ## Contributing
 
-If you want to suggest a level or make a level that has been suggested, check out [the wiki](https://github.com/Gazler/githug/wiki).
+To suggest a level or create a level that has been suggested, check out [the wiki](https://github.com/Gazler/githug/wiki).
 
  Get yourself on the [contributors list](https://github.com/Gazler/githug/contributors) by doing the following:
 
@@ -39,14 +39,12 @@ If you want to suggest a level or make a level that has been suggested, check ou
 
 ## Todo List
 
- * A follow up to the level, more information on a specific command, etc.
+ * A follow-up to the level, more information on a specific command, etc.
  * More levels!
 
 ## Writing Levels
 
-Githug has a DSL for writing levels
-
-An example level:
+Githug has a DSL for writing levels. Here is an example:
 
 ```ruby
 difficulty 1
@@ -71,7 +69,7 @@ end
 
  `difficulty`, `description` and `solution` are required.
 
-You can also include multiple hints like this:
+You can include multiple hints like this:
 
 ```ruby
 hints [
@@ -83,8 +81,7 @@ hints [
 
  You can call `repo.init` to initialize an empty repository.
 
- All methods called on `repo` are sent to the [grit gem](https://github.com/mojombo/grit) if the method does not exist, and you can use that for most git related commands (`repo.add`, `repo.commit`, etc.)
-
+ All methods called on `repo` are sent to the [grit gem](https://github.com/mojombo/grit) if the method does not exist, and you can use that for most git related commands (`repo.add`, `repo.commit`, etc.).
 
 Another method exists called `init_from_level` and it is used like so:
 
@@ -94,23 +91,23 @@ setup do
 end
 ```
 
-This will copy the contents of a repository specified in the levels folder for your level.  For example, if your level is called "merge" then it will copy the contents of the "merge" folder.  it is recommended that you do the following steps:
+This will copy the contents of a repository specified in the levels folder for your level.  For example, if your level is called "merge" then it will copy the contents of the "merge" folder.  It is recommended that you perform the following steps:
 
  * mkdir "yourlevel"
  * cd "yourlevel"
  * git init
  * some git stuff
- * **important** rename ".git" to ".githug" so it does not get treated as a submodule
+ * **important** rename ".git" to ".githug" so that it isn't treated as a submodule
  * cd "../"
  * git add "yourlevel"
 
-After doing this, your level should be able to copy the contents from that git repository and use those for your level.  You can see the "blame" level for an example of this.
+After doing this, your level should be able to copy the contents from that git repository and use those for your level.  See the "blame" level for an example of this.
 
 ## Testing Levels
 
 The easiest way to test a level is:
 
- * change into your git_hug repository
+ * Change into your git_hug repository
  * Run `githug reset PATH_TO_YOUR_LEVEL`
  * Solve the level
  * Run `githug test PATH_TO_YOUR_LEVEL`
