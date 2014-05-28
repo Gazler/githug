@@ -22,8 +22,8 @@ solution do
   valid = false
   valid = true if repo.commits.length > 3 &&
     repo.commits[3].message == "First commit" &&
-    repo.commits[2].message == "Second commit" &&
-    repo.commits[1].message == "Bad commit" &&
+    repo.commits[2].message == "Bad commit" &&
+    repo.commits[1].message == "Second commit" &&
     repo.commits[0].message.split("\n").first == "Revert \"Bad commit\""
   valid
 end
