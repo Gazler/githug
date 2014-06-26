@@ -28,7 +28,7 @@ setup do
   Dir.chdir cwd
   `git remote add origin #{tmpdir}/.git`
   `git fetch origin --quiet`
-  `git branch -u origin/master master`
+  `git branch -u origin/master master 2> /dev/null`
 
   Dir.chdir tmpdir
   # create a new branch in the remote repo
