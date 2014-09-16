@@ -1,6 +1,6 @@
 difficulty 3
 
-description "You added some files to your repository, but now realize that your project needs to be restructured.  Make a new folder named `src`, and move all of the .html files into this folder."
+description "You added some files to your repository, but now realize that your project needs to be restructured.  Make a new folder named `src` and using Git move all of the .html files into this folder."
 
 setup do
   repo.init
