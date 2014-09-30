@@ -33,7 +33,15 @@ module Githug
     end
 
     desc :reset, "Reset the current level"
+    long_desc <<-LONGDESC
+      `githug reset` will reset the current level. You can optionally specify a
+      LEVEL parameter which will reset the game to a specific level. For
+      example:
 
+      > $ githug reset merge_squash
+
+      Will reset githug to level '#45: merge_squash'
+    LONGDESC
     def reset(path = nil)
       level = load_level(path)
       UI.word_box("Githug")
