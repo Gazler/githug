@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 a78bcab6232e9382a86436cdfcb2ed0391b1f0ac ipmsteven <steven.lyl147@gmail.com> 1418373194 -0800	branch: Created from HEAD
+a78bcab6232e9382a86436cdfcb2ed0391b1f0ac ed0fdcf366b21b8984fb37ea34106978a2e5c5ba ipmsteven <steven.lyl147@gmail.com> 1418373239 -0800	commit: add feature
+ed0fdcf366b21b8984fb37ea34106978a2e5c5ba 4419b972c0cd1b346ac90332aa7c5cc949589f78 ipmsteven <steven.lyl147@gmail.com> 1418373314 -0800	rebase finished: refs/heads/feature onto 98205e9faf10cf33d2ef7c0f66e402540c62613a
+4419b972c0cd1b346ac90332aa7c5cc949589f78 ed0fdcf366b21b8984fb37ea34106978a2e5c5ba ipmsteven <steven.lyl147@gmail.com> 1418373492 -0800	reset: moving to ed0fdcf
