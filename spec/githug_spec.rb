@@ -68,7 +68,7 @@ describe "The Game" do
     `echo "*.swp" >> .gitignore`
     `githug`.should be_solved
   end
-  
+
   it "solves the include level" do
     `echo "*.a\n!lib.a" >> .gitignore`
     `githug`.should be_solved
@@ -228,6 +228,12 @@ describe "The Game" do
 
   it "solves the fetch level" do
     `git fetch`
+    `githug`.should be_solved
+  end
+
+  it "solves the rebase level" do
+    `git checkout feature`
+    `git rebase master`
     `githug`.should be_solved
   end
 
