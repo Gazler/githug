@@ -4,7 +4,7 @@ description "You have committed several times but would like all those changes t
 setup do
   repo.init
   FileUtils.touch(".hidden")
-  repo.add("hidden")
+  repo.add(".hidden")
   repo.commit_all("Initial Commit")
   FileUtils.touch("README")
   repo.add("README")
