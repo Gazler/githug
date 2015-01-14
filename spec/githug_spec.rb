@@ -298,6 +298,11 @@ describe "The Game" do
     skip_level
   end
 
+  it "solves the submodule level" do
+      `git submodule add https://github.com/jackmaney/githug-include-me`
+      `githug`.should be_solved
+  end
+
   it "solves the contribute level" do
     skip_level
   end
