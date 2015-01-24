@@ -1,0 +1,39 @@
+zh-CN:
+  githug:
+    cli:
+      tasks:
+        play: 初始化游戏
+        test: 根据文件路径测试关卡 
+        hint: 查看本关线索
+        reset: 重玩本关
+
+      reset:
+        resetting: 重置本关中
+        does_not_exist: 关卡不存在
+
+      make_directory:
+        change_dir: 请切换到git_hug目录
+        no_dir_found: 没有githug目录，你想要创建一个吗？
+        exiting: 正在退出
+
+    game:
+      play_level:
+        welcome: 欢迎来到Githug！
+        success: 恭喜大侠过关！
+        failure: 革命尚未成功，大侠仍需努力！
+        hint_prompt: 大侠别忘了可以用`githug hint`查看锦囊，用`githug reset`重玩本关。
+
+      test_level:
+        valid: 成功！
+        invalid: 失败！
+
+    level:
+      level: "关卡："
+      difficulty: "难度："
+      no_hints: 本关暂无提示
+
+  level:
+    init:
+      description: 一个新目录`git_hug`已被创建，请将它初始化为Git仓库。
+      hints: 
+        - "你可以在shell中执行`git`命令来查看可用的git命令列表。"
