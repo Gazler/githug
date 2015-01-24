@@ -8,8 +8,8 @@ end
 solution do
   valid = false
 
-  name = request("What is your name?")
-  email = request("What is your email?")
+  name = request(I18n.t("level.config.questions")[0])
+  email = request(I18n.t("level.config.questions")[1])
   config_name = repo.config["user.name"]
   config_email = repo.config["user.email"]
 
@@ -22,8 +22,8 @@ solution do
     valid = true
   end
 
-  puts "Your config has the following name: #{config_name}"
-  puts "Your config has the following email: #{config_email}"
+  puts I18n.t("level.config.messages")[0] + config_name
+  puts I18n.t("level.config.messages")[1] + config_email
 
   valid
 end

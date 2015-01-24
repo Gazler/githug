@@ -37,3 +37,13 @@ zh-CN:
       description: 一个新目录`git_hug`已被创建，请将它初始化为Git仓库。
       hints: 
         - "你可以在shell中执行`git`命令来查看可用的git命令列表。"
+    config:
+      description: 设置你的git名称和email，这对你的commit是否可识别很重要。
+      hints:
+        - 这些设置需要在config中进行设置，如果大侠你实在不知道怎么办的话，不妨运行一下：`git help config`。
+      questions:
+        - 你行走江湖的名号是？
+        - 你的邮件地址是？
+      messages:
+        - "你配置的名号是："
+        - "你配置的邮件地址是："
