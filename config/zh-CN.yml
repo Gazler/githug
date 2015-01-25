@@ -55,3 +55,7 @@ zh-CN:
       description: 文件`README`已经被添加到了staging区域，请提交它。
       hints:
         - 提交时必须包含注释。
+    clone:
+      description: 请clone仓库：https://github.com/Gazler/cloneme
+      hints:
+        - 你应该看一下：https://github.com/Gazler/cloneme
