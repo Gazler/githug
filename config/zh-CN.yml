@@ -59,3 +59,7 @@ zh-CN:
       description: 请clone仓库：https://github.com/Gazler/cloneme
       hints:
         - 你应该看一下：https://github.com/Gazler/cloneme
+    clone_to_folder:
+      description: 请clone仓库：https://github.com/Gazler/cloneme 到`my_cloned_repo`
+      hints:
+        - 本关和上一关类似，`git clone`有一个可选参数。
