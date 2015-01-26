@@ -63,3 +63,7 @@ zh-CN:
       description: 请clone仓库：https://github.com/Gazler/cloneme 到`my_cloned_repo`
       hints:
         - 本关和上一关类似，`git clone`有一个可选参数。
+    ignore:
+      description: vim编辑器会为所有当前打开的文件生成`.swp`（swap文件）后缀的文件。我们不希望它们出现在仓库中。本关的任务是让git仓库忽略`.swp`文件。
+      hints:
+        - 你可能注意到了仓库中有一个名为`.gitignore`的文件。
