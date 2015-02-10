@@ -52,13 +52,13 @@ solution do
   # after a git fetch command, each branch will be stored in in the .git/FETCH_HEAD file. Each branch is on its own line
   # This command will count the number of lines, which will give the number of branches 
   if File.file?('.git/FETCH_HEAD') #checks for file existance
-  	num_remote = `wc -l < .git/FETCH_HEAD`
+  	num_remote = File.read(".git/FETCH_HEAD").split("\n").count
   else
-  	num_remote = '0'
+  	num_remote = 0
   end
 
   # there should be 1 local branch and 2 remote branches for a success condition
-  if local_branches == 1 and num_remote.to_i == 2
+  if local_branches == 1 and num_remote == 2
   	result = true
   else
   	result = false
