@@ -39,6 +39,7 @@ solution do
   result = false unless file.readline =~ /some feature/
   result = false unless file.readline =~ /getting awesomer/
   result = false unless file.readline =~ /and awesomer!/
+  file.close
 
   result
 end
