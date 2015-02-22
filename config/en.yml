@@ -33,6 +33,13 @@ en:
       no_hints: No hints available for this level
 
   level:
+    config:
+      questions:
+        - What is your name?
+        - What is your email?
+      messages:
+        - "Your config has the following name:"
+        - "Your config has the following email:"
     status:
       questions: 
         - What is the full file name of the untracked file?
