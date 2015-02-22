@@ -71,3 +71,9 @@ zh-CN:
       description: 注意那些后缀为'.a'的文件，我希望git忽略除'lib.a'之外的其它文件。
       hints:
         - 用`git gitignore --help`，读一下关于将模式取反的可选前缀的部分。
+    status:
+      description: 仓库中有一些文件，其中一个没有被git跟踪，它是哪一个呢？
+      hints:
+        - 你要找到一个命令来查看仓库的状态。
+      questions:
+        - 那个未被跟踪的文件名称是？

@@ -32,12 +32,7 @@ en:
       difficulty: "Difficulty:"
       no_hints: No hints available for this level
 
-
-
-
-#  levels:
-#    init:
-#      description: Initialize an empty repository
-#       hints: 
-#         - "First Hint"
-#         - "Second Hint"
+  level:
+    status:
+      questions: 
+        - What is the full file name of the untracked file?

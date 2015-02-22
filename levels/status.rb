@@ -12,7 +12,7 @@ end
 
 solution do
 
-  name = request("What is the full file name of the untracked file?")
+  name = request(I18n.t("level.status.questions")[0])
 
   if name != "database.yml"
     return false
