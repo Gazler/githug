@@ -67,3 +67,7 @@ zh-CN:
       description: vim编辑器会为所有当前打开的文件生成`.swp`（swap文件）后缀的文件。我们不希望它们出现在仓库中。本关的任务是让git仓库忽略`.swp`文件。
       hints:
         - 你可能注意到了仓库中有一个名为`.gitignore`的文件。
+    include:
+      description: 注意那些后缀为'.a'的文件，我希望git忽略除'lib.a'之外的其它文件。
+      hints:
+        - 用`git gitignore --help`，读一下关于将模式取反的可选前缀的部分。

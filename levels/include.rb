@@ -16,6 +16,4 @@ solution do
   entries.include? '*.a' and entries.include? '!lib.a'
 end
 
-hint do
-  puts "Using `git gitignore --help`, read about the optional prefix to negate a pattern."
-end
+hints ["Using `git gitignore --help`, read about the optional prefix to negate a pattern."]
