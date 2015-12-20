@@ -3,27 +3,57 @@ Git Your Game On [![Build Status](https://travis-ci.org/Gazler/githug.png?branch
 ## About
 Githug is designed to give you a practical way of learning git.  It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
 
-## Installation
+## Playing Githug
+
+Githug should work on Linux, OS X and Windows.
+
+### Prerequisites
+
+Githug requires Ruby 1.8.7 or higher.
+
+You can check which version of Ruby is installed with the following command:
+
+```
+ruby --version
+```
+
+If ruby is not installed, follow the installation instructions on [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
+
+### Installation
+
 To install Githug, run
 
     gem install githug
 
-After the gem is installed, run `githug`.  You will be prompted to create a directory. Githug should work on Linux, OS X and Windows.
+If you get a complaint about permissions, you can rerun the command with `sudo`:
 
-## Commands
+    sudo gem install githug
 
-Githug has 5 commands:
+### Starting the Game
+
+After the gem is installed change directory to the location where you want the game-related assets to be stored.
+Then run `githug`:
+
+    githug
+
+You will be prompted to create a directory.
+
+    No githug directory found, do you wish to create one? [yn]
+
+Type `y` (yes) to continue, `n` (no) to cancel and quit Githug.
+
+### Commands
+
+Githug has 4 game commands:
 
  * play - The default command, checks your solution for the current level
  * hint - Gives you a hint (if available) for the current level
  * reset - Reset the current level or reset the level to a given name or path
  * levels - List all the levels
- * test - Test levels in development (please see the "Testing Levels" section below)
 
 ## Change Log
 
 The change log is available on the wiki.  [Change log](https://github.com/Gazler/githug/wiki/Change-Log)
-
 
 ## Contributing
 
