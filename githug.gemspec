@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Githug::VERSION
   s.authors     = ["Gary Rennie"]
   s.email       = ["webmaster@gazler.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/Gazler/githug"
   s.summary     = %q{An interactive way to learn git.}
   s.description = %q{An interactive way to learn git.}
 
