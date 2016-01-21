@@ -21,7 +21,9 @@ setup do
   repo.commit_all "Second commit"
 
   # copy the repo to remote
-  FileUtils.cp_r ".", tmpdir
+  FileUtils.cp "file1", tmpdir
+  FileUtils.cp "file2", tmpdir
+
   # add another file
   FileUtils.touch "file3"
   repo.add        "file3"
