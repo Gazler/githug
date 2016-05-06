@@ -9,7 +9,7 @@ setup do
 end
 
 solution do
-  "https://github.com/githug/not_a_repo" == request("What is the url of the remote repository?")
+  !!(request("What is the url of the remote repository?") =~ /https:\/\/github.com\/githug\/not_a_repo\/?/)
 end
 
 hint do

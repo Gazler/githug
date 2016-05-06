@@ -11,13 +11,13 @@ setup do
   repo.commit_all("Adding README")
   File.open("README", 'w') { |f| f.write("hey there") }
   repo.add("README")
-  repo.commit_all("Updating README")
+  repo.commit_all("Updating README (squash this commit into Adding README)")
   File.open("README", 'a') { |f| f.write("\nAdding some more text") }
   repo.add("README")
-  repo.commit_all("Updating README")
+  repo.commit_all("Updating README (squash this commit into Adding README)")
   File.open("README", 'a') { |f| f.write("\neven more text") }
   repo.add("README")
-  repo.commit_all("Updating README")
+  repo.commit_all("Updating README (squash this commit into Adding README)")
 end
 
 solution do

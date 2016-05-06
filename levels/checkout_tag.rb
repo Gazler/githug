@@ -30,7 +30,7 @@ end
 
 solution do
   return false unless repo.commits.length == 5
-  return false unless `git show HEAD` =~ /Some more changes/
+  return false unless `git show HEAD --format=%s` =~ /Some more changes/
   true
 end
 
