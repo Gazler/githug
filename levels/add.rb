@@ -1,6 +1,5 @@
 difficulty 1
-description "There is a file in your folder called `README`, you should add it to your staging area
-Note: You start each level with a new repo. Don't look for files from the previous one."
+description "Stworzylismy plik `README` w katalogu, dodaj go do plikow przygotowanych dla zcommitowania. Pamietaj, ze kazdy poziom zaczynasz z nowym repozytorium!"
 
 setup do
   repo.init
@@ -14,5 +13,5 @@ solution do
 end
 
 hint do
-  puts "You can type `git` in your shell to get a list of available git commands."
+  puts "Po wykonaniu komendy `git` zobaczysz liste dostepnych polecen."
 end

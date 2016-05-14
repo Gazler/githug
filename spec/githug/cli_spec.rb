@@ -34,7 +34,7 @@ describe Githug::CLI do
 
   it "prompts to change into the directory if it exists" do
     File.stub(:exists?).and_return(true)
-    Githug::UI.should_receive(:puts).with("Please change into the git_hug directory")
+    Githug::UI.should_receive(:puts).with("Wejdz do katalogu git_hug")
     lambda {subject.check_githug_directory!}.should raise_error(SystemExit)
   end
 
@@ -74,7 +74,7 @@ describe Githug::CLI do
         level.should_receive(:setup_level)
         level.should_receive(:full_description)
         Githug::UI.should_receive(:word_box).with("Githug")
-        Githug::UI.should_receive(:puts).with("resetting level")
+        Githug::UI.should_receive(:puts).with("czyszczenie poziomu")
         subject.reset
       end
 
@@ -82,7 +82,7 @@ describe Githug::CLI do
         Githug::Level.stub(:load).and_return(false)
         level.should_not_receive(:setup_level)
         level.should_not_receive(:full_description)
-        Githug::UI.should_receive(:error).with("Level does not exist")
+        Githug::UI.should_receive(:error).with("Poziom nie istnieje")
         subject.reset
       end
 
@@ -94,7 +94,7 @@ describe Githug::CLI do
         profile.should_receive(:set_level).with("add")
         Githug::Level.should_receive(:load).with("add").and_return(level)
         Githug::UI.should_receive(:word_box).with("Githug")
-        Githug::UI.should_receive(:puts).with("resetting level")
+        Githug::UI.should_receive(:puts).with("czyszczenie poziomu")
         subject.reset("add")
       end
 
@@ -102,7 +102,7 @@ describe Githug::CLI do
         level.should_receive(:setup_level)
         level.should_receive(:full_description)
         Githug::UI.should_receive(:word_box).with("Githug")
-        Githug::UI.should_receive(:puts).with("resetting level")
+        Githug::UI.should_receive(:puts).with("czyszczenie poziomu")
         subject.reset("/foo/bar/level.rb")
       end
     end

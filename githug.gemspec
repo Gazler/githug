@@ -5,11 +5,12 @@ require "githug/version"
 Gem::Specification.new do |s|
   s.name        = "githug"
   s.version     = Githug::VERSION
-  s.authors     = ["Gary Rennie"]
-  s.email       = ["webmaster@gazler.com"]
-  s.homepage    = "https://github.com/Gazler/githug"
-  s.summary     = %q{An interactive way to learn git.}
-  s.description = %q{An interactive way to learn git.}
+  s.authors     = ["Kamila Kupidura", "Tomasz Wierzchowski", "Daniel Dec"]
+  s.email       = ["kkupidura@future-processing.com", "twierzchowski@future-processing.com", "ddec@future-processing.com"]
+  s.homepage    = "https://github.com/FP-QAs/githug"
+  s.summary     = %q{Warsztaty z git dla testerów (TestingCup 2016).}
+  s.description = %q{Warsztaty z git dla testerów (TestingCup 2016).}
+  s.license     = "MIT"
 
   s.rubyforge_project = "githug"
 

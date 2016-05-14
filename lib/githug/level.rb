@@ -78,9 +78,9 @@ module Githug
 
     def full_description
       UI.puts
-      UI.puts "Name: #{level_name}"
-      UI.puts "Level: #{level_no}"
-      UI.puts "Difficulty: #{"*"*@difficulty}"
+      UI.puts "Nazwa: #{level_name}"
+      UI.puts "Poziom: #{level_no}"
+      UI.puts "Trudnosc: #{"*"*@difficulty}"
       UI.puts
       UI.puts @description
       UI.puts
@@ -121,7 +121,7 @@ module Githug
       elsif @hint
         @hint.call
       else
-        UI.puts("No hints available for this level.")
+        UI.puts("Brak wskazowek dla tego poziomu.")
       end
     end
   end
