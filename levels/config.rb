@@ -1,5 +1,5 @@
 difficulty 1
-description "Zmien konfigurację ustawiajac nazwe uzytkownika i email. Jest to wazny krok ktory zapewni Ci ze Twoje commity beda podpisane i bedzie mozna je z latwoscia odnalezc."
+description "Zmien konfiguracje ustawiajac nazwe uzytkownika i email. Jest to wazny krok ktory zapewni Ci ze Twoje commity beda podpisane i bedzie mozna je z latwoscia odnalezc."
 
 setup do
   repo.init
