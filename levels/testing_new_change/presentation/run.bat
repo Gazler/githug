@@ -1,0 +1,1 @@
+node plugin/notes-server
