@@ -11,7 +11,7 @@ solution do
   offender = repo.commit("dd797d1a0edbcbae317940eb289528763cd53298").author.name
   request("W ktorym commicie prezentacja po uruchomieniu jest nieczytelna?") == "dd797d1a0edbcbae317940eb289528763cd53298"
   request("Kto wprowadzil ta zmiane?").downcase == offender.downcase
-  request("Ktora linia spowodowala blad?") == 208
+  request("Ktora linia spowodowala blad?") == "208"
 end
 
 hint do
