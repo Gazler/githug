@@ -19,3 +19,6 @@ dd797d1a0edbcbae317940eb289528763cd53298 6a75bd84b24f02d6e2d113006f8e63619eb3e7b
 6a75bd84b24f02d6e2d113006f8e63619eb3e7b3 de5217b729c6d54d6641185512cc3b36b1d68b1d Daniel Dec <ddec@future-processing.com> 1463437002 +0200	commit (amend): Zmieniono zegar, poprawiono błąd ortograficzny
 de5217b729c6d54d6641185512cc3b36b1d68b1d eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 Daniel Dec <ddec@future-processing.com> 1463437009 +0200	rebase -i (edit): Dodano kolejny bardzo ważny punkt
 eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 Daniel Dec <ddec@future-processing.com> 1463437023 +0200	rebase -i (finish): returning to refs/heads/master
+eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 c43fa59aeeac5ce01552684dbd339165d241e90f Daniel Dec <ddec@future-processing.com> 1463437977 +0200	checkout: moving from master to c43fa59aeeac5ce01552684dbd339165d241e90f
+c43fa59aeeac5ce01552684dbd339165d241e90f dd797d1a0edbcbae317940eb289528763cd53298 Daniel Dec <ddec@future-processing.com> 1463438052 +0200	checkout: moving from c43fa59aeeac5ce01552684dbd339165d241e90f to dd797d1a0edbcbae317940eb289528763cd53298
+dd797d1a0edbcbae317940eb289528763cd53298 eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 Daniel Dec <ddec@future-processing.com> 1463438401 +0200	checkout: moving from dd797d1a0edbcbae317940eb289528763cd53298 to master

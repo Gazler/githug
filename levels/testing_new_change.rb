@@ -8,10 +8,12 @@ setup do
 end
 
 solution do
-  #offender = repo.commit("97bdd0cccf9f4b8730f78cb53a81a74f205dbcc2").author.name
-  request("Who made the commit with the password?").downcase == offender.downcase
+  offender = repo.commit("dd797d1a0edbcbae317940eb289528763cd53298").author.name
+  request("W którym commicie prezentacja po uruchomieniu jest nieczytelna?") == "dd797d1a0edbcbae317940eb289528763cd53298"
+  request("Kto wprowadził tą zmianę").downcase == offender.downcase
+  request("Która linia spowodowała błąd") == 208
 end
 
 hint do
-  puts "You want to research the `git blame` command."
+  puts "git blame, git checkout, git diff - powinny pomóc"
 end
