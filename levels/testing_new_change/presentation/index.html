@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Zwinność w automatyzacji
+    </title>
+
+    <meta name="author"
+          content="Korneliusz Caputa, Wojciech Gawroński, Kamila Kupidura, Daniel Dec, Tomasz Wierzchowski" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link href="//fonts.googleapis.com/css?family=Roboto+Slab|Roboto&amp;subset=latin,latin-ext"
+          rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/TangleKit.css" />
+    <link rel="stylesheet" href="css/theme/default.css" id="theme" />
+
+    <link rel="stylesheet" href="lib/css/github.css" />
+
+    <script src="js/raphael.js"></script>
+    <script src="js/raphael.group.js"></script>
+    <script src="js/raphael.tachometer.min.js"></script>
+
+    <script src="js/popup.js"></script>
+    <script src="js/Tangle.js"></script>
+    <script src="js/mootools.js"></script>
+    <script src="js/sprintf.js"></script>
+    <script src="js/BVTouchable.js"></script>
+    <script src="js/TangleKit.js"></script>
+
+    <script src="js/countdown.js"></script>
+    <script>
+      var RAD = Math.PI / 180;
+
+      function getRandomArbitary(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function createRectPath(x, y, a) {
+        return "M" + x + "," + y + "l" + a + ",0 0," + a + "-" + a + ",0z";
+      }
+
+      function createTrianglePath(x, y, a) {
+        return "M" + x + "," + y + "l" + a / 2 + "," + a + " -" + a + ",0z";
+      }
+
+      function createRightArrowPath(x, y) {
+        return "M" + x + "," + y + "m-10-10l40,0 0-6 20,16 -20,16 0-6 -40,0 -0-16z"
+      }
+
+      function createGearboxPath() {
+        return "M295.186,122.908c12.434,18.149,32.781,18.149,45.215,0l12.152-17.736c12.434-18.149,22.109-15.005,21.5,6.986l-0.596,21.49c-0.609,21.992,15.852,33.952,36.579,26.578l20.257-7.207c20.728-7.375,26.707,0.856,13.288,18.29l-13.113,17.037c-13.419,17.434-7.132,36.784,13.971,43.001l20.624,6.076c21.103,6.217,21.103,16.391,0,22.608l-20.624,6.076c-21.103,6.217-27.39,25.567-13.971,43.001l13.113,17.037c13.419,17.434,7.439,25.664-13.287,18.289l-20.259-7.207c-20.727-7.375-37.188,4.585-36.578,26.576l0.596,21.492c0.609,21.991-9.066,25.135-21.5,6.986L340.4,374.543c-12.434-18.148-32.781-18.148-45.215,0.001l-12.152,17.736c-12.434,18.149-22.109,15.006-21.5-6.985l0.595-21.492c0.609-21.991-15.851-33.951-36.578-26.576l-20.257,7.207c-20.727,7.375-26.707-0.855-13.288-18.29l13.112-17.035c13.419-17.435,7.132-36.785-13.972-43.002l-20.623-6.076c-21.104-6.217-21.104-16.391,0-22.608l20.623-6.076c21.104-6.217,27.391-25.568,13.972-43.002l-13.112-17.036c-13.419-17.434-7.439-25.664,13.288-18.29l20.256,7.207c20.728,7.374,37.188-4.585,36.579-26.577l-0.595-21.49c-0.609-21.992,9.066-25.136,21.5-6.986L295.186,122.908z";
+      }
+
+      function font(color) {
+        return {
+          "font": "18px 'Helvetica Neue', Arial",
+          "font-weight": "bold",
+          "fill": color
+        };
+      }
+
+      function createArcPath(cx, cy, r, startAngle, endAngle) {
+        var x1 = cx + r * Math.cos(-startAngle * RAD),
+            x2 = cx + r * Math.cos(-endAngle * RAD),
+            y1 = cy + r * Math.sin(-startAngle * RAD),
+            y2 = cy + r * Math.sin(-endAngle * RAD);
+
+        return ["M", cx, cy, "L", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, "z"];
+      }
+
+      function spinner(r, centerx, centery, spinnerId, R1, R2, count, stroke_width, colour) {
+        var sectorsCount = count || 12,
+            color = colour || "#888",
+            group = r.group(),
+            width = stroke_width || 5,
+            r1 = Math.min(R1, R2) || 10,
+            r2 = Math.max(R1, R2) || 25,
+            cx = centerx + r2 + width,
+            cy = centery + r2 + width,
+
+            sectors = [],
+            opacity = [],
+            beta = 2 * Math.PI / sectorsCount,
+
+            pathParams = { stroke: color, "stroke-width": width, "stroke-linecap": "round" };
+
+        Raphael.getColor.reset();
+
+        if (spinnerId) {
+          group.id(spinnerId);
+        }
+
+        for (var i = 0; i < sectorsCount; i++) {
+          var alpha = beta * i - Math.PI / 2,
+              cos = Math.cos(alpha),
+              sin = Math.sin(alpha);
+
+          opacity[i] = 1 / sectorsCount * i;
+          sectors[i] = r.path([["M", cx + r1 * cos, cy + r1 * sin], ["L", cx + r2 * cos, cy + r2 * sin]])
+                        .attr(pathParams);
+
+          group.push(sectors[i]);
+
+          sectors[i].attr("data-name", "sectors");
+
+          if (color == "rainbow") {
+            sectors[i].attr("stroke", Raphael.getColor());
+          }
+        }
+
+        var tick;
+
+        (function ticker() {
+          opacity.unshift(opacity.pop());
+
+          for (var i = 0; i < sectorsCount; i++) {
+            sectors[i].attr("opacity", opacity[i]);
+          }
+
+          r.safari();
+          tick = setTimeout(ticker, 1000 / sectorsCount);
+        } ());
+
+        return function () {
+          clearTimeout(tick);
+
+          for (var i = 0; i < sectorsCount; i++) {
+            sectors[i].remove();
+          }
+        };
+      }
+
+      Raphael.fn.arrow = function (x, y) {
+          return this.path(["M", x, y ] + "m-10-10l20,0 0-6 10,16 -10,16 0-6 -20,0 0,6 -10-16 10-16z")
+                     .attr({ fill: "#fff", stroke: "none", "stroke-dasharray": "-", "fill-opacity": 0.2 });
+      };
+
+      Raphael.fn.rightArrow = function (x, y) {
+          return this.path(createRightArrowPath(x, y))
+                     .attr({ fill: "#fff", stroke: "none", "stroke-dasharray": "-", "fill-opacity": 0.5 });
+      };
+
+      Raphael.fn.gearBox = function() {
+          return this.path(createGearboxPath())
+                     .attr({ stroke: "#666", opacity: 0.9, "stroke-width": 10 });
+      };
+
+      Raphael.fn.thinArrow = function(x1, y1, x2, y2, size) {
+        var angle = Raphael.angle(x1, y1, x2, y2);
+            a45   = Raphael.rad(angle - 45),
+            a45m  = Raphael.rad(angle + 45),
+            a135  = Raphael.rad(angle - 135),
+            a135m = Raphael.rad(angle + 135),
+            x1a = x1 + Math.cos(a135) * size,
+            y1a = y1 + Math.sin(a135) * size,
+            x1b = x1 + Math.cos(a135m) * size,
+            y1b = y1 + Math.sin(a135m) * size,
+            x2a = x2 + Math.cos(a45) * size,
+            y2a = y2 + Math.sin(a45) * size,
+            x2b = x2 + Math.cos(a45m) * size,
+            y2b = y2 + Math.sin(a45m) * size;
+
+        return this.path("M" + x1 + " " + y1 + "L" + x1a + " " + y1a + "M" + x1 + " " + y1 + "L" + x1b + " " + y1b +
+                         "M" + x1 + " " + y1 + "L" + x2 +  " " + y2 +
+                         "M" + x2 + " " + y2 + "L" + x2a + " " + y2a + "M" + x2 + " " + y2 + "L" + x2b + " " + y2b);
+      };
+
+      Raphael.fn.drawAnnotatedSlice = function(x, y, size, text, color, width, yOffset) {
+        var height = 20;
+
+        width = width || 1;
+        yOffset = yOffset || 0;
+
+        this.text(x + (size / 2), y - 65 - yOffset, text).attr(font(white));
+
+        this.path("M" + x + " " + y + "L" + (x + size) + " " + y).attr({ "stroke": color, "stroke-width": 10 });
+
+        this.path("M" + (x + size) + " " + (y - height) + "L" + (x + size) + " " + (y + height))
+            .attr({ "stroke": color, "stroke-width": width });
+
+        this.path("M" + x + " " + (y - height) + "L" + x + " " + (y + height))
+            .attr({ "stroke": color, "stroke-width": width });
+      };
+
+      var dashed = { fill: "none", stroke: "#666", "stroke-dasharray": "- " },
+          black = "#333",
+          gray = "#888",
+          white = "#ffffff",
+          red = "#ff0000",
+          green = "#00ff00",
+          yellow = "#ffff00",
+          lightBlue = "#00ffff",
+          nodeGreen = "#8CC84B";
+    </script>
+    <script>
+      document.write("<link rel='stylesheet' href='css/print/" +
+                     (window.location.search.match(/print-pdf/gi) ? "pdf" : "paper") +
+                    ".css' type='text/css' media='print'>");
+    </script>
+  </head>
+  <body>
+    <ddiv class="reveal">
+      <div class="slides">
+        <section id="intro">
+          <h2>Zwinność w automatyzacji</h2>
+          <h4>Agile & Automation Days 16.11.2015</h4>
+          <span class="license">
+            License:
+            <a href="http://creativecommons.org/licenses/by-nd/3.0/pl/">CC BY-ND 3.0 PL</a>
+          </span>
+        </section>
+
+        <section id="user_story">
+
+          <section>
+            <h2><em>Pracujemy w Agile</em></h2>
+            <h3>Pracujemy z klientem</h3>
+
+            <img src="img/AgileUCD.jpg" alt="Agile + UX = UCD" />
+          </section>
+
+          <section>
+            <h2>Co to jest <em>UCD</em>?</h2>
+
+            <div>Informację, do czego system ma służyć</div>
+			<div>Informację, do czego system ma służyć</div>
+            <div>Persony, czyli informacje kim są użytkownicy</div>
+            <div>Informację o umiejętnościach użytkowników</div>
+
+          </section>
+		  
+		  <section>
+            <h2>Bardzo istotny slajd</h2>
+
+            <ul>
+              <li>bardzo wazny punkt</li>
+				<li>bardzo wazny punkt</li>
+              <li>bardzo wazny punkt</li>
+			  <li>bardzo wazny punkt</li>
+            </ul>
+
+          </section>
+
+          <section>
+            <h2>Persona</h2>
+
+            <ul>
+              <li>Zdjęcie</li>
+              <li>Opis - wiek, zawód, krótkie wprowadzenie</li>
+              <li>Potrzeby</li>
+              <li>Cele</li>
+              <li>Czego nie lubi?</li>
+            </ul>
+
+          </section>
+
+        <section>
+
+          <section class="assignment">
+            <h2>Zbieramy wymagania!</h2>
+            <h3>Rozmowa z <em>product ownerem</em></h3>
+
+            <time id="us-assignment-timer" class="countdown">
+              <span class="hours">00</span>:<span class="minutes">10</span>:<span class="seconds">00</span>
+            </time>
+
+            <script>
+              (function () {
+                "use strict";
+
+                var element = document.getElementById("us-assignment-timer");
+
+                element.addEventListener("click", createTimer(element, minutes(1)));
+              } ());
+            </script>
+          </section>
+          
+          <section class="solution">
+            <h2>Zadanie 1</h2>
+            <h3>Użytkownik może się zalogować na własne konto</h3>
+
+            <p class="fragment nicer-container">
+              <strong>Jako</strong> Matylda,<br>
+              <strong>Chcę</strong> się zalogować do aplikacji,<br>
+              <strong>Żeby</strong> zobaczyć swoje listy zakupów
+            </p>
+
+            <time id="us-1" class="countdown">
+              <span class="hours">00</span>:<span class="minutes">05</span>:<span class="seconds">00</span>
+            </time>
+
+            <script>
+              (function () {
+                "use strict";
+
+                var element = document.getElementById("us-1");
+
+                element.addEventListener("click", createTimer(element, minutes(5)));
+              } ());
+            </script>
+
+          </section>
+
+     
+
+          <section class="solution">
+            <h2>Zadanie 3</h2>
+            <h3>Zamknięta lista zakupów jest niedostępna dla użytkownika</h3>
+
+            <p class="fragment nicer-container">
+              <strong>Jako</strong> Matylda,<br>
+              <strong>Chcę</strong> aby moje zamknięte listy zakupów nie były widoczne,<br>
+              <strong>Żeby</strong> nie wprowadzały mnie w błąd
+            </p>
+
+            <time id="us-3" class="countdown">
+              <span class="hours">00</span>:<span class="minutes">05</span>:<span class="seconds">00</span>
+            </time>
+
+            <script>
+              (function () {
+                "use strict";
+
+                var element = document.getElementById("us-3");
+
+                element.addEventListener("click", createTimer(element, minutes(5)));
+              } ());
+            </script>
+          </section>
+        </section>
+
+
+          <section>
+            <h2>Dziękujemy za uwagę!</h2>
+
+            <h4><em>Linki dla ciekawskich: </em></h4>
+
+            <ul class="links">
+              <li>
+                <a href="http://creativecommons.org/licenses/by-nd/3.0/pl">
+                  Licencja prezentacji
+                </a>
+              </li>
+              <li>
+                <a href="http://specificationbyexample.com">
+                  Specification by Example
+                </a>
+              </li>
+              <li>
+                <a href="http://www.amazon.com/Succeeding-Agile-Software-Development-Using/dp/0321579364">
+                  Succeeding with Agile
+                </a>,
+                <a href="http://www.amazon.com/User-Stories-Applied-Software-Development/dp/0321205685">
+                  User Stories Applied
+                </a>
+              </li>
+              <li>
+                <a href="http://docs.seleniumhq.org">
+                  Selenium
+                </a>,
+                <a href="http://www.fitnesse.org">
+                  Fitnesse
+                </a>
+              </li>
+              <li>
+                <a href="http://cukes.info">
+                  Cucumber
+                </a>,
+                <a href="http://jnicklas.github.io/capybara">
+                  Capybara
+                </a>
+              </li>
+            </ul>
+          </section>
+
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script src="js/svg-mover.js"></script>
+
+    <script>
+      var BLUE = "#63ABF0",
+          RED = "#FA5F0C",
+          GREEN = "#52A617",
+          YELLOW = "#FFC03C";
+
+      Function.prototype.curry = function() {
+        var fn = this,
+            args = [].slice.call(arguments);
+
+        return function() {
+          return fn.apply(this, args.concat([].slice.call(arguments)));
+        };
+      };
+
+      function getArrayOfDomElements(selector) {
+        return [].slice.call(document.querySelectorAll(selector));
+      }
+
+      function applyColor(color, element) {
+        element.setAttribute("data-background", color);
+      }
+
+      getArrayOfDomElements(".theory").forEach(applyColor.curry(BLUE));
+      getArrayOfDomElements(".solution").forEach(applyColor.curry(GREEN));
+      getArrayOfDomElements(".break").forEach(applyColor.curry(RED));
+      getArrayOfDomElements(".assignment").forEach(applyColor.curry(YELLOW));
+
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: "default",
+        transition: "slide",
+        transitionSpeed: "fast",
+        backgroundTransition: "linear",
+
+        // key bindings for right/left arrow (for remote presenter)
+        //keyboard: {
+        //  39: 'next',
+        //  37: 'prev'
+        //},
+
+        dependencies: [
+          {
+            src: "lib/js/classList.js",condition: function() { return !document.body.classList; }
+          },
+          {
+            src: "plugin/highlight/highlight.js", async: true, callback: function() { hljs.initHighlightingOnLoad(); }
+          },
+          {
+            src: "plugin/zoom-js/zoom.js", async: true, condition: function() { return !!document.body.classList; }
+          },
+          {
+            src: "plugin/notes/notes.js", async: true, condition: function() { return !!document.body.classList; }
+          },
+          {
+            src: "socket.io/socket.io.js", async: true
+          },
+          {
+            src: "plugin/notes-server/client.js", async: true
+          }
+        ]
+      });
+    </script>
+  </body>
+</html>

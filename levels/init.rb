@@ -1,10 +1,11 @@
 difficulty 1
-description "A new directory, `git_hug`, has been created; initialize an empty repository in it."
+
+description "Stworzylismy nowy katalog 'git_hug', zainicjalizuj nowe repozytorium."
 
 solution do
   repo.valid?
 end
 
 hint do
-  puts "You can type `git` in your shell to get a list of available git commands."
+  puts "Mozesz uzyc komendy 'git' w swojej konsoli i podejrzec dostępne polecenia."
 end
