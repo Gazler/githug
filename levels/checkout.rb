@@ -1,5 +1,5 @@
 difficulty 2
-description "Create and switch to a new branch called my_branch.  You will need to create a branch like you did in the previous level."
+description "Stworz i przelacz sie na nowa galaz o nazwie my_branch. Powinienes stworzyc galaz w taki sam sposob jak w poprzednim zadaniu."
 
 setup do
   repo.init
@@ -14,5 +14,5 @@ solution do
 end
 
 hint do
-  puts "Try looking up `git checkout` and `git branch`."
+  puts "Sprawdz komendy 'git checkout' i 'git branch'."
 end

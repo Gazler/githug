@@ -1,5 +1,5 @@
 difficulty 4
-description "You need to merge mybranch into the current branch (master). But there may be some incorrect changes in mybranch which may cause conflicts. Solve any merge-conflicts you come across and finish the merge."
+description "Potrzebujesz polaczyc galaz o nazwie mybranch to aktualnej galezi (master). Na galezi mybranch moga pojawic sie zmiany ktore spowoduja konflikty. Rozwiaz powstale konflikty i dokoncz scalenie (merge)."
 
 setup do
   init_from_level
@@ -19,5 +19,5 @@ solution do
 end
 
 hint do
-  puts ["First you have to do a merge. Then resolve any conflicts and finish the merge", "Take a look at the sections on merge conflicts in 'git merge'.", "Remove the unnecessary lines in `poem.txt`, so only the correct poem remains."]
+  puts ["Poczatkowo musisz wywolac komende merge. Nastepnie rozwiazac konflikty i dokonczyc merge", "Mozesz szukac pomocy pod haslem 'git merge'.", "Usun niepotrzebne linijki w pliku 'poe,.txt', tak aby pozostala poprawna tresc."]
 end

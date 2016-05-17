@@ -1,6 +1,6 @@
 difficulty 2
 
-description "You need to pull changes from your origin repository."
+description "Potrzebujesz zaciagnac zmiany ze zrodlowego (origin) repozytorium"
 
 setup do
   repo.init
@@ -12,5 +12,5 @@ solution do
 end
 
 hint do
-  puts "Check out the remote repositories and research `git pull`."
+  puts "Zaciagnij zmiany ze zdalnego repozytorium i sprawdź polecenie 'git pull'."
 end
