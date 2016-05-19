@@ -1,5 +1,4 @@
 difficulty 2
-
 description "Potrzebujesz zaciagnac zmiany ze zrodlowego (origin) repozytorium"
 
 setup do

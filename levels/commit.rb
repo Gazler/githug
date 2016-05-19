@@ -1,5 +1,5 @@
 difficulty 1
-description "Po tym jak przygotowalismy plik `README` przyszedl czas, zeby go zcommitowac."
+description "Po tym jak przygotowalismy plik `README` przyszedl czas, zeby go zacommitowac."
 
 setup do
   repo.init

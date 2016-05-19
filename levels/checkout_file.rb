@@ -1,6 +1,6 @@
 difficulty 3
 
-description "A file has been modified, but you don't want to keep the modification.  Checkout the `config.rb` file from the last commit."
+description "Plik, ktory zostal zmodyfikowany zawiera zmiany ktorych nie potrzebujesz. Pozbadz sie zmian wprowadzonych z ostatnik commitem w pliku 'config.rb'."
 
 setup do
   repo.init
@@ -21,5 +21,5 @@ solution do
 end
 
 hint do
-  puts "You will need to do some research on the checkout command for this one."
+  puts "W razie potrzeby spojrz na pomoc dotyczacaca komendy 'checkout'."
 end

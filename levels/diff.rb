@@ -1,5 +1,5 @@
 difficulty 2
-description "There have been modifications to the `app.rb` file since your last commit.  Find out which line has changed."
+description "Zostały wprowadzone zmiany w pliku 'app.rb' od Twojego ostatniego commita. Sprawdz ktora linijka zostala zmieniona."
 
 setup do
   init_from_level
@@ -12,5 +12,5 @@ solution do
 end
 
 hint do
-  puts "You are looking for the difference since your last commit.  Don't forget that running `git` on its own will list the possible commands."
+  puts "Szukasz roznic od Twojego ostatniego commita. Uruchomienie komendy 'git' wywola wszystkie dostepne komendy z ich opisem."
 end

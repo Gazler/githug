@@ -1,6 +1,5 @@
 difficulty 2
-
-description "You will be asked for the hash of most recent commit.  You will need to investigate the logs of the repository for this."
+description "Jestes poproszony o znacznik (hash) ostatnich commitow. Potrzebujesz sprawdzic zmiany, ktore zostaly wprowadzone w ostatnim czasie w repozytorium."
 
 setup do
   repo.init
@@ -14,5 +13,5 @@ solution do
 end
 
 hint do
-  puts "You need to investigate the logs.  There is probably a command for doing that!"
+  puts "Musisz sprawdzic logi. Istnieje komenda, ktora pozwoli Ci wypisac wszystkie zmiany."
 end

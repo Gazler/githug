@@ -1,5 +1,5 @@
 difficulty 3
-description "Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well."
+description "Twoja nowa funkcjonalnosc nie zostanie wdrozona i zamierzasz ja usunac. Jednak zalezy Ci na jednym commicie ktory modyfikuje plik 'README', chcesz aby ten plik znalazl sie na glownej galezi (master)."
 
 setup do
     init_from_level
@@ -13,5 +13,5 @@ solution do
 end
 
 hint do
-  puts "Sneak a peek at the `cherry-pick` command."
+  puts "Zapoznaj sie z komenda 'cheryy-pick'."
 end
