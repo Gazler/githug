@@ -1,0 +1,30 @@
+.reveal .TKCursorDragHorizontal {
+  cursor: pointer;
+  cursor: move;
+  cursor: col-resize;
+}
+
+.reveal .TKToggle {
+  color: #46f;
+  border-bottom: 1px dashed #46f;
+  cursor: pointer;
+}
+
+.reveal .TKAdjustableNumber {
+  position: relative;
+  color: #46f;
+  border-bottom: 1px dashed #46f;
+}
+
+.reveal .TKAdjustableNumberHover {}
+
+.reveal .TKAdjustableNumberDown {
+  color: #00c;
+  border-bottom: 1px dashed #00c;
+}
+
+.reveal .TKAdjustableNumberHelp {
+  position: absolute;
+  color: #00f;
+  font: 9px "Helvetica-Neue", "Arial", sans-serif;
+}
