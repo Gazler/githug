@@ -1,6 +1,7 @@
 difficulty 4
-description "You have committed several times but want to undo the middle commit.
-All commits have been pushed, so you can't change existing history."
+
+description "Historia w Twoim repozytorium zawiera kilka commitow, jednak chesz usunac srodkowy commit. " +
+"Wszystkie commity zostaly wypchniete do zdalnego repozytorium wiec nie mozesz zmienic istniejacej historii."
 
 setup do
   repo.init
@@ -27,5 +28,5 @@ solution do
 end
 
 hint do
-  puts "Try the revert command."
+  puts "Sprawdz komende 'revert'"
 end

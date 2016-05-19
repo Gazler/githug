@@ -1,6 +1,6 @@
 difficulty 2
 
-description "This project has a remote repository.  Identify it."
+description "Ten projekt posiada zdalne repozytorium. Znajdz jego nazwe."
 
 setup do
   repo.init
@@ -8,9 +8,9 @@ setup do
 end
 
 solution do
-  "my_remote_repo" == request("What is the name of the remote repository?")
+  "my_remote_repo" == request("Jaka jest nazwa zdalnego repozytorium?")
 end
 
 hint do
-  puts "You are looking for a remote.  You can run `git` for a list of commands."
+  puts "Jezeli potrzebujesz pomocy uzyj komendy 'git', wyswietlone zostana dostepne komendy."
 end

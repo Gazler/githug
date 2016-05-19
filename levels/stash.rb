@@ -1,5 +1,7 @@
 difficulty 2
-description "You've made some changes and want to work on them later. You should save them, but don't commit them."
+description "Zrobiles kilka zmian z ktorymi chcesz pracowac pozniej. Powinienes zamisac je, ale nie commitowac."
+	
+end
 
 setup do
   init_from_level
@@ -12,5 +14,5 @@ solution do
 end
 
 hint do
-  puts "It's like stashing. Try finding appropriate git command."
+  puts "Sprobuj znalezc odpowiednia komende, ktora 'schowa' Twoje zmiany."
 end

@@ -1,5 +1,6 @@
 difficulty 2
-description "The text editor 'vim' creates files ending in `.swp` (swap files) for all files that are currently open.  We don't want them creeping into the repository.  Make this repository ignore `.swp` files."
+description "Jeden z edytorow tekstowych tworzy pliki z rozszerzeniem '.swp'. " +
+"Nie checmy ich commitowac, spraw zeby git ignorowal pliki z rozszerzeniem '.swp'."
 
 setup do
   repo.init
@@ -26,5 +27,5 @@ solution do
 end
 
 hint do
-  puts "You may have noticed there is a file named `.gitignore` in the repository."
+  puts "Zwroc uwage na plik o nazwie '.gitignore'."
 end
