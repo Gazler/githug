@@ -7,7 +7,7 @@ setup do
 end
 
 solution do
-  request("Podaj hasło") == "TestingCup2016"
+  request("Podaj haslo") == "TestingCup2016"
 end
 
 hint do
