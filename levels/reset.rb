@@ -1,5 +1,6 @@
 difficulty 2
-description "There are two files to be committed.  The goal was to add each file as a separate commit, however both were added by accident.  Unstage the file `to_commit_second.rb` using the reset command (don't commit anything)."
+description "Dwa pliki zostaly zacommitowane. Celem bylo dodanie ich w dwoch osobnych commitach, przez przypadek zostaly dodane w jednym. " +
+"Usun plik 'to_commit_second.rb' z listy zacommitowanych uzywajac komendy reset (nie musisz nic commitowac)."
 
 setup do
   repo.init
@@ -18,5 +19,5 @@ solution do
 end
 
 hint do
-  puts "You can get some useful information for git status, it will tell you the command you need to run."
+  puts "Informacje o plikach ktore sa na liscie zacommitowanych uzyskasz dzieki komendzie 'git status'."
 end

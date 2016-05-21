@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="/css/theme/default.css" />
+
+    <title>reveal.js - Slide Notes</title>
+
+    <style>
+      body {
+        font-family: Helvetica;
+        background-color: white;
+      }
+
+      button {
+        font-size: 1.2em;
+
+        width: 220px;
+        height: 50px;
+      }
+
+      #notes {
+        font-size: 1.2em;
+
+        width: 93%;
+        min-height: 50px;
+
+        margin: 5px 0;
+        padding: 10px;
+
+        border: 2px dashed black;
+      }
+
+      #wrap-current-slide {
+        width: 445px;
+        height: 355px;
+      }
+
+      #current-slide {
+        width: 1280px;
+        height: 1024px;
+        border: none;
+      }
+
+      #wrap-next-slide {
+        width: 445px;
+        height: 355px;
+      }
+
+      #next-slide {
+        width: 1280px;
+        height: 1024px;
+        border: none;
+      }
+
+      .scaled-slide {
+        -webkit-transform-origin: 0 0;
+           -moz-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+             -o-transform-origin: 0 0;
+                transform-origin: 0 0;
+
+        -webkit-transform: scale(0.35);
+           -moz-transform: scale(0.35);
+            -ms-transform: scale(0.35);
+             -o-transform: scale(0.35);
+                transform: scale(0.35);
+      }
+
+      .slides {
+        position: relative;
+        float: left;
+
+        margin-bottom: 10px;
+        border: 1px solid black;
+
+        border-radius: 2px;
+        background: rgb(33, 33, 33);
+        overflow: hidden;
+      }
+
+      .next {
+        margin: 0 0 0 10px;
+      }
+
+      .slides span {
+        position: absolute;
+
+        top: 3px;
+        left: 3px;
+
+        font-weight: bold;
+        font-size: 14px;
+
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .time {
+        width: 448px;
+        margin: 30px 0 0 10px;
+        float: left;
+        text-align: center;
+        opacity: 0;
+
+        -webkit-transition: opacity 0.4s;
+           -moz-transition: opacity 0.4s;
+             -o-transition: opacity 0.4s;
+                transition: opacity 0.4s;
+      }
+
+      .elapsed,
+      .clock {
+        color: #333;
+        font-size: 2em;
+        text-align: center;
+        display: inline-block;
+        padding: 0.5em;
+        background-color: #eee;
+        border-radius: 10px;
+      }
+
+      .elapsed h2,
+      .clock h2 {
+        font-size: 0.8em;
+        line-height: 100%;
+        margin: 0;
+        color: #aaa;
+      }
+
+      .elapsed .mute {
+        color: #ddd;
+      }
+
+      @media only screen and (max-width: 540px) {
+        button {
+          width: 160px;
+          height: 44px;
+        }
+
+        #wrap-current-slide {
+          width: 320px;
+          height: 255px;
+        }
+
+        #wrap-next-slide {
+          width: 320px;
+          height: 255px;
+        }
+
+        #notes {
+          width: 300px;
+        }
+
+        .next {
+          margin: 0;
+        }
+
+        .scaled-slide {
+          -webkit-transform-origin: 0 0;
+             -moz-transform-origin: 0 0;
+              -ms-transform-origin: 0 0;
+               -o-transform-origin: 0 0;
+                  transform-origin: 0 0;
+
+          -webkit-transform: scale(0.25);
+             -moz-transform: scale(0.25);
+              -ms-transform: scale(0.25);
+               -o-transform: scale(0.25);
+                  transform: scale(0.25);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="controls">
+      <button id="go-to-previous-slide">PREVIOUS</button> <button id="go-to-next-slide">NEXT</button>
+    </div>
+    <div id="notes" class="notes">
+
+    </div>
+    <div id="wrap-current-slide" class="slides">
+      <iframe src="/?receiver" id="current-slide" class="scaled-slide"></iframe>
+    </div>
+    <div id="wrap-next-slide" class="slides next">
+      <iframe src="/?receiver" id="next-slide" class="scaled-slide"></iframe>
+      <span>UPCOMING:</span>
+    </div>
+
+    <div class="time">
+      <div class="clock">
+        <h2>Time</h2>
+        <span id="clock">0:00:00 AM</span>
+      </div>
+      <div class="elapsed">
+        <h2>Elapsed</h2>
+        <span id="hours">00</span><span id="minutes">:00</span><span id="seconds">:00</span>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/plugin/markdown/marked.js"></script>
+
+    <script>
+      var socketId = "{{ socketId }}",
+
+          SocketData = { socketId: socketId },
+
+          socket = io.connect(window.location.origin),
+
+          notes = document.getElementById("notes"),
+
+          currentSlide = document.getElementById("current-slide"),
+          nextSlide = document.getElementById("next-slide"),
+
+          supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+
+      function fillNotes(notesContent, isMarkdown) {
+        if (isMarkdown) {
+          notes.innerHTML = marked(notesContent);
+        } else {
+          notes.innerHTML = notesContent;
+        }
+      }
+
+      socket.on("initialSlideReceived", function(data) {
+        if (data.socketId !== socketId) {
+          return;
+        }
+
+        fillNotes(data.notes, data.markdown);
+
+        setTimeout(function() {
+          currentSlide.contentWindow.Reveal.slide(data.indexH, data.indexV);
+          nextSlide.contentWindow.Reveal.slide(data.nextIndexH, data.nextIndexV);
+        }, 1000);
+      });
+
+      socket.on("slideData", function(data) {
+        if (data.socketId !== socketId) {
+          return;
+        }
+
+        fillNotes(data.notes, data.markdown);
+
+        currentSlide.contentWindow.Reveal.slide(data.indexH, data.indexV);
+        nextSlide.contentWindow.Reveal.slide(data.nextIndexH, data.nextIndexV);
+      });
+
+      socket.on("fragmentData", function(data) {
+        if (data.socketId !== socketId) {
+          return;
+        }
+
+        if (data.fragment === "next") {
+          currentSlide.contentWindow.Reveal.nextFragment();
+        } else if (data.fragment === "previous") {
+          currentSlide.contentWindow.Reveal.prevFragment();
+        }
+      });
+
+      function sendPrevSlide() {
+        socket.emit("prevSlide", SocketData);
+      }
+
+      function sendNextSlide() {
+        socket.emit("nextSlide", SocketData);
+      }
+
+      function keyDownHandler(event) {
+        if (event.which === 37) {
+          sendPrevSlide();
+        } else if (event.which === 39) {
+          sendNextSlide();
+        }
+      }
+
+      function cancelInteraction(event) {
+        event.stopPropagation();
+        event.preventDefault();
+
+        return false;
+      }
+
+      var start = new Date(),
+
+          timeEl = document.querySelector(".time"),
+          clockEl = document.getElementById("clock"),
+          hoursEl = document.getElementById("hours"),
+          minutesEl = document.getElementById("minutes"),
+          secondsEl = document.getElementById("seconds");
+
+      function zeroPadInteger(num) {
+        var str = "00" + parseInt(num);
+
+        return str.substring(str.length - 2);
+      }
+
+      setInterval( function() {
+        timeEl.style.opacity = 1;
+
+        var diff,
+            hours,
+            minutes,
+            seconds,
+            now = new Date();
+
+        diff = now.getTime() - start.getTime();
+
+        hours = Math.floor(diff / (1000 * 60 * 60));
+        minutes = Math.floor((diff / ( 1000 * 60)) % 60);
+        seconds = Math.floor((diff / 1000 ) % 60);
+
+        clockEl.innerHTML = now.toLocaleTimeString();
+
+        hoursEl.innerHTML = zeroPadInteger(hours);
+        hoursEl.className = hours > 0 ? "" : "mute";
+
+        minutesEl.innerHTML = ":" + zeroPadInteger(minutes);
+        minutesEl.className = minutes > 0 ? "" : "mute";
+
+        secondsEl.innerHTML = ":" + zeroPadInteger(seconds);
+
+      }, 1000);
+
+      if (supportsTouch) {
+        document.querySelector("#go-to-previous-slide").addEventListener("touchend", sendPrevSlide, true);
+        document.querySelector("#go-to-next-slide").addEventListener("touchend", sendNextSlide, true);
+
+        document.querySelector("#current-slide").addEventListener("touchend", cancelInteraction, true);
+        document.querySelector("#next-slide").addEventListener("touchend", cancelInteraction, true);
+      } else {
+        document.addEventListener("keydown", keyDownHandler, true);
+
+        document.querySelector("#go-to-previous-slide").addEventListener("click", sendPrevSlide, true);
+        document.querySelector("#go-to-next-slide").addEventListener("click", sendNextSlide, true);
+
+        document.querySelector("#current-slide").addEventListener("click", cancelInteraction, true);
+        document.querySelector("#next-slide").addEventListener("click", cancelInteraction, true);
+      }
+
+      socket.emit("initialSlide", SocketData);
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 difficulty 1
-description "There are some files in this repository, how many of the files will be committed?"
+description "W repozytorium jest klika zmienionych plikow, jak duzo zostanie ich zacommitowanych?"
 
 setup do
   repo.init
@@ -31,7 +31,7 @@ setup do
 end
 
 solution do
-  numberOfFilesThereWillBeCommit = request("How many changes are going to be committed?")
+  numberOfFilesThereWillBeCommit = request("Jak duzo zmian zostanie zacommitowanych")
 
   isInteger = !!(numberOfFilesThereWillBeCommit =~ /^[-+]?[0-9]+$/)
 
@@ -47,5 +47,5 @@ solution do
 end
 
 hint do
-  puts "You are looking for a command to identify the status of the repository."
+  puts "Szukasz komendy, ktora umozliwi Ci podglad statusu repozytorium."
 end

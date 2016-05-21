@@ -1,0 +1,24 @@
+0000000000000000000000000000000000000000 c8c19225f352dcd14ce660408e4adb70b74b145a Daniel Dec <ddec@future-processing.com> 1463435572 +0200	commit (initial): Pierwszy release prezentacji
+c8c19225f352dcd14ce660408e4adb70b74b145a 60c1139b760d52f426e7c746a18a4612ce2bb572 Daniel Dec <ddec@future-processing.com> 1463435694 +0200	commit: Wprowadzono instrukcję obslugi
+60c1139b760d52f426e7c746a18a4612ce2bb572 1fa61ac619b24243271abce8123a25bb88e05436 Daniel Dec <ddec@future-processing.com> 1463435810 +0200	commit: Nadal działa po poprawkach
+1fa61ac619b24243271abce8123a25bb88e05436 ddff01f2be658cedce1ac7f8149a0f0bbfe027ff Daniel Dec <ddec@future-processing.com> 1463435926 +0200	commit: Nadal działa po poprawkach - wyrzucono kolejne slajdy
+ddff01f2be658cedce1ac7f8149a0f0bbfe027ff 502ebf5c4a219bcf0efe3b4e78f8767bc0e0eb79 Daniel Dec <ddec@future-processing.com> 1463436138 +0200	commit: Dodany pusty slajd
+502ebf5c4a219bcf0efe3b4e78f8767bc0e0eb79 904e73c0b732603209c5b23e2474d690bfaaab79 Daniel Dec <ddec@future-processing.com> 1463436251 +0200	commit: Uzupelniony slajd
+904e73c0b732603209c5b23e2474d690bfaaab79 24792af638d0535af1a30b1c6f5cbd4a6583fa63 Daniel Dec <ddec@future-processing.com> 1463436333 +0200	commit: Zmieniono zegar, poprawiono błąd ortograficzny
+24792af638d0535af1a30b1c6f5cbd4a6583fa63 a28d4fd49f5cf579b65b7b863bfaecff82125148 Daniel Dec <ddec@future-processing.com> 1463436498 +0200	commit: Dodano kolejny bardzo ważny punkt
+a28d4fd49f5cf579b65b7b863bfaecff82125148 60c1139b760d52f426e7c746a18a4612ce2bb572 Daniel Dec <ddec@future-processing.com> 1463436738 +0200	rebase -i (start): checkout 60c1139b760
+60c1139b760d52f426e7c746a18a4612ce2bb572 1fa61ac619b24243271abce8123a25bb88e05436 Daniel Dec <ddec@future-processing.com> 1463436738 +0200	rebase -i (edit): updating HEAD
+1fa61ac619b24243271abce8123a25bb88e05436 05ea67f67f7d2bbe76b4824b2223557b55c836e3 Daniel Dec <ddec@future-processing.com> 1463436803 +0200	commit (amend): Nadal działa po poprawkach
+05ea67f67f7d2bbe76b4824b2223557b55c836e3 3152cd53317285a68d739d1541d253380fb5cc36 Daniel Dec <ddec@future-processing.com> 1463436839 +0200	rebase -i (edit): Nadal działa po poprawkach - wyrzucono kolejne slajdy
+3152cd53317285a68d739d1541d253380fb5cc36 4a6afbdc52ef73f6fa6e54a1789e1543c10376f4 Daniel Dec <ddec@future-processing.com> 1463436868 +0200	commit (amend): Nadal działa po poprawkach - wyrzucono kolejne slajdy
+4a6afbdc52ef73f6fa6e54a1789e1543c10376f4 52e457ccfe7f70aad1397770f6461ebaf15694e5 Daniel Dec <ddec@future-processing.com> 1463436874 +0200	rebase -i (edit): Dodany pusty slajd
+52e457ccfe7f70aad1397770f6461ebaf15694e5 c43fa59aeeac5ce01552684dbd339165d241e90f Daniel Dec <ddec@future-processing.com> 1463436906 +0200	commit (amend): Dodany pusty slajd
+c43fa59aeeac5ce01552684dbd339165d241e90f fb4eff18cd46210ce28bfdb83c85433784820a70 Daniel Dec <ddec@future-processing.com> 1463436910 +0200	rebase -i (edit): Uzupelniony slajd
+fb4eff18cd46210ce28bfdb83c85433784820a70 dd797d1a0edbcbae317940eb289528763cd53298 Daniel Dec <ddec@future-processing.com> 1463436964 +0200	commit (amend): Uzupelniony slajd
+dd797d1a0edbcbae317940eb289528763cd53298 6a75bd84b24f02d6e2d113006f8e63619eb3e7b3 Daniel Dec <ddec@future-processing.com> 1463436972 +0200	rebase -i (edit): Zmieniono zegar, poprawiono błąd ortograficzny
+6a75bd84b24f02d6e2d113006f8e63619eb3e7b3 de5217b729c6d54d6641185512cc3b36b1d68b1d Daniel Dec <ddec@future-processing.com> 1463437002 +0200	commit (amend): Zmieniono zegar, poprawiono błąd ortograficzny
+de5217b729c6d54d6641185512cc3b36b1d68b1d eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 Daniel Dec <ddec@future-processing.com> 1463437009 +0200	rebase -i (edit): Dodano kolejny bardzo ważny punkt
+eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 Daniel Dec <ddec@future-processing.com> 1463437023 +0200	rebase -i (finish): returning to refs/heads/master
+eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 c43fa59aeeac5ce01552684dbd339165d241e90f Daniel Dec <ddec@future-processing.com> 1463437977 +0200	checkout: moving from master to c43fa59aeeac5ce01552684dbd339165d241e90f
+c43fa59aeeac5ce01552684dbd339165d241e90f dd797d1a0edbcbae317940eb289528763cd53298 Daniel Dec <ddec@future-processing.com> 1463438052 +0200	checkout: moving from c43fa59aeeac5ce01552684dbd339165d241e90f to dd797d1a0edbcbae317940eb289528763cd53298
+dd797d1a0edbcbae317940eb289528763cd53298 eff895d69ba70e2d7bcfb7cecd2f2c562fefa4c6 Daniel Dec <ddec@future-processing.com> 1463438401 +0200	checkout: moving from dd797d1a0edbcbae317940eb289528763cd53298 to master

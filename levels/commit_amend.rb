@@ -1,5 +1,5 @@
 difficulty 2
-description "The `README` file has been committed, but it looks like the file `forgotten_file.rb` was missing from the commit.  Add the file and amend your previous commit to include it."
+description "Plik 'README' zostal zacommitowany, jednak wyglada na to ze plik 'forgotten_file.rb' zostal pominiety. Dodaj plik i zmien swoj poprzedni commit tak zeby zawieral ten plik."
 
 setup do
   repo.init
@@ -19,5 +19,5 @@ solution do
 end
 
 hint do
-  puts "Running `git commit --help` will display the man page and possible flags."
+  puts "Uruchom komende 'git commit --help' i zapoznaj sie z mozliwymi akcjami."
 end

@@ -1,30 +1,29 @@
 require 'thor'
 require 'githug'
+
 module Githug
   class CLI < Thor
-
-
     default_task :play
 
-    desc :play, "Initialize the game"
+    desc :play, "Zacznij gre!"
 
     def play
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       make_directory!
       Game.new.play_level
     end
 
-    desc :test, "Test a level from a file path"
+    desc :test, "Sprawdz zadanie z podanej sciezki."
     method_option :errors, :type => :boolean, :default => false
 
     def test(path)
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       make_directory!
       level = Level.load_from_file(path)
       Game.new.test_level(level, options[:errors])
     end
 
-    desc :hint, "Get a hint for the current level"
+    desc :hint, "Wypisz wskazowki dla aktualnego zadania."
 
     def hint
       if level = load_level
@@ -32,29 +31,21 @@ module Githug
       end
     end
 
-    desc :reset, "Reset the current level"
-    long_desc <<-LONGDESC
-      `githug reset` will reset the current level. You can optionally specify a
-      LEVEL parameter which will reset the game to a specific level. For
-      example:
+    desc :reset, "Wyczysc stan obecnego poziomu."
 
-      > $ githug reset merge_squash
-
-      Will reset githug to level '#45: merge_squash'
-    LONGDESC
     def reset(path = nil)
       level = load_level(path)
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       if level
-        UI.puts("resetting level")
+        UI.puts("czyszczenie poziomu")
         level.setup_level
         level.full_description
       else
-        UI.error("Level does not exist")
+        UI.error("Poziom nie istnieje")
       end
     end
 
-    desc :levels, "List all of the levels"
+    desc :levels, "Pokaz wszystkie poziomy."
 
     def levels
       list_with_numbers = Level.list.each_with_index.map do |name, index|
@@ -92,14 +83,14 @@ module Githug
 
       def check_githug_directory!
         if File.exists?("./git_hug")
-          UI.puts "Please change into the git_hug directory"
+          UI.puts "Wejdz do katalogu git_hug"
           exit
         end
       end
 
       def prompt_githug_directory!
-        unless UI.ask("No githug directory found, do you wish to create one?")
-          UI.puts("Exiting")
+        unless UI.ask("Nie znaleziono katalogu git_hug. Czy stworzyc nowy?")
+          UI.puts("Wychodze")
           exit
         end
       end
