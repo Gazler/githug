@@ -8,7 +8,7 @@ module Githug
     desc :play, "Zacznij gre!"
 
     def play
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       make_directory!
       Game.new.play_level
     end
@@ -17,7 +17,7 @@ module Githug
     method_option :errors, :type => :boolean, :default => false
 
     def test(path)
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       make_directory!
       level = Level.load_from_file(path)
       Game.new.test_level(level, options[:errors])
@@ -35,7 +35,7 @@ module Githug
 
     def reset(path = nil)
       level = load_level(path)
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       if level
         UI.puts("czyszczenie poziomu")
         level.setup_level
