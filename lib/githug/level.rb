@@ -7,7 +7,7 @@ module Githug
               "stash", "log", "diff", "blame", "branch", "checkout", "delete_branch",
               "commit_amend", "merge", "conflict", "rebase", "cherry-pick",
               "revert", "remote", "fetch", "pull", "push",  
-              "testing_new_change", "adding_new_slide"]
+              "testing_cup_1", "testing_cup_2"]
 
     attr_accessor :level_no, :level_path, :level_name
 
