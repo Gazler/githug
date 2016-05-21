@@ -1,4 +1,3 @@
-echo ${0%/*}
-pushd ${0%/*}
+pushd ${0%/*} >/dev/null
 ruby bin/githug
-popd
+popd >/dev/null
