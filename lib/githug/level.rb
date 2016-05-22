@@ -2,17 +2,12 @@ module Githug
   class Level
     include UI
 
-    LEVELS = [nil, "init", "config", "add", "commit", "clone",
-              "clone_to_folder", "ignore", "include", "status",
-              "number_of_files_committed", "rm", "rm_cached", "stash", "rename",
-              "restructure", "log", "tag", "push_tags", "commit_amend",
-              "commit_in_future", "reset", "reset_soft", "checkout_file", "remote",
-              "remote_url", "pull", "remote_add", "push", "diff", "blame", "branch",
-              "checkout", "checkout_tag", "checkout_tag_over_branch", "branch_at",
-              "delete_branch", "push_branch", "merge", "fetch", "rebase", "repack", "cherry-pick",
-              "grep", "rename_commit", "squash", "merge_squash", "reorder", "bisect",
-              "stage_lines", "find_old_branch", "revert", "restore", "conflict",
-              "submodule","contribute"]
+    LEVELS = [nil, "init", "config", "add", "commit", "clone", 
+              "clone_to_folder", "status", "number_of_files_committed", "ignore", "reset",
+              "stash", "log", "diff", "blame", "branch", "checkout", "delete_branch",
+              "commit_amend", "merge", "conflict", "rebase", "cherry-pick",
+              "revert", "remote", "fetch", "pull", "push",  
+              "testing_cup_1", "testing_cup_2"]
 
     attr_accessor :level_no, :level_path, :level_name
 
@@ -78,9 +73,9 @@ module Githug
 
     def full_description
       UI.puts
-      UI.puts "Name: #{level_name}"
-      UI.puts "Level: #{level_no}"
-      UI.puts "Difficulty: #{"*"*@difficulty}"
+      UI.puts "Nazwa: #{level_name}"
+      UI.puts "Poziom: #{level_no}"
+      UI.puts "Trudnosc: #{"*"*@difficulty}"
       UI.puts
       UI.puts @description
       UI.puts
@@ -106,7 +101,7 @@ module Githug
     end
 
     def show_hint
-      UI.word_box("Githug")
+      UI.word_box("Testing Cup 2016 GIT training (based on Githug)")
       profile = Profile.load
       current_hint_index = profile.current_hint_index
       if @hints
@@ -121,7 +116,7 @@ module Githug
       elsif @hint
         @hint.call
       else
-        UI.puts("No hints available for this level.")
+        UI.puts("Brak wskazowek dla tego poziomu.")
       end
     end
   end

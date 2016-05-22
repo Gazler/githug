@@ -1,7 +1,7 @@
 difficulty 3
-description "Your local master branch has diverged from " +
-  "the remote origin/master branch. Rebase your commit onto " +
-  "origin/master and push it to remote."
+description "Lokalna wersja repozytorium na galezi glownej (master) zawiera Twoje lokalne zmiany. " +
+"W miedzyczasie ktos zmienil zdalne repozytorium. " +
+"Wykonaj rebase i wypchnij zmiany do zdalnego repozytorium."
 
 setup do
   # remember the working directory so we can come back to it later
@@ -63,5 +63,5 @@ solution do
 end
 
 hint do
-  puts "Take a look at `git fetch`, `git pull`, and `git push`."
+  puts "Sprawdz komendy 'git fetch', 'git pull' i 'git push'."
 end

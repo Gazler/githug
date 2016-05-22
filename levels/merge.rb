@@ -1,5 +1,5 @@
 difficulty 2
-description "We have a file in the branch 'feature'; Let's merge it to the master branch."
+description "Na galezi 'feature' mamy pliki, ktore chcemy polaczyc z glowna galezia (master)."
 
 setup do
 	init_from_level
@@ -10,5 +10,5 @@ solution do
 end
 
 hint do
-  puts "You want to research the `git merge` command."
+  puts "Poznaj komende 'git merge'."
 end

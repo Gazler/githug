@@ -1,5 +1,5 @@
 difficulty 2
-description "Someone has put a password inside the file `config.rb` find out who it was."
+description "Ktos wprowadzil haslo w pliku 'config.rb' znajdz kto to byl"
 
 setup do
   init_from_level
@@ -7,9 +7,9 @@ end
 
 solution do
   offender = repo.commit("97bdd0cccf9f4b8730f78cb53a81a74f205dbcc2").author.name
-  request("Who made the commit with the password?").downcase == offender.downcase
+  request("Kto wprowadzil zmiany umieszczajac haslo?").downcase == offender.downcase
 end
 
 hint do
-  puts "You want to research the `git blame` command."
+  puts "Sprawdz komende 'git blame'."
 end

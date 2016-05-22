@@ -1,5 +1,5 @@
 difficulty 1
-description "There are some files in this repository, one of the files is untracked, which file is it?"
+description "Jeden z plikow w tym repozytorium nie zostal dodany do listy przygotowanej do commita. Ktory to plik?"
 
 setup do
   repo.init
@@ -12,7 +12,7 @@ end
 
 solution do
 
-  name = request("What is the full file name of the untracked file?")
+  name = request("Jak nazywa sie plik niedodany do listy?")
 
   if name != "database.yml"
     return false
@@ -22,5 +22,5 @@ solution do
 end
 
 hint do
-  puts "You are looking for a command to identify the status of the repository."
+  puts "Szukasz komendy ktora zwroci aktualny stan repozytorium."
 end

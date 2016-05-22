@@ -1,6 +1,5 @@
 difficulty 2
-
-description "You have created too many branches for your project. There is an old branch in your repo called 'delete_me', you should delete it."
+description "Masz stworzone wiele galezi w swoim projekcie. Jedna z galezi o nazwie 'delete_me' nie jest Ci potrzebna, usun ja."
 
 setup do
     init_from_level
@@ -11,5 +10,5 @@ solution do
 end
 
 hint do
-  puts "Running 'git --help branch' will give you a list of branch commands."
+  puts "Uruchomienie komendy 'git --help branch' pozwoli Ci zapoznac sie ze wszystkimi komendami dotyczacymi pracy na galeziach."
 end

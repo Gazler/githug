@@ -1,6 +1,5 @@
 difficulty 2
-
-description "We are using a git rebase workflow and the feature branch is ready to go into master. Let's rebase the feature branch onto our master branch."
+description "Popularnym sposobem pracy z gitem jest 'git rebase workflow'. Twoje zmiany sa gotowe zeby dolaczyc je do galezi glownej (mastera)."
 
 setup do
   init_from_level
@@ -12,5 +11,5 @@ solution do
 end
 
 hint do
-  puts "You want to research the `git rebase` command"
+  puts "Poznaj komende 'git rebase'"
 end

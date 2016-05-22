@@ -1,5 +1,5 @@
 difficulty 1
-description "The `README` file has been added to your staging area, now commit it."
+description "Po tym jak przygotowalismy plik `README` przyszedl czas, zeby go zacommitowac."
 
 setup do
   repo.init
@@ -13,5 +13,5 @@ solution do
 end
 
 hint do
-  puts "You must include a message when you commit."
+  puts "Pamietaj, ze musisz dodac opis do przygotowanego commita."
 end

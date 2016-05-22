@@ -1,5 +1,5 @@
 difficulty 2
-description "Looks like a new branch was pushed into our remote repository. Get the changes without merging them with the local repository "
+description "Wyglada na to, ze nowa galaz zostala wypchnieta do repozytorium na ktorym pracujesz. Pobierz zmiany bez laczenia ich z Twoimi lokalnymi zmianami na repozytorium."
 
 setup do
   # remember the working directory so we can come back to it later
@@ -66,5 +66,5 @@ solution do
 end
 
 hint do
-  puts "Look up the 'git fetch' command"
+  puts "Poznaj komende 'git fetch'"
 end
