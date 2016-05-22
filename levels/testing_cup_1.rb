@@ -10,7 +10,7 @@ end
 
 solution do
   offender = repo.commit("dd797d1a0edbcbae317940eb289528763cd53298").author.name
-  request("Podaj hash commita w ktorym powstal blad sprawiajacy, ze prezentacja nie jest czytelnia") == "dd797d1a0edbcbae317940eb289528763cd53298"
+  request("Podaj hash commita w ktorym powstal blad sprawiajacy, ze prezentacja nie jest czytelna") == "dd797d1a0edbcbae317940eb289528763cd53298"
   request("Kto wprowadzil ta zmiane?").downcase == offender.downcase
   request("Ktora linia spowodowala blad?") == "208"
 end
