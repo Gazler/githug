@@ -66,6 +66,7 @@ module Githug
     no_tasks do
 
       def load_level(path = nil)
+        path = Level.list[path.to_i - 1] if path.to_i.to_s == path and 0 < path.to_i and path.to_i <= Level.list.size
         return load_level_from_profile unless path
         return load_level_from_name(path) if Level.list.include?(path)
         Level.load_from_file(path)
