@@ -66,10 +66,15 @@ module Githug
     no_tasks do
 
       def load_level(path = nil)
-        path = Level.list[path.to_i - 1] if path.to_i.to_s == path and 0 < path.to_i and path.to_i <= Level.list.size
         return load_level_from_profile unless path
+        return load_level_from_number(path.to_i) if path.to_i.to_s == path
         return load_level_from_name(path) if Level.list.include?(path)
         Level.load_from_file(path)
+      end
+
+      def load_level_from_number(number)
+        level_name = number >= 1 ? Level.list[number - 1] : nil
+        return load_level_from_name(level_name)
       end
 
       def load_level_from_name(name)
