@@ -98,20 +98,24 @@ describe Githug::CLI do
         subject.reset("add")
       end
 
+      it "resets the level with a level number" do
+        level.should_receive(:setup_level)
+        level.should_receive(:full_description)
+        profile = mock
+        Githug::Profile.stub(:load).and_return(profile)
+        profile.should_receive(:set_level).with("45")
+        Githug::Level.should_receive(:load).with("45").and_return(level)
+        Githug::UI.should_receive(:word_box).with("Githug")
+        Githug::UI.should_receive(:puts).with("resetting level")
+        subject.reset("45")
+      end
+
       it "resets the level with a path" do
         level.should_receive(:setup_level)
         level.should_receive(:full_description)
         Githug::UI.should_receive(:word_box).with("Githug")
         Githug::UI.should_receive(:puts).with("resetting level")
         subject.reset("/foo/bar/level.rb")
-      end
-
-      it "resets the level with a number" do
-        level.should_receive(:setup_level)
-        level.should_receive(:full_description)
-        Githug::UI.should_receive(:word_box).with("Githug")
-        Githug::UI.should_receive(:puts).with("resetting level")
-        subject.reset("45")
       end
     end
 
