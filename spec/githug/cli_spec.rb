@@ -105,6 +105,14 @@ describe Githug::CLI do
         Githug::UI.should_receive(:puts).with("resetting level")
         subject.reset("/foo/bar/level.rb")
       end
+
+      it "resets the level with a number" do
+        level.should_receive(:setup_level)
+        level.should_receive(:full_description)
+        Githug::UI.should_receive(:word_box).with("Githug")
+        Githug::UI.should_receive(:puts).with("resetting level")
+        subject.reset("45")
+      end
     end
 
   end
