@@ -103,8 +103,8 @@ describe Githug::CLI do
         level.should_receive(:full_description)
         profile = mock
         Githug::Profile.stub(:load).and_return(profile)
-        profile.should_receive(:set_level).with("45")
-        Githug::Level.should_receive(:load).with("45").and_return(level)
+        profile.should_receive(:set_level).with("squash")
+        Githug::Level.should_receive(:load).with("squash").and_return(level)
         Githug::UI.should_receive(:word_box).with("Githug")
         Githug::UI.should_receive(:puts).with("resetting level")
         subject.reset("45")
