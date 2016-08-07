@@ -65,7 +65,7 @@ To suggest a level or create a level that has been suggested, check out [the wik
  * Make a level in the levels directory (covered below)
  * Add your level to the LEVELS array inside `lib/githug/level.rb` in a position that makes sense (the "commit" level after the "add" and "init" levels for example)
  * Make sure your level works (covered below)
- * Submit a pull request
+ * Submit a pull request as requested
 
 ## Todo List
 
