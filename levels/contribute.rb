@@ -21,5 +21,5 @@ solution do
 end
 
 hint do
-  puts "Forking the repository would be a good start!"
+  puts "Forking the repository would be a good start! This should be done on github.com"
 end
