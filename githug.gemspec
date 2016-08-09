@@ -23,6 +23,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "grit", "~>2.3.0"
   s.add_dependency "thor", "~>0.14.6"
-  s.add_dependency "rake"
+  s.add_dependency "rake", "<11"
   # s.add_runtime_dependency "rest-client"
 end
