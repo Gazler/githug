@@ -20,7 +20,7 @@ describe Githug::Profile do
     end
   end
 
-  it "allows method acces to getters and setters" do
+  it "allows method access to getters and setters" do
     profile = Githug::Profile.load
     profile.level.should eql(nil)
     profile.level = 1
