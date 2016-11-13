@@ -237,6 +237,12 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "solves the rebase_onto level" do
+    `git checkout readme-update`
+    `git rebase --onto master wrong_branch readme-update`
+    `githug`.should be_solved
+  end
+
   it "solves the repack level" do
     `git repack -d`
     `githug`.should be_solved
