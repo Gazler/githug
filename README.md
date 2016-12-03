@@ -142,6 +142,6 @@ The easiest way to test a level is:
  * Solve the level
  * Run `githug test PATH_TO_YOUR_LEVEL`
 
-Please note that the `githug test` command can be run as `githug test --errors` to get an error stacktrace from your solve method.
+Please note that the `githug test` command can be run as `githug test --errors` to get an error stack trace from your solve method.
 
 It would be ideal if you add an integration test for your level.  These tests live in `spec/githug_spec` and **must** be run in order.  If you add a level but do not add a test, please add a simple `skip_level` test case similar to the `contribute` level.
