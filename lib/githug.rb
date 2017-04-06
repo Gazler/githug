@@ -13,3 +13,4 @@ require 'githug/repository'
 
 Githug::UI.in_stream = STDIN
 Githug::UI.out_stream = STDOUT
+STDIN.sync = true
