@@ -16,5 +16,5 @@ solution do
 end
 
 hint do
-  puts "You may need to use more than one command to complete this.  You have checked your staging area in a previous level.  Don't forget to run `git` for a list of commands."
+  puts ["You may need to use more than one command to complete this.", "You have checked your staging area in a previous level.", "Don't forget to run `git` for a list of commands."]
 end
