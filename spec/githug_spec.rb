@@ -173,7 +173,7 @@ describe "The Game" do
 
   it "solves the push level" do
     `git rebase origin/master`
-    `git push origin`
+    `git push origin master`
     `githug`.should be_solved
   end
 
