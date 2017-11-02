@@ -1,6 +1,6 @@
 difficulty 3
 description "Your local master branch has diverged from " +
-  "the remote origin/master branch. Rebase your commit onto " +
+  "the remote origin/master branch. Rebase your branch onto " +
   "origin/master and push it to remote."
 
 setup do
