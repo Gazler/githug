@@ -47,5 +47,5 @@ solution do
 end
 
 hint do
-  puts "You are looking for a command to identify the status of the repository, resembles a linux command."
+  puts "You are looking for a command to identify the status of the repository, (resembles a linux command)."
 end
