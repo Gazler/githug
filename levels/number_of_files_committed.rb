@@ -31,7 +31,7 @@ setup do
 end
 
 solution do
-  numberOfFilesThereWillBeCommit = request("How many changes are going to be committed?")
+  numberOfFilesThereWillBeCommit = request("How many files are going to be committed?")
 
   isInteger = !!(numberOfFilesThereWillBeCommit =~ /^[-+]?[0-9]+$/)
 
