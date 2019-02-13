@@ -13,7 +13,7 @@ setup do
   FileUtils.touch "file1"
   repo.add        "file1"
   repo.commit_all "First commit"
-  repo.git.tag({'f' => true}, "tag_to_be_pushed")
+  repo.git.tag({'f' => true}, "tag-to-be-pushed")
 
   FileUtils.touch "file2"
   repo.add        "file2"
@@ -35,7 +35,7 @@ setup do
 
   # delete tags from remote
   Dir.chdir tmpdir
-  repo.git.tag({'d' => true}, "tag_to_be_pushed")
+  repo.git.tag({'d' => true}, "tag-to-be-pushed")
 
   # change back to local repo
   Dir.chdir cwd
@@ -52,7 +52,7 @@ solution do
 
   # see if we have the correct tag in the remote
   remote_tags.each do |t|
-    solved=true if t.include?("refs/tags/tag_to_be_pushed")
+    solved=true if t.include?("refs/tags/tag-to-be-pushed")
   end
 
   solved
