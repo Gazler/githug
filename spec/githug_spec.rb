@@ -217,7 +217,7 @@ describe "The Game" do
   end
 
   it "solves the push_branch level" do
-    `git push origin test_branch`
+    `git push origin test-branch`
     `githug`.should be_solved
   end
 
