@@ -115,7 +115,7 @@ describe "The Game" do
   end
 
   it "solves the tag level" do
-    `git tag new_tag`
+    `git tag new-tag`
     `githug`.should be_solved
   end
 
