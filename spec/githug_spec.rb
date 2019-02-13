@@ -239,7 +239,7 @@ describe "The Game" do
 
   it "solves the rebase_onto level" do
     `git checkout readme-update`
-    `git rebase --onto master wrong_branch readme-update`
+    `git rebase --onto master wrong-branch readme-update`
     `githug`.should be_solved
   end
 
