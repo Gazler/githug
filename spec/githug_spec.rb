@@ -285,7 +285,7 @@ describe "The Game" do
   end
 
   it "solves the find_old_branch level" do
-    `git checkout solve_world_hunger`
+    `git checkout solve-world-hunger`
     `githug`.should be_solved
   end
 
