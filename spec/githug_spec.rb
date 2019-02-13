@@ -186,7 +186,7 @@ describe "The Game" do
   end
 
   it "solves the branch level" do
-    `git branch test_code`
+    `git branch test-code`
     `githug`.should be_solved
   end
 
