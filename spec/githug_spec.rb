@@ -212,7 +212,7 @@ describe "The Game" do
   end
 
   it "solves the delete_branch level" do
-    `git branch -d delete_me`
+    `git branch -d delete-me`
     `githug`.should be_solved
   end
 
