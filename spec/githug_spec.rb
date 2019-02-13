@@ -191,7 +191,7 @@ describe "The Game" do
   end
 
   it "solves the checkout level" do
-    `git checkout -b my_branch`
+    `git checkout -b my-branch`
     `githug`.should be_solved
   end
 
