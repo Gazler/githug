@@ -1,5 +1,5 @@
 difficulty 4
-description "You need to merge mybranch into the current branch (master). But there may be some incorrect changes in mybranch which may cause conflicts. Solve any merge-conflicts you come across and finish the merge."
+description "You need to merge my-branch into the current branch (master). But there may be some incorrect changes in my-branch which may cause conflicts. Solve any merge-conflicts you come across and finish the merge."
 
 setup do
   init_from_level
