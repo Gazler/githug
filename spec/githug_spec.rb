@@ -207,7 +207,7 @@ describe "The Game" do
 
   it "solves the branch_at level" do
     commit = `git log HEAD~1 --pretty=short | head -1 | cut -d " " -f 2`
-    `git branch test_branch #{commit}`
+    `git branch test-branch #{commit}`
     `githug`.should be_solved
   end
 
