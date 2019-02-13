@@ -60,7 +60,7 @@ describe "The Game" do
   end
 
   it "solves the clone_to_folder level" do
-    `git clone https://github.com/Gazler/cloneme my_cloned_repo`
+    `git clone https://github.com/Gazler/cloneme my-cloned-repo`
     `githug`.should be_solved
   end
 
