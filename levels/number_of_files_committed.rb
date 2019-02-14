@@ -22,7 +22,7 @@ setup do
   %w{rubyfile1.rb}.each do |file|
     FileUtils.touch(file)
     repo.add(file)
-  end  
+  end
 
   #Untrached files
   %w{rubyfile6.rb rubyfile7.rb}.each do |file|

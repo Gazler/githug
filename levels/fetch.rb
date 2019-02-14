@@ -23,7 +23,7 @@ setup do
   FileUtils.touch "master_file"
   repo.add        "master_file"
   repo.commit_all 'Commits master_file'
-  
+
   #adds remote repo
   Dir.chdir cwd
   `git remote add origin #{tmpdir}/.git`
@@ -38,7 +38,7 @@ setup do
   FileUtils.touch "file1"
   repo.add        "file1"
   repo.commit_all 'Commits file 1'
-  
+
 end
 
 solution do
@@ -50,7 +50,7 @@ solution do
   local_branches = repo.branches.size
 
   # after a git fetch command, each branch will be stored in in the .git/FETCH_HEAD file. Each branch is on its own line
-  # This command will count the number of lines, which will give the number of branches 
+  # This command will count the number of lines, which will give the number of branches
   if File.file?('.git/FETCH_HEAD') #checks for file existance
   	num_remote = File.read(".git/FETCH_HEAD").split("\n").count
   else
@@ -62,7 +62,7 @@ solution do
   	result = true
   else
   	result = false
-  end 
+  end
 end
 
 hint do
