@@ -1,30 +1,30 @@
 difficulty 1
-description "There are some files in this repository, how many of the files will be committed?"
+description "There are some files in this repository, how many of the files are staged for a commit?"
 
 setup do
   repo.init
 
-  #Modified files
+  # Modified files
   %w{rubyfile4.rb rubyfile5.rb}.each do |file|
     FileUtils.touch(file)
     repo.add(file)
   end
   repo.commit_all "Commit"
 
-  #Staged file
+  # Staged file
   File.open("rubyfile4.rb", 'w') { |f| f << "#Changes" }
   repo.add("rubyfile4.rb")
 
-  #Not staged file
+  # Not staged file
   File.open("rubyfile5.rb", 'w') { |f| f << "#Changes" }
 
-  #Changes to be committed
+  # Changes to be committed
   %w{rubyfile1.rb}.each do |file|
     FileUtils.touch(file)
     repo.add(file)
   end
 
-  #Untrached files
+  # Untracked files
   %w{rubyfile6.rb rubyfile7.rb}.each do |file|
     FileUtils.touch(file)
   end

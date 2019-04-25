@@ -1,5 +1,5 @@
 difficulty 4
-description "You decided to delete your latest commit by running `git reset --hard HEAD^`.  (Not a smart thing to do.)  You then change your mind, and want that commit back.  Restore the deleted commit."
+description "You decided to delete your latest commit by running `git reset --hard HEAD^` (not a smart thing to do). Now you changed your mind and want that commit back. Restore the deleted commit."
 
 setup do
   repo.init
@@ -24,5 +24,5 @@ solution do
 end
 
 hint do
-  puts "The commit is still floating around somewhere.  Have you checked out `git reflog`?"
+  puts "The commit is still floating around somewhere. Have you checked out `git reflog`?"
 end

@@ -12,5 +12,5 @@ solution do
 end
 
 hint do
-  puts "It's like stashing. Try finding appropriate git command."
+  puts "It's like stashing. Try finding an appropriate git command."
 end

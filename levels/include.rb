@@ -1,5 +1,5 @@
 difficulty 2
-description "Notice a few files with the '.a' extension.  We want git to ignore all but the 'lib.a' file."
+description "Notice a few files with the '.a' extension. We want git to ignore all but the 'lib.a' file."
 
 setup do
   repo.init

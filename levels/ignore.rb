@@ -1,5 +1,5 @@
 difficulty 2
-description "The text editor 'vim' creates files ending in `.swp` (swap files) for all files that are currently open.  We don't want them creeping into the repository.  Make this repository ignore those swap files which are ending in `.swp`."
+description "The text editor 'vim' creates files ending in `.swp` (swap files) for all files that are currently open. We don't want them creeping into the repository. Make this repository ignore those swap files which are ending in `.swp`."
 
 setup do
   repo.init

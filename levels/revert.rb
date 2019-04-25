@@ -1,6 +1,5 @@
 difficulty 4
-description "You have committed several times but want to undo the middle commit.
-All commits have been pushed, so you can't change existing history."
+description "You have committed several times but want to undo the middle commit. All commits have been pushed, so you can't change existing history."
 
 setup do
   repo.init
