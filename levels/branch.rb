@@ -1,5 +1,5 @@
 difficulty 1
-description "You want to work on a piece of code that has the potential to break things, create the branch test_code."
+description "You want to work on a piece of code that has the potential to break things, create the branch test-code."
 
 setup do
   repo.init
@@ -9,7 +9,7 @@ setup do
 end
 
 solution do
-  repo.branches.map(&:name).include?("test_code")
+  repo.branches.map(&:name).include?("test-code")
 end
 
 hint do

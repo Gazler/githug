@@ -1,11 +1,11 @@
 difficulty 2
 
-description "The remote repositories have a url associated to them.  Please enter the url of remote_location."
+description "The remote repositories have a url associated to them.  Please enter the url of remote-location."
 
 setup do
   repo.init
-  repo.remote_add("my_remote_repo", "https://github.com/Gazler/githug")
-  repo.remote_add("remote_location", "https://github.com/githug/not_a_repo")
+  repo.remote_add("my-remote-repo", "https://github.com/Gazler/githug")
+  repo.remote_add("remote-location", "https://github.com/githug/not_a_repo")
 end
 
 solution do

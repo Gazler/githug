@@ -1,6 +1,6 @@
 difficulty 2
 
-description "We have a git repo and we want to tag the current commit with `new_tag`."
+description "We have a git repo and we want to tag the current commit with `new-tag`."
 
 setup do
     repo.init
@@ -10,7 +10,7 @@ setup do
 end
 
 solution do
-    repo.tags.first.name == "new_tag"
+    repo.tags.first.name == "new-tag"
 end
 
 hint do

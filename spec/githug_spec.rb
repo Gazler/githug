@@ -60,7 +60,7 @@ describe "The Game" do
   end
 
   it "solves the clone_to_folder level" do
-    `git clone https://github.com/Gazler/cloneme my_cloned_repo`
+    `git clone https://github.com/Gazler/cloneme my-cloned-repo`
     `githug`.should be_solved
   end
 
@@ -115,7 +115,7 @@ describe "The Game" do
   end
 
   it "solves the tag level" do
-    `git tag new_tag`
+    `git tag new-tag`
     `githug`.should be_solved
   end
 
@@ -186,12 +186,12 @@ describe "The Game" do
   end
 
   it "solves the branch level" do
-    `git branch test_code`
+    `git branch test-code`
     `githug`.should be_solved
   end
 
   it "solves the checkout level" do
-    `git checkout -b my_branch`
+    `git checkout -b my-branch`
     `githug`.should be_solved
   end
 
@@ -207,17 +207,17 @@ describe "The Game" do
 
   it "solves the branch_at level" do
     commit = `git log HEAD~1 --pretty=short | head -1 | cut -d " " -f 2`
-    `git branch test_branch #{commit}`
+    `git branch test-branch #{commit}`
     `githug`.should be_solved
   end
 
   it "solves the delete_branch level" do
-    `git branch -d delete_me`
+    `git branch -d delete-me`
     `githug`.should be_solved
   end
 
   it "solves the push_branch level" do
-    `git push origin test_branch`
+    `git push origin test-branch`
     `githug`.should be_solved
   end
 
@@ -239,7 +239,7 @@ describe "The Game" do
 
   it "solves the rebase_onto level" do
     `git checkout readme-update`
-    `git rebase --onto master wrong_branch readme-update`
+    `git rebase --onto master wrong-branch readme-update`
     `githug`.should be_solved
   end
 
@@ -285,7 +285,7 @@ describe "The Game" do
   end
 
   it "solves the find_old_branch level" do
-    `git checkout solve_world_hunger`
+    `git checkout solve-world-hunger`
     `githug`.should be_solved
   end
 

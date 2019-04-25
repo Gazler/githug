@@ -6,7 +6,7 @@ setup do
 end
 
 solution do
-  return false unless repo.head.name == "solve_world_hunger"
+  return false unless repo.head.name == "solve-world-hunger"
   true
 end
 

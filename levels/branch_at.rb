@@ -1,5 +1,5 @@
 difficulty 3
-description "You forgot to branch at the previous commit and made a commit on top of it. Create branch test_branch at the commit before the last."
+description "You forgot to branch at the previous commit and made a commit on top of it. Create branch test-branch at the commit before the last."
 
 setup do
   repo.init
@@ -15,8 +15,8 @@ setup do
 end
 
 solution do
-  return false unless repo.branches.map(&:name).include?("test_branch")
-  repo.commits("test_branch").each { |commit| return false if commit.message ==  "Updating file1 again" }
+  return false unless repo.branches.map(&:name).include?("test-branch")
+  repo.commits("test-branch").each { |commit| return false if commit.message ==  "Updating file1 again" }
   true
 end
 

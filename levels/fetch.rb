@@ -32,7 +32,7 @@ setup do
 
   Dir.chdir tmpdir
   # create a new branch in the remote repo
-  `git checkout -b new_branch --quiet`
+  `git checkout -b new-branch --quiet`
 
   # adds a file into the new branch.  Should not be pulled into the local
   FileUtils.touch "file1"

@@ -4,11 +4,11 @@ description "This project has a remote repository.  Identify it."
 
 setup do
   repo.init
-  repo.remote_add("my_remote_repo", "https://github.com/Gazler/githug")
+  repo.remote_add("my-remote-repo", "https://github.com/Gazler/githug")
 end
 
 solution do
-  "my_remote_repo" == request("What is the name of the remote repository?")
+  "my-remote-repo" == request("What is the name of the remote repository?")
 end
 
 hint do
