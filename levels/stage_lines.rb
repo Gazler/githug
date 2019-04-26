@@ -25,5 +25,5 @@ solution do
 end
 
 hint do
-  puts "You might want to try to manipulate the hunks of the diff to choose which lines of the diff get staged. Read about the flags which can be passed to the `add` command; `man git-add`."
+  puts "You might want to try to manipulate the hunks of the diff to choose which lines of the diff get staged. Read about the flags which can be passed to the `add` command; `git --help add`."
 end

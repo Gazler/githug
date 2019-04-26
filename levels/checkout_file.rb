@@ -1,6 +1,6 @@
 difficulty 3
 
-description "A file has been modified, but you don't want to keep the modification.  Checkout the `config.rb` file from the last commit."
+description "A file has been modified, but you don't want to keep the modification. Checkout the `config.rb` file from the last commit."
 
 setup do
   repo.init

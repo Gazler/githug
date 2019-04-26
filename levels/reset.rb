@@ -1,5 +1,5 @@
 difficulty 2
-description "There are two files to be committed.  The goal was to add each file as a separate commit, however both were added by accident.  Unstage the file `to_commit_second.rb` using the reset command (don't commit anything)."
+description "There are two files to be committed. The goal was to add each file as a separate commit, however both were added by accident. Unstage the file `to_commit_second.rb` using the reset command (don't commit anything)."
 
 setup do
   repo.init

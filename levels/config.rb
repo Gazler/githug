@@ -29,5 +29,5 @@ solution do
 end
 
 hint do
-  puts "These settings are config settings.  You should run `git help config` if you are stuck."
+  puts "These settings are config settings. You should run `git help config` if you are stuck."
 end

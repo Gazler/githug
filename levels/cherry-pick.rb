@@ -3,7 +3,7 @@ description "Your new feature isn't worth the time and you're going to delete it
 
 setup do
     init_from_level
-    `git stash` #fix for README.md being in githug root an the level
+    `git stash` # fix for README.md being in githug root an the level
 end
 
 solution do

@@ -1,5 +1,5 @@
 difficulty 1
-description "There are some files in this repository, one of the files is untracked, which file is it?"
+description "There are some files in this repository, but only one of them is untracked. Which file is it?"
 
 setup do
   repo.init
