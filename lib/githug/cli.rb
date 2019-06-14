@@ -32,7 +32,7 @@ module Githug
       end
     end
 
-    desc :reset, "Reset the current level"
+    desc :reset, "Reset the current level or select specific level"
     long_desc <<-LONGDESC
       `githug reset` will reset the current level. You can optionally specify a
       LEVEL parameter which will reset the game to a specific level. For
