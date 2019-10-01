@@ -54,13 +54,21 @@ module Githug
       end
     end
 
-    desc :levels, "List all of the levels"
+    desc :levels, "List all of the levels (green passed, red pending)"
 
     def levels
-      list_with_numbers = Level.list.each_with_index.map do |name, index|
-        "##{index + 1}: #{name}"
+      level = load_level_from_profile
+      pending = false
+      Level.list.each_with_index.map do |name, index|
+        if index + 1 == level.level_no
+          pending = true
+        end
+        if !pending
+          UI.success("##{index + 1}: #{name}")
+        else
+          UI.error("##{index + 1}: #{name}")
+        end
       end
-      UI.puts(list_with_numbers)
     end
 
     no_tasks do
