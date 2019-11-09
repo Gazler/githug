@@ -15,5 +15,5 @@ solution do
 end
 
 hint do
-  puts "Build a time machine, move to the future and commit your changes, then go back and verify results ;)."
+  puts "Build a time machine, and commit --date \"future\"."
 end
