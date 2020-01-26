@@ -47,12 +47,13 @@ Type `y` (yes) to continue, `n` (no) to cancel and quit Githug.
 
 ### Commands
 
-Githug has 4 game commands:
+Githug has 5 game commands:
 
  * play - The default command, checks your solution for the current level
  * hint - Gives you a hint (if available) for the current level
  * reset - Reset the current level or reset the level to a given name or path
  * levels - List all the levels
+ * vscode - Can't exit Vim? Switch your default Git editor to VS Code
 
 ## Change Log
 

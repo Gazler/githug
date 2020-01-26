@@ -71,6 +71,23 @@ module Githug
       end
     end
 
+    desc :vscode, "Change your default Git editor to VS Code"
+
+    def vscode
+      UI.puts("Checking to see if you have VS Code installed...")
+      if system("code --help >/dev/null 2>&1")
+        UI.success("You have VS Code installed!")
+        UI.puts("Changing your Git config to use VS Code...")
+        if system("git config --global core.editor 'code --wait'")
+          UI.success("VS Code is now your default Git editor!")
+        else
+          UI.error("VS Code is installed, however an error occurred trying to edit your Git config.")
+        end
+      else
+        UI.error("VS Code may be uninstalled. If you are on Mac OSX, open VS Code, press SHIFT + CMD + P and select 'Shell Command: Install 'Code' command in path' from the Command Palette and try again.")
+      end
+    end
+
     no_tasks do
 
       def load_level(path = nil)
