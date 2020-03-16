@@ -7,7 +7,7 @@ end
 
 solution do
   line = request "What is the number of the line which has changed?"
-  return false unless line == "26"
+  return false unless line == "23"
   true
 end
 
