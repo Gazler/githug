@@ -17,7 +17,7 @@ setup do
 end
 
 solution do
-  repo.commits[1].message == "First commit"
+  repo.commits.first.parents[0].message == "First commit"
 end
 
 hint do
