@@ -12,7 +12,7 @@ module Githug
               "delete_branch", "push_branch", "merge", "fetch", "rebase", "rebase_onto", "repack", "cherry-pick",
               "grep", "rename_commit", "squash", "merge_squash", "reorder", "bisect",
               "stage_lines", "find_old_branch", "revert", "restore", "conflict",
-              "submodule","contribute"]
+              "submodule","contribute","aliases"]
 
     attr_accessor :level_no, :level_path, :level_name
 
