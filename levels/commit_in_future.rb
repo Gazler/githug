@@ -15,5 +15,5 @@ solution do
 end
 
 hint do
-  puts "Build a time machine, and commit --date \"future\"."
+  puts "Build a time format, and commit your code using --date parameter for \"future\"."
 end
