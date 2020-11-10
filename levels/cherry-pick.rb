@@ -13,5 +13,5 @@ solution do
 end
 
 hint do
-  puts "Sneak a peek at the `cherry-pick` command."
+  puts "Sneak a peek at the `git help cherry-pick` command."
 end
