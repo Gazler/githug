@@ -6,14 +6,14 @@ setup do
   FileUtils.touch("app.rb")
   FileUtils.touch("README.md")
   repo.add("app.rb")
-  `echo "Some buggy code" >> app.rb`
+  File.write("app.rb", "Some buggy code")
   repo.add("README.md")
-  `echo "Hey! This is the master branch." >> README.md`
+  File.write("README.md", "Hey! This is the master branch.")
   repo.commit_all("Initial commit")
 
   repo.git.native :checkout, {"b" => true}, 'other_branch'
-  `echo "Fixed code" > app.rb`
-  `echo "Hey! This is the other_branch branch, and we don't want this to be included in master!" > README.md`
+  File.write("app.rb", "Fixed code")
+  File.write("README.md", "Hey! This is the other_branch branch, and we don't want this to be included in master!")
   repo.add("app.rb")
   repo.add("README.md")
   repo.commit_all("Some more changes")
