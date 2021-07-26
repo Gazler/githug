@@ -13,6 +13,6 @@ matrix:
     - rvm: ruby-head
 
 before_install:
-  - gem update --system 2.1.11
+  - gem update --system
   - git config --global user.email 'user@example.com'
   - git config --global user.name 'Test User'
