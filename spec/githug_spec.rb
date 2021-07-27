@@ -153,11 +153,6 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
-  it "solves the checkout_file_from_branch level" do
-    `git checkout other_branch -- app.rb`
-    `githug`.should be_solved
-  end
-
   it "solves the remove level" do
     `git remote | githug`.should be_solved
   end
