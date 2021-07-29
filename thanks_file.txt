@@ -1,0 +1,3 @@
+Thank u, Gazler!
+That was really awesome.
+Best for me were bisect, log, rebase, reflog, merge.
