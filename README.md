@@ -1,6 +1,8 @@
 # Githug
 Git Your Game On 
 
+Make test pull request
+
 [![Build Status](https://travis-ci.org/Gazler/githug.svg?branch=master)](https://travis-ci.org/Gazler/githug) [![Code Climate](https://codeclimate.com/github/Gazler/githug.svg)](https://codeclimate.com/github/Gazler/githug)
 
 ## About
