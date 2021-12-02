@@ -11,5 +11,5 @@ solution do
 end
 
 hint do
-  puts "You can check option using git branch command."
+  puts "You can check option using git branch command so user can get better hint."
 end
