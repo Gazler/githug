@@ -10,10 +10,6 @@ Githug is designed to give you a practical way of learning git.  It has a series
 
 Githug should work on Linux, OS X and Windows.
 
-## Teaching with Githug
-
-For teachers, _Docker_ can be used to generate a containerized application that is designed to track the progress of your students ([more detail can be found here](https://hub.docker.com/r/orwa84/githug)).
-
 ### Prerequisites
 
 Githug requires Ruby 1.8.7 or higher.
@@ -35,6 +31,10 @@ To install Githug, run
 If you get a complaint about permissions, you can rerun the command with `sudo`:
 
     sudo gem install githug
+    
+#### Usage with Docker
+
+An unofficial _Docker_ image for this project is available at ([more detail can be found here](https://hub.docker.com/r/orwa84/githug)).
 
 ### Starting the Game
 
