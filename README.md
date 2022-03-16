@@ -34,7 +34,7 @@ If you get a complaint about permissions, you can rerun the command with `sudo`:
     
 #### Usage with Docker
 
-An unofficial _Docker_ image for this project is available at ([more detail can be found here](https://hub.docker.com/r/orwa84/githug)).
+An unofficial _Docker_ image for this project by [@odiraneyya](https://github.com/odiraneyya) is available on ([Docker Hub](https://hub.docker.com/r/orwa84/githug)).
 
 ### Starting the Game
 
