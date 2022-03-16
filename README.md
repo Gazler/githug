@@ -12,7 +12,8 @@ Githug should work on Linux, OS X and Windows.
 
 ## Teaching with Githug
 
-For teachers, Dockercan be used to generate a containerized application that is designed to track the progress of your students ([more detail can be found below](#for-teachers)).
+For teachers, _Docker_ can be used to generate a containerized application that is designed to track the progress of your students ([more detail can be found below](#for-teachers)).
+
 ### Prerequisites
 
 Githug requires Ruby 1.8.7 or higher.
@@ -61,15 +62,15 @@ Githug has 4 game commands:
 
 After cloning this repo (... or a forked repo populated with custom levels tailored to your course), your students should be instructed on how to build and start the interactive application using Docker, as follows:
 
-   docker run --name github-orwa -it $(docker build .)
+    docker run --name github-orwa -it $(docker build -q .)
 
-... where the student is advised to replace _orwa_ with his/her name. In case of multiple students sharing the same computer, different containers can be built and used by the corresponding students.
+... where the student is advised to replace _orwa_ with his/her own name. In case of multiple students sharing the same computer, different containers can be ran from the same image with their own state representing the progress of each student.
 
-After solving a number of levels, the student should "exit" the container, which will save their progress automatically in the `/data` volume inside the continer.
+After solving a number of levels, the student should "exit" the container by pressing CTRL+D or typing `exit`, which will save their progress automatically in the `/data` volume inside the continer.
 
 To pick up from where the student left off. The following command can be used:
 
-  docker start -ai githug-orwa
+    docker start -ai githug-orwa
 
 ... with `githug-orwa` replaced with the name of the container used when running the built image.
 
