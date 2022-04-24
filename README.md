@@ -92,7 +92,7 @@ setup do
   FileUtils.touch("README")
 end
 
-solution do
+solution do41
   return false unless repo.status.files.keys.include?("README")
   return false if repo.status.files["README"].untracked
 
