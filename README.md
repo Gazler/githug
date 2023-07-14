@@ -154,3 +154,6 @@ Please note that the `githug test` command can be run as `githug test --errors` 
 It would be ideal if you add an integration test for your level.  These tests live in `spec/githug_spec` and **must** be run in order.  If you add a level but do not add a test, please add a simple `skip_level` test case similar to the `contribute` level.
 
 
+Это какой-то проект на гитхаб аккаунте (Если это окажется у автора данного репозитория, то я взял его в качестве обучения работы с чужими репозиториями. Преподователь в лекции использовал свой репозиторий в качестве примера, но, к сожалению, лекция идет в записи и на момент ее просмотра мной, его аккаунт на гитхаб был либо удален, либо с ним случилось что-то еще (я его не нашел))
+
+(If this turns out to be the author of this repository, I took it as a tutorial on working with other people's repositories. The instructor used his repository as an example in the lecture, but unfortunately the lecture is recorded and at the time I watched it, his github account was either deleted or something else happened to it (I couldn't find it)).
