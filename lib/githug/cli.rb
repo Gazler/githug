@@ -97,7 +97,7 @@ module Githug
       end
 
       def check_githug_directory!
-        if File.exists?("./git_hug")
+        if File.exist?("./git_hug")
           UI.puts "Please change into the git_hug directory"
           exit
         end

@@ -35,7 +35,7 @@ module Githug
         level_path = path.chomp(File.extname(path))
         level = self.new
 
-        return false unless File.exists?(path)
+        return false unless File.exist?(path)
 
         level.instance_eval(File.read(path))
         level.level_name = File.basename(path, File.extname(path))
