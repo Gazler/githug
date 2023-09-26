@@ -11,7 +11,7 @@ RUN apt update && apt install -y man git && apt install --reinstall coreutils
 # content for the classroom activity.
 ENV DATA_PATH="/data"
 # The REPO_PATH is where the original or the teacher's forked repo
-# resides inside the container.
+# resides inside the container. 
 ENV REPO_PATH="/root/githug"
 # The LEVEL_PATH is where the current challenge resides and where
 # students should navigate prior to attemping to use the `githug`
