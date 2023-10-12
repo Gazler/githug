@@ -153,4 +153,8 @@ Please note that the `githug test` command can be run as `githug test --errors` 
 
 It would be ideal if you add an integration test for your level.  These tests live in `spec/githug_spec` and **must** be run in order.  If you add a level but do not add a test, please add a simple `skip_level` test case similar to the `contribute` level.
 
+## FAQs
 
+1. Answers are not being checked properly
+
+   *This is a common issue we are facing and we are actively working to fix it. In the mean time, You can run this command, `git branch -m master` and continue with the levels. The issue arises because of the recent git update of calling the default branch `main` instead of `master`. Happy Learning!*
