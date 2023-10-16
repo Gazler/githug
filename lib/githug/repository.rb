@@ -20,7 +20,7 @@ module Githug
     end
 
     def create_gitignore
-      Dir.chdir("git_hug") if File.exists?("./git_hug")
+      Dir.chdir("git_hug") if File.exist?("./git_hug")
       File.open(".gitignore", "w") do |file|
         file.puts(".profile.yml")
         file.puts(".gitignore")
