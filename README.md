@@ -4,7 +4,7 @@ Git Your Game On
 [![Build Status](https://travis-ci.org/Gazler/githug.svg?branch=master)](https://travis-ci.org/Gazler/githug) [![Code Climate](https://codeclimate.com/github/Gazler/githug.svg)](https://codeclimate.com/github/Gazler/githug)
 
 ## About
-Githug is designed to give you a practical way of learning git.  It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
+Githug is designed to give you a practical way of learning git. It has a series of levels, each requiring you to use git commands to arrive at a correct answer.
 
 ## Playing Githug
 
