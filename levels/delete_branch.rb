@@ -11,5 +11,5 @@ solution do
 end
 
 hint do
-  puts "Running 'git --help branch' will give you a list of branch commands."
+  puts "You can check option using git branch command so user can get better hint."
 end
