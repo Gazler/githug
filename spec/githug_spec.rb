@@ -258,6 +258,10 @@ describe "The Game" do
     `echo "4" | githug`.should be_solved
   end
 
+  it "solved the shortlog level" do
+    `echo "25" | githug`.should_be_solved
+  end
+
   it "solves the rename_commit level" do
     skip_level
   end
