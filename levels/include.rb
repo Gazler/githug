@@ -17,5 +17,5 @@ solution do
 end
 
 hint do
-  puts "Using `git help gitignore`, read about the optional prefix to negate a pattern."
+  puts "Using `git help ignore`, read about the optional prefix to negate a pattern."
 end
