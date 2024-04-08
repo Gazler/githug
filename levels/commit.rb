@@ -3,6 +3,7 @@ description "The `README` file has been added to your staging area, now commit i
 
 setup do
   repo.init
+  system "git branch -m master"
   FileUtils.touch("README")
   repo.add("README")
 end
