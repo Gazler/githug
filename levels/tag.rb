@@ -7,6 +7,7 @@ setup do
     FileUtils.touch("somefile.txt")
     repo.add("somefile.txt")
     repo.commit_all("Added some file to the repo")
+    system "git branch -m master"
 end
 
 solution do
