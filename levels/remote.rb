@@ -5,6 +5,7 @@ description "This project has a remote repository. Identify it."
 setup do
   repo.init
   repo.remote_add("my_remote_repo", "https://github.com/Gazler/githug")
+  system "git branch -m master"
 end
 
 solution do
