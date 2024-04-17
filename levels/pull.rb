@@ -5,6 +5,7 @@ description "You need to pull changes from your origin repository."
 setup do
   repo.init
   repo.remote_add("origin", "https://github.com/pull-this/thing-to-pull")
+  system "git branch -m master"
 end
 
 solution do
