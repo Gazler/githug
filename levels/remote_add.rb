@@ -4,6 +4,7 @@ description "Add a remote repository called `origin` with the url https://github
 
 setup do
   repo.init
+  system "git branch -m master"
 end
 
 solution do
