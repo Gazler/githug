@@ -9,6 +9,7 @@ setup do
   FileUtils.touch("newfile.rb")
   repo.add("newfile.rb")
   repo.commit_all("Premature commit")
+  system "git branch -m master"
 end
 
 solution do
