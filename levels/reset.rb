@@ -9,6 +9,7 @@ setup do
   FileUtils.touch("to_commit_first.rb")
   FileUtils.touch("to_commit_second.rb")
   repo.add(".")
+  system "git branch -m master"
 end
 
 solution do
