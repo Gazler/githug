@@ -1,5 +1,5 @@
 difficulty 1
-description "Set up your git name and email, this is important so that your commits can be identified."
+description "Set up your git name and email; this is important so that your commits can be identified."
 
 setup do
   repo.init
