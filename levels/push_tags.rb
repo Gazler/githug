@@ -14,6 +14,7 @@ setup do
   repo.add        "file1"
   repo.commit_all "First commit"
   repo.git.tag({'f' => true}, "tag_to_be_pushed")
+  system "git branch -m master"
 
   FileUtils.touch "file2"
   repo.add        "file2"
