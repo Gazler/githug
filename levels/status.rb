@@ -1,10 +1,11 @@
 difficulty 1
-description "There are some files in this repository, but only one of them is untracked. Which file is it?"
+description "Among the files in this repository, which of them is untracked?"
 
 setup do
   repo.init
   %w{config.rb README setup.rb deploy.rb Guardfile}.each do |file|
     FileUtils.touch(file)
+    system "git branch -m master"
     repo.add(file)
   end
   FileUtils.touch("database.yml")
