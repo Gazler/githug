@@ -6,6 +6,7 @@ setup do
   repo.init
   repo.remote_add("my_remote_repo", "https://github.com/Gazler/githug")
   repo.remote_add("remote_location", "https://github.com/githug/not_a_repo")
+  system "git branch -m master"
 end
 
 solution do
