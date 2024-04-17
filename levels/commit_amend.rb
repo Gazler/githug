@@ -7,6 +7,7 @@ setup do
   repo.add("README")
   repo.commit_all("Initial commit")
   FileUtils.touch("forgotten_file.rb")
+  system "git branch -m master"
 end
 
 solution do
