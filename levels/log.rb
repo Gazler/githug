@@ -1,12 +1,13 @@
 difficulty 2
 
-description "Find out what the hash of the latest commit is."
+description "Identify the hash of the latest commit."
 
 setup do
   repo.init
   file = File.new("newfile.rb", "w")
   repo.add("newfile.rb")
   repo.commit_all("THIS IS THE COMMIT YOU ARE LOOKING FOR!")
+  system "git branch -m master"
 end
 
 solution do
