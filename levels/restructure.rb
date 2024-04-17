@@ -13,6 +13,8 @@ setup do
   repo.add("contact.html")
   repo.add("index.html")
 
+  system "git branch -m master"
+
   repo.commit_all("adding web content.")
 end
 
