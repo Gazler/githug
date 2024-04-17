@@ -1,10 +1,11 @@
 difficulty 2
 
-description "A file has accidentally been added to your staging area, find out which file and remove it from the staging area. *NOTE* Do not remove the file from the file system, only from git."
+description "A file has accidentally been added to your staging area. Identify and remove it from the staging area. *NOTE* Do not remove the file from the file system, only from git."
 
 setup do
   repo.init
   FileUtils.touch("deleteme.rb")
+  system "git branch -m master"
   repo.add(".gitignore")
   repo.add("deleteme.rb")
 end
