@@ -14,6 +14,7 @@ setup do
   File.open("config.rb", "a") do |file|
     file.puts("These are changed you don't want to keep!")
   end
+  system "git branch -m master"
 end
 
 solution do
