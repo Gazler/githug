@@ -1,5 +1,5 @@
 difficulty 1
-description "Clone the repository at https://github.com/Gazler/cloneme to `my_cloned_repo`."
+description "Clone the repository at https://github.com/Gazler/cloneme into the folder `my_cloned_repo`."
 
 solution do
   repo("my_cloned_repo").commit("157b2b61f29ab9df45f31c7cd9cb5d8ff06ecde4")
