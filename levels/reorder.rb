@@ -7,6 +7,7 @@ setup do
   FileUtils.touch "README"
   repo.add        "README"
   repo.commit_all "Initial Setup"
+  system "git branch -m master"
 
   FileUtils.touch "file1"
   repo.add        "file1"
