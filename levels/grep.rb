@@ -3,6 +3,7 @@ description "Your project's deadline approaches, you should evaluate how many TO
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do
