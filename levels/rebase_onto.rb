@@ -13,6 +13,7 @@ setup do
   File.open(authors_file, "w") { |f| f << "https://github.com/janis-vitols\n" }
   repo.add(authors_file)
   repo.commit_all("Create authors file")
+  system "git branch -m master"
 
   repo.git.native :checkout, { "b" => true }, "wrong_branch"
   File.open(authors_file, "w") { |f| f << "None\n" }
