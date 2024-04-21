@@ -3,7 +3,8 @@ difficulty 2
 description "You have created too many branches for your project. There is an old branch in your repo called 'delete_me', you should delete it."
 
 setup do
-    init_from_level
+  init_from_level
+  system "git branch -m master"
 end
 
 solution do
