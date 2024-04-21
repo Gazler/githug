@@ -1,6 +1,6 @@
 difficulty 2
 
-description "A file has been removed from the working tree, but not from the repository. Identify this file was and remove it."
+description "A file has been removed from the working tree, but not from the repository. Identify this file and remove it."
 
 setup do
   repo.init
