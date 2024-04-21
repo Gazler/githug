@@ -7,6 +7,7 @@ setup do
   File.open("feature.rb", "w") do |file|
     file.puts("this is the class of my feature")
   end
+  system "git branch -m master"
 
   repo.add("feature.rb")
   repo.commit_all("Added initial feature file")
