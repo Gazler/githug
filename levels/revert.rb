@@ -7,6 +7,7 @@ setup do
   FileUtils.touch "file1"
   repo.add        "file1"
   repo.commit_all "First commit"
+  system "git branch -m master"
 
   FileUtils.touch "file3"
   repo.add        "file3"
