@@ -3,6 +3,7 @@ description "You need to merge mybranch into the current branch (master). But th
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do
