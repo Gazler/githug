@@ -4,6 +4,7 @@ description "We are using a git rebase workflow and the feature branch is ready 
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do
