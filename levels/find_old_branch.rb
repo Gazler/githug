@@ -3,6 +3,7 @@ description "You have been working on a branch but got distracted by a major iss
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do
