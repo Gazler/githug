@@ -6,6 +6,7 @@ setup do
   FileUtils.touch("foo")
   repo.add("foo")
   repo.commit_all("Added foo")
+  system "git branch -m master"
 end
 
 solution do
