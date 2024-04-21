@@ -2,8 +2,9 @@ difficulty 3
 description "Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well."
 
 setup do
-    init_from_level
-    `git stash` # fix for README.md being in githug root an the level
+  init_from_level
+  `git stash` # fix for README.md being in githug root an the level
+  system "git branch -m master"
 end
 
 solution do
