@@ -7,6 +7,7 @@ setup do
   FileUtils.touch "file1"
   repo.add        "file1"
   repo.commit_all "First commit"
+  system "git branch -m master"
 
   repo.git.native :checkout, {"b" => true}, 'long-feature-branch'
   File.open("file3", 'w') { |f| f << "some feature\n" }
