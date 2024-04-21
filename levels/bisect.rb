@@ -1,9 +1,10 @@
 difficulty 3
-description "A bug was introduced somewhere along the way. You know that running `ruby prog.rb 5` should output 15. You can also run `make test`. What are the first 7 chars of the hash of the commit that introduced the bug."
+description "A bug was introduced somewhere along the way. You know that running `ruby prog.rb 5` should output 15. You can also run `make test`. What are the first 7 chars of the hash of the commit (the abbreviated hash) that introduced the bug?"
 
 setup do
   init_from_level
   repo.init
+  system "git branch -m master"
 end
 
 solution do
