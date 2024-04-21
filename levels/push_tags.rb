@@ -1,5 +1,5 @@
 difficulty 2
-description "There are tags in the repository that aren't pushed into remote repository. Push them now."
+description "A tag in the local repository isn't pushed into remote repository. Push it now."
 
 setup do
   # remember the working directory so we can come back to it later
