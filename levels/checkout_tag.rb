@@ -26,6 +26,8 @@ setup do
   repo.add("app.rb")
   repo.commit_all("Changes galore")
   repo.git.tag( { 'f' => true }, "v1.5" )
+
+  system "git branch -m master"
 end
 
 solution do

@@ -8,6 +8,7 @@ setup do
 
   FileUtils.touch("README")
   repo.add("README")
+  system "git branch -m master"
 end
 
 solution do

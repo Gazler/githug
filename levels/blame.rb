@@ -1,8 +1,9 @@
 difficulty 2
-description "Someone has put a password inside the file `config.rb` find out who it was."
+description "Identify who put a password inside the file `config.rb`."
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do

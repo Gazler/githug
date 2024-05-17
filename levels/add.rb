@@ -1,10 +1,11 @@
 difficulty 1
-description "There is a file in your folder called `README`, you should add it to your staging area
-Note: You start each level with a new repo. Don't look for files from the previous one."
+description "There is a file in your folder called `README`; add it to your staging area.
+Note: Each level starts with a new repo. Don't look for files of the previous one."
 
 setup do
   repo.init
   FileUtils.touch("README")
+  system "git branch -m master"
 end
 
 solution do

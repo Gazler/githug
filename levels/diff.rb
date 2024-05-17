@@ -1,8 +1,9 @@
 difficulty 2
-description "There have been modifications to the `app.rb` file since your last commit. Find out which line has changed."
+description "Since your last commit, file `app.rb` was modified. Find out which line has changed."
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do

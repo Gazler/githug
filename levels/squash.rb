@@ -6,6 +6,7 @@ setup do
   FileUtils.touch(".hidden")
   repo.add(".hidden")
   repo.commit_all("Initial Commit")
+  system "git branch -m master"
   FileUtils.touch("README")
   repo.add("README")
   repo.commit_all("Adding README")

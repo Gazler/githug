@@ -7,6 +7,7 @@ setup do
   FileUtils.touch("app.rb")
   repo.add("app.rb")
   repo.commit_all("Initial commit")
+  system "git branch -m master"
 
   `echo "Some code" >> app.rb`
   repo.add("app.rb")

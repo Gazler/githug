@@ -6,6 +6,7 @@ setup do
   FileUtils.touch("README")
   repo.add("README")
   repo.commit_all("initial commit")
+  system "git branch -m master"
 end
 
 solution do

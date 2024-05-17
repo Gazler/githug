@@ -1,5 +1,5 @@
 difficulty 2
-description "There are tags in the repository that aren't pushed into remote repository. Push them now."
+description "A tag in the local repository isn't pushed into remote repository. Push it now."
 
 setup do
   # remember the working directory so we can come back to it later
@@ -14,6 +14,7 @@ setup do
   repo.add        "file1"
   repo.commit_all "First commit"
   repo.git.tag({'f' => true}, "tag_to_be_pushed")
+  system "git branch -m master"
 
   FileUtils.touch "file2"
   repo.add        "file2"

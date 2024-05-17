@@ -1,11 +1,12 @@
 difficulty 1
-description "You want to work on a piece of code that has the potential to break things, create the branch test_code."
+description "To work on a piece of code that has the potential to break things, create the branch test_code."
 
 setup do
   repo.init
   FileUtils.touch("README")
   repo.add "README"
   repo.commit_all("Initial commit")
+  system "git branch -m master"
 end
 
 solution do

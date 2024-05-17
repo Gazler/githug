@@ -3,6 +3,7 @@ description "You've made some changes and want to work on them later. You should
 
 setup do
   init_from_level
+  system "git branch -m master"
 end
 
 solution do

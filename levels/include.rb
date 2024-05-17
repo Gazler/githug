@@ -6,6 +6,7 @@ setup do
   FileUtils.touch("first.a")
   FileUtils.touch("second.a")
   FileUtils.touch("lib.a")
+  system "git branch -m master"
   file = File.open(".git/config", "w") do |file|
     file.puts "[core]\nexcludesfile="
   end

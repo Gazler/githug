@@ -1,5 +1,5 @@
 difficulty 1
-description "There are some files in this repository, how many of the files are staged for a commit?"
+description "There are some files in this repository; how many of them are staged for a commit?"
 
 setup do
   repo.init
@@ -8,6 +8,7 @@ setup do
   %w{rubyfile4.rb rubyfile5.rb}.each do |file|
     FileUtils.touch(file)
     repo.add(file)
+    system "git branch -m master"
   end
   repo.commit_all "Commit"
 
@@ -47,5 +48,5 @@ solution do
 end
 
 hint do
-  puts "You are looking for a command to identify the status of the repository, (resembles a linux command)."
+  puts "You are looking for a command to identify the status of the repository (resembles a Linux command)."
 end

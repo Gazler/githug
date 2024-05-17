@@ -14,6 +14,7 @@ setup do
   FileUtils.touch "file1"
   repo.add        "file1"
   repo.commit_all "committed changes on master"
+  system "git branch -m master"
 
   # copy the repo to remote
   FileUtils.cp_r ".", tmpdir

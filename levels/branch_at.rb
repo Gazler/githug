@@ -12,6 +12,7 @@ setup do
   File.open("file1", 'a') { |f| f.write("\nAdding some more text") }
   repo.add("file1")
   repo.commit_all("Updating file1 again")
+  system "git branch -m master"
 end
 
 solution do

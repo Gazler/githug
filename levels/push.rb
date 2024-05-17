@@ -28,6 +28,7 @@ setup do
   FileUtils.touch "file3"
   repo.add        "file3"
   repo.commit_all "Third commit"
+  system "git branch -m master"
 
   # remote repo
   Dir.chdir tmpdir
@@ -39,6 +40,7 @@ setup do
   FileUtils.touch "file4"
   repo.add        "file4"
   repo.commit_all "Fourth commit"
+  system "git branch -m master"  # tentative addition
 
   # change back to original repo to set up a remote
   Dir.chdir cwd

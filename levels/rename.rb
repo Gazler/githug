@@ -7,6 +7,7 @@ setup do
   FileUtils.touch("oldfile.txt")
   repo.add("oldfile.txt")
   repo.commit_all("Commited oldfile.txt")
+  system "git branch -m master"
 end
 
 solution do

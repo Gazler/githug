@@ -9,6 +9,7 @@ setup do
 
   # local repo
   repo.init
+  system "git branch -m master"
 
   # adds a file to origin/master
   FileUtils.touch "master_file"
@@ -51,16 +52,16 @@ solution do
   # after a git fetch command, each branch will be stored in in the .git/FETCH_HEAD file. Each branch is on its own line
   # This command will count the number of lines, which will give the number of branches
   if File.file?('.git/FETCH_HEAD') # checks for file existence
-  	num_remote = File.read(".git/FETCH_HEAD").split("\n").count
+    num_remote = File.read(".git/FETCH_HEAD").split("\n").count
   else
-  	num_remote = 0
+    num_remote = 0
   end
 
   # there should be 1 local branch and 2 remote branches for a success condition
   if local_branches == 1 and num_remote == 2
-  	result = true
+    result = true
   else
-  	result = false
+    result = false
   end
 end
 
