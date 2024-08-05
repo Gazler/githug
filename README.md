@@ -157,4 +157,31 @@ It would be ideal if you add an integration test for your level.  These tests li
 
 1. Answers are not being checked properly
 
-   *This is a common issue we are facing and we are actively working to fix it. In the mean time, You can run this command, `git branch -m master` and continue with the levels. The issue arises because of the recent git update of calling the default branch `main` instead of `master`. Happy Learning!*
+   *This is a common issue we are facing and we are actively working to fix it.*
+
+   For now, run the following commands to change the default branch name to master. This should fix most of the issues you may face.
+   ```
+   $ git config --global init.defaultBranch master
+   $ githug reset
+   ```
+
+   From the current level forward, the default branch will be `master`.
+
+2. `githug` command doesn't work
+
+    Githug currently isn't supported on ruby versions ^3.0.0. Use any ruby version below 3.0.0 (preferrably 2.7.1).
+
+    If you use rvm, execute the below commands
+
+    ```
+    $ rvm install 2.7.1
+    $ rvm use 2.7.1
+    ```
+
+    If you use rbenv, execute the below commands
+
+    ```
+    $ rbenv install 2.7.1
+    $ rbenv global 2.7.1
+    ```
+
