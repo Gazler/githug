@@ -2,7 +2,7 @@ module Githug
   class Level
     include UI
 
-    LEVELS = [nil, "init", "config", "add", "commit", "clone",
+    LEVELS = [nil, "init", "config", "core_editor", "add", "commit", "clone",
               "clone_to_folder", "ignore", "include", "status",
               "number_of_files_committed", "rm", "rm_cached", "stash", "rename",
               "restructure", "log", "tag", "push_tags", "commit_amend",
