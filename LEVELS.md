@@ -1,6 +1,6 @@
 # Githug Levels
 
-A complete guide to all **56 levels** in Githug, ordered from beginner to advanced. Each level teaches a different Git concept through hands-on practice.
+A complete guide to all **57 levels** in Githug, ordered from beginner to advanced. Each level teaches a different Git concept through hands-on practice.
 
 > **Difficulty Scale:** 1 = Beginner | 2 = Intermediate | 3 = Advanced | 4 = Expert
 
@@ -65,9 +65,10 @@ git clone https://github.com/Gazler/cloneme my_cloned_repo
 | 10 | **number_of_files_committed** | 1 | There are some files in this repository; how many of them are staged for a commit? |
 | 11 | **rm** | 2 | A file has been removed from the working tree, but not from the repository. Identify this file and remove it. |
 | 12 | **rm_cached** | 2 | A file has accidentally been added to your staging area. Identify and remove it from the staging area. _(Note: Do not remove the file from the file system, only from git.)_ |
-| 13 | **stash** | 2 | You've made some changes and want to work on them later. You should save them, but don't commit them. |
-| 14 | **rename** | 3 | We have a file called `oldfile.txt`. We want to rename it to `newfile.txt` and stage this change. |
-| 15 | **restructure** | 3 | You added some files to your repository, but now realize that your project needs to be restructured. Make a new folder named `src` and use Git to move all of the `.html` files into this folder. |
+| 13 | **clean** | 2 | There are multiple untracked files and directories cluttering your repository. Clean up your working tree by deleting all untracked files and directories. |
+| 14 | **stash** | 2 | You've made some changes and want to work on them later. You should save them, but don't commit them. |
+| 15 | **rename** | 3 | We have a file called `oldfile.txt`. We want to rename it to `newfile.txt` and stage this change. |
+| 16 | **restructure** | 3 | You added some files to your repository, but now realize that your project needs to be restructured. Make a new folder named `src` and use Git to move all of the `.html` files into this folder. |
 
 <details>
 <summary>Solutions (Working with Files)</summary>
@@ -105,17 +106,26 @@ git rm deleteme.rb
 git rm --cached deleteme.rb
 ```
 
-**Level 13 - stash**
+**Level 13 - clean**
+```bash
+# Dry run to see what would be removed:
+git clean -n -d
+
+# Force removal of untracked files and directories:
+git clean -f -d
+```
+
+**Level 14 - stash**
 ```bash
 git stash
 ```
 
-**Level 14 - rename**
+**Level 15 - rename**
 ```bash
 git mv oldfile.txt newfile.txt
 ```
 
-**Level 15 - restructure**
+**Level 16 - restructure**
 ```bash
 mkdir src
 git mv *.html src/
@@ -129,38 +139,38 @@ git mv *.html src/
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 16 | **log** | 2 | Identify the hash of the latest commit. |
-| 17 | **tag** | 2 | We have a git repo and we want to tag the current commit with `new_tag`. |
-| 18 | **push_tags** | 2 | A tag in the local repository isn't pushed into the remote repository. Push it now. |
-| 19 | **commit_amend** | 2 | The `README` file has been committed, but it looks like the file `forgotten_file.rb` was missing from the commit. Add the file and amend your previous commit to include it. |
-| 20 | **commit_in_future** | 2 | Commit your changes with a future date (e.g. tomorrow). |
+| 17 | **log** | 2 | Identify the hash of the latest commit. |
+| 18 | **tag** | 2 | We have a git repo and we want to tag the current commit with `new_tag`. |
+| 19 | **push_tags** | 2 | A tag in the local repository isn't pushed into the remote repository. Push it now. |
+| 20 | **commit_amend** | 2 | The `README` file has been committed, but it looks like the file `forgotten_file.rb` was missing from the commit. Add the file and amend your previous commit to include it. |
+| 21 | **commit_in_future** | 2 | Commit your changes with a future date (e.g. tomorrow). |
 
 <details>
 <summary>Solutions (History and Tags)</summary>
 
-**Level 16 - log**
+**Level 17 - log**
 ```bash
 git log
 # Answer: the full hash of the latest commit
 ```
 
-**Level 17 - tag**
+**Level 18 - tag**
 ```bash
 git tag new_tag
 ```
 
-**Level 18 - push_tags**
+**Level 19 - push_tags**
 ```bash
 git push origin --tags
 ```
 
-**Level 19 - commit_amend**
+**Level 20 - commit_amend**
 ```bash
 git add forgotten_file.rb
 git commit --amend
 ```
 
-**Level 20 - commit_in_future**
+**Level 21 - commit_in_future**
 ```bash
 git commit --date="2026-10-01T00:00:00" -m "Commit in future"
 ```
@@ -173,24 +183,24 @@ git commit --date="2026-10-01T00:00:00" -m "Commit in future"
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 21 | **reset** | 2 | There are two files to be committed. The goal was to add each file as a separate commit, however both were added by accident. Unstage the file `to_commit_second.rb` using the reset command (don't commit anything). |
-| 22 | **reset_soft** | 2 | You committed too soon. Now you want to undo the last commit, while keeping the index. |
-| 23 | **checkout_file** | 3 | A file has been modified, but you don't want to keep the modification. Checkout the `config.rb` file from the last commit. |
+| 22 | **reset** | 2 | There are two files to be committed. The goal was to add each file as a separate commit, however both were added by accident. Unstage the file `to_commit_second.rb` using the reset command (don't commit anything). |
+| 23 | **reset_soft** | 2 | You committed too soon. Now you want to undo the last commit, while keeping the index. |
+| 24 | **checkout_file** | 3 | A file has been modified, but you don't want to keep the modification. Checkout the `config.rb` file from the last commit. |
 
 <details>
 <summary>Solutions (Undoing Changes)</summary>
 
-**Level 21 - reset**
+**Level 22 - reset**
 ```bash
 git reset HEAD to_commit_second.rb
 ```
 
-**Level 22 - reset_soft**
+**Level 23 - reset_soft**
 ```bash
 git reset --soft HEAD^
 ```
 
-**Level 23 - checkout_file**
+**Level 24 - checkout_file**
 ```bash
 git checkout -- config.rb
 ```
@@ -203,38 +213,38 @@ git checkout -- config.rb
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 24 | **remote** | 2 | This project has a remote repository. Identify it. |
-| 25 | **remote_url** | 2 | The remote repositories have a URL associated to them. Please enter the URL of `remote_location`. |
-| 26 | **pull** | 2 | You need to pull changes from your origin repository. |
-| 27 | **remote_add** | 2 | Add a remote repository called `origin` with the URL `https://github.com/githug/githug`. |
-| 28 | **push** | 3 | Your local master branch has diverged from the remote `origin/master` branch. Rebase your branch onto `origin/master` and push it to remote. |
+| 25 | **remote** | 2 | This project has a remote repository. Identify it. |
+| 26 | **remote_url** | 2 | The remote repositories have a URL associated to them. Please enter the URL of `remote_location`. |
+| 27 | **pull** | 2 | You need to pull changes from your origin repository. |
+| 28 | **remote_add** | 2 | Add a remote repository called `origin` with the URL `https://github.com/githug/githug`. |
+| 29 | **push** | 3 | Your local master branch has diverged from the remote `origin/master` branch. Rebase your branch onto `origin/master` and push it to remote. |
 
 <details>
 <summary>Solutions (Remotes and Syncing)</summary>
 
-**Level 24 - remote**
+**Level 25 - remote**
 ```bash
 git remote
 # Answer: my_remote_repo
 ```
 
-**Level 25 - remote_url**
+**Level 26 - remote_url**
 ```bash
 git remote -v
 # Answer: https://github.com/githug/not_a_repo
 ```
 
-**Level 26 - pull**
+**Level 27 - pull**
 ```bash
 git pull origin master
 ```
 
-**Level 27 - remote_add**
+**Level 28 - remote_add**
 ```bash
 git remote add origin https://github.com/githug/githug
 ```
 
-**Level 28 - push**
+**Level 29 - push**
 ```bash
 git rebase origin/master
 git push origin master
@@ -248,19 +258,19 @@ git push origin master
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 29 | **diff** | 2 | Since your last commit, file `app.rb` was modified. Find out which line has changed. |
-| 30 | **blame** | 2 | Identify who put a password inside the file `config.rb`. |
+| 30 | **diff** | 2 | Since your last commit, file `app.rb` was modified. Find out which line has changed. |
+| 31 | **blame** | 2 | Identify who put a password inside the file `config.rb`. |
 
 <details>
 <summary>Solutions (Inspecting and Comparing)</summary>
 
-**Level 29 - diff**
+**Level 30 - diff**
 ```bash
 git diff
 # Answer: 26
 ```
 
-**Level 30 - blame**
+**Level 31 - blame**
 ```bash
 git blame config.rb
 # Answer: Spider Man
@@ -274,48 +284,48 @@ git blame config.rb
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 31 | **branch** | 1 | To work on a piece of code that has the potential to break things, create the branch `test_code`. |
-| 32 | **checkout** | 2 | Create and switch to a new branch called `my_branch`. You will need to create a branch like you did in the previous level. |
-| 33 | **checkout_tag** | 2 | You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`. |
-| 34 | **checkout_tag_over_branch** | 2 | You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`. _(Note: There is also a branch named `v1.2`.)_ |
-| 35 | **branch_at** | 3 | You forgot to branch at the previous commit and made a commit on top of it. Create the branch `test_branch` at the commit before the last. |
-| 36 | **delete_branch** | 2 | You have created too many branches for your project. There is an old branch in your repo called `delete_me`, you should delete it. |
-| 37 | **push_branch** | 2 | You've made some changes to a local branch and want to share it, but aren't yet ready to merge it with the `master` branch. Push only `test_branch` to the remote repository. |
+| 32 | **branch** | 1 | To work on a piece of code that has the potential to break things, create the branch `test_code`. |
+| 33 | **checkout** | 2 | Create and switch to a new branch called `my_branch`. You will need to create a branch like you did in the previous level. |
+| 34 | **checkout_tag** | 2 | You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`. |
+| 35 | **checkout_tag_over_branch** | 2 | You need to fix a bug in the version 1.2 of your app. Checkout the tag `v1.2`. _(Note: There is also a branch named `v1.2`.)_ |
+| 36 | **branch_at** | 3 | You forgot to branch at the previous commit and made a commit on top of it. Create the branch `test_branch` at the commit before the last. |
+| 37 | **delete_branch** | 2 | You have created too many branches for your project. There is an old branch in your repo called `delete_me`, you should delete it. |
+| 38 | **push_branch** | 2 | You've made some changes to a local branch and want to share it, but aren't yet ready to merge it with the `master` branch. Push only `test_branch` to the remote repository. |
 
 <details>
 <summary>Solutions (Branching)</summary>
 
-**Level 31 - branch**
+**Level 32 - branch**
 ```bash
 git branch test_code
 ```
 
-**Level 32 - checkout**
+**Level 33 - checkout**
 ```bash
 git checkout -b my_branch
 ```
 
-**Level 33 - checkout_tag**
+**Level 34 - checkout_tag**
 ```bash
 git checkout v1.2
 ```
 
-**Level 34 - checkout_tag_over_branch**
+**Level 35 - checkout_tag_over_branch**
 ```bash
 git checkout tags/v1.2
 ```
 
-**Level 35 - branch_at**
+**Level 36 - branch_at**
 ```bash
 git branch test_branch HEAD~1
 ```
 
-**Level 36 - delete_branch**
+**Level 37 - delete_branch**
 ```bash
 git branch -d delete_me
 ```
 
-**Level 37 - push_branch**
+**Level 38 - push_branch**
 ```bash
 git push origin test_branch
 ```
@@ -328,42 +338,42 @@ git push origin test_branch
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 38 | **merge** | 2 | We have a file in the branch `feature`. Let's merge it with the master branch. |
-| 39 | **fetch** | 2 | Looks like a new branch was pushed into our remote repository. Get the changes without merging them with the local repository. |
-| 40 | **rebase** | 2 | We are using a git rebase workflow and the feature branch is ready to go into master. Let's rebase the feature branch onto our master branch. |
-| 41 | **rebase_onto** | 2 | You have created your branch from `wrong_branch` and already made some commits, and you realise that you needed to create your branch from `master`. Rebase your commits onto `master` branch so that you don't have `wrong_branch` commits. |
-| 42 | **repack** | 2 | Optimise how your repository is packaged ensuring that redundant packs are removed. |
-| 43 | **cherry-pick** | 3 | Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well. |
+| 39 | **merge** | 2 | We have a file in the branch `feature`. Let's merge it with the master branch. |
+| 40 | **fetch** | 2 | Looks like a new branch was pushed into our remote repository. Get the changes without merging them with the local repository. |
+| 41 | **rebase** | 2 | We are using a git rebase workflow and the feature branch is ready to go into master. Let's rebase the feature branch onto our master branch. |
+| 42 | **rebase_onto** | 2 | You have created your branch from `wrong_branch` and already made some commits, and you realise that you needed to create your branch from `master`. Rebase your commits onto `master` branch so that you don't have `wrong_branch` commits. |
+| 43 | **repack** | 2 | Optimise how your repository is packaged ensuring that redundant packs are removed. |
+| 44 | **cherry-pick** | 3 | Your new feature isn't worth the time and you're going to delete it. But it has one commit that fills in `README` file, and you want this commit to be on the master as well. |
 
 <details>
 <summary>Solutions (Merging and Rebasing)</summary>
 
-**Level 38 - merge**
+**Level 39 - merge**
 ```bash
 git merge feature
 ```
 
-**Level 39 - fetch**
+**Level 40 - fetch**
 ```bash
 git fetch origin
 ```
 
-**Level 40 - rebase**
+**Level 41 - rebase**
 ```bash
 git rebase master feature
 ```
 
-**Level 41 - rebase_onto**
+**Level 42 - rebase_onto**
 ```bash
 git rebase --onto master wrong_branch readme-update
 ```
 
-**Level 42 - repack**
+**Level 43 - repack**
 ```bash
 git repack -d
 ```
 
-**Level 43 - cherry-pick**
+**Level 44 - cherry-pick**
 ```bash
 git log new-feature   # find the commit hash for "Filled in README.md"
 git cherry-pick <commit-hash>
@@ -377,12 +387,12 @@ git cherry-pick <commit-hash>
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 44 | **grep** | 2 | Your project's deadline approaches, you should evaluate how many TODOs are left in your code. |
+| 45 | **grep** | 2 | Your project's deadline approaches, you should evaluate how many TODOs are left in your code. |
 
 <details>
 <summary>Solutions (Searching and Debugging)</summary>
 
-**Level 44 - grep**
+**Level 45 - grep**
 ```bash
 git grep TODO
 # Answer: 4
@@ -396,50 +406,50 @@ git grep TODO
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 45 | **rename_commit** | 3 | Correct the typo in the message of your first (non-root) commit. |
-| 46 | **squash** | 4 | You have committed several times but would like all those changes to be one commit. |
-| 47 | **merge_squash** | 3 | Merge all commits from the `long-feature-branch` as a single commit. |
-| 48 | **reorder** | 4 | You have committed several times but in the wrong order. Please reorder your commits. |
-| 49 | **bisect** | 3 | A bug was introduced somewhere along the way. You know that running `ruby prog.rb 5` should output 15. You can also run `make test`. What are the first 7 chars of the hash of the commit that introduced the bug? |
-| 50 | **stage_lines** | 4 | You've made changes within a single file that belong to two different features, but neither of the changes are yet staged. Stage only the changes belonging to the first feature. |
+| 46 | **rename_commit** | 3 | Correct the typo in the message of your first (non-root) commit. |
+| 47 | **squash** | 4 | You have committed several times but would like all those changes to be one commit. |
+| 48 | **merge_squash** | 3 | Merge all commits from the `long-feature-branch` as a single commit. |
+| 49 | **reorder** | 4 | You have committed several times but in the wrong order. Please reorder your commits. |
+| 50 | **bisect** | 3 | A bug was introduced somewhere along the way. You know that running `ruby prog.rb 5` should output 15. You can also run `make test`. What are the first 7 chars of the hash of the commit that introduced the bug? |
+| 51 | **stage_lines** | 4 | You've made changes within a single file that belong to two different features, but neither of the changes are yet staged. Stage only the changes belonging to the first feature. |
 
 <details>
 <summary>Solutions (Rewriting History)</summary>
 
-**Level 45 - rename_commit**
+**Level 46 - rename_commit**
 ```bash
 git rebase -i HEAD~2
 # Change "pick" to "reword" on the line with "First coommit"
 # Save and close, then correct the message to "First commit"
 ```
 
-**Level 46 - squash**
+**Level 47 - squash**
 ```bash
 git rebase -i HEAD~4
 # Change "pick" to "squash" (or "s") for the last 3 commits
 # Save and close, then write a combined commit message
 ```
 
-**Level 47 - merge_squash**
+**Level 48 - merge_squash**
 ```bash
 git merge --squash long-feature-branch
 git commit -m "Merged long-feature-branch"
 ```
 
-**Level 48 - reorder**
+**Level 49 - reorder**
 ```bash
 git rebase -i HEAD~3
 # Reorder the lines so commits appear in the correct order
 ```
 
-**Level 49 - bisect**
+**Level 50 - bisect**
 ```bash
 git bisect start HEAD <known-good-commit>
 git bisect run make test
 # Answer: the first 7 characters of the bad commit hash (18ed2ac)
 ```
 
-**Level 50 - stage_lines**
+**Level 51 - stage_lines**
 ```bash
 git add -p feature.rb
 # Split the hunk with "s", then stage only the first feature's changes
@@ -454,35 +464,35 @@ git add -p feature.rb
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 51 | **find_old_branch** | 4 | You have been working on a branch but got distracted by a major issue. Switch back to that branch even though you forgot the name of it. |
-| 52 | **revert** | 4 | You have committed several times but want to undo the middle commit. All commits have been pushed, so you can't change existing history. |
-| 53 | **restore** | 4 | You decided to delete your latest commit by running `git reset --hard HEAD^` (not a smart thing to do). Now you changed your mind and want that commit back. Restore the deleted commit. |
-| 54 | **conflict** | 4 | You need to merge `mybranch` into the current branch (master). But there may be some incorrect changes in `mybranch` which may cause conflicts. Solve any merge-conflicts you come across and finish the merge. |
-| 55 | **submodule** | 2 | You want to include the files from the following repo: `https://github.com/jackmaney/githug-include-me` into the folder `./githug-include-me`. Do this without manually cloning the repo or copying the files from the repo into this repo. |
+| 52 | **find_old_branch** | 4 | You have been working on a branch but got distracted by a major issue. Switch back to that branch even though you forgot the name of it. |
+| 53 | **revert** | 4 | You have committed several times but want to undo the middle commit. All commits have been pushed, so you can't change existing history. |
+| 54 | **restore** | 4 | You decided to delete your latest commit by running `git reset --hard HEAD^` (not a smart thing to do). Now you changed your mind and want that commit back. Restore the deleted commit. |
+| 55 | **conflict** | 4 | You need to merge `mybranch` into the current branch (master). But there may be some incorrect changes in `mybranch` which may cause conflicts. Solve any merge-conflicts you come across and finish the merge. |
+| 56 | **submodule** | 2 | You want to include the files from the following repo: `https://github.com/jackmaney/githug-include-me` into the folder `./githug-include-me`. Do this without manually cloning the repo or copying the files from the repo into this repo. |
 
 <details>
 <summary>Solutions (Expert Challenges)</summary>
 
-**Level 51 - find_old_branch**
+**Level 52 - find_old_branch**
 ```bash
 git reflog
 # Find the branch name you were on (solve_world_hunger)
 git checkout solve_world_hunger
 ```
 
-**Level 52 - revert**
+**Level 53 - revert**
 ```bash
 git revert HEAD~1
 ```
 
-**Level 53 - restore**
+**Level 54 - restore**
 ```bash
 git reflog
 # Find the hash of the deleted commit
 git reset --hard HEAD@{1}
 ```
 
-**Level 54 - conflict**
+**Level 55 - conflict**
 ```bash
 git merge mybranch
 # Edit poem.txt to resolve conflicts - remove conflict markers and keep the correct lines
@@ -490,7 +500,7 @@ git add poem.txt
 git commit
 ```
 
-**Level 55 - submodule**
+**Level 56 - submodule**
 ```bash
 git submodule add https://github.com/jackmaney/githug-include-me githug-include-me
 ```
@@ -503,12 +513,12 @@ git submodule add https://github.com/jackmaney/githug-include-me githug-include-
 
 | # | Level | Difficulty | Description |
 |---|-------|:----------:|-------------|
-| 56 | **contribute** | 3 | This is the final level, the goal is to contribute to this repository by making a pull request on GitHub. Please note that this level is designed to encourage you to add a valid contribution to Githug, not testing your ability to create a pull request. Contributions that are likely to be accepted are levels, bug fixes and improved documentation. |
+| 57 | **contribute** | 3 | This is the final level, the goal is to contribute to this repository by making a pull request on GitHub. Please note that this level is designed to encourage you to add a valid contribution to Githug, not testing your ability to create a pull request. Contributions that are likely to be accepted are levels, bug fixes and improved documentation. |
 
 <details>
 <summary>Solution (The Final Level)</summary>
 
-**Level 56 - contribute**
+**Level 57 - contribute**
 
 1. Fork the Githug repository on GitHub
 2. Clone your fork locally
@@ -525,7 +535,7 @@ git submodule add https://github.com/jackmaney/githug-include-me githug-include-
 | Difficulty | Level | Count |
 |------------|:-----:|:-----:|
 | Beginner | 1 | 9 |
-| Intermediate | 2 | 27 |
+| Intermediate | 2 | 28 |
 | Advanced | 3 | 11 |
 | Expert | 4 | 9 |
 
