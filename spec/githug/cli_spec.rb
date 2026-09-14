@@ -107,7 +107,7 @@ describe Githug::CLI do
         Githug::Level.should_receive(:load).with("rename_commit").and_return(level)
         Githug::UI.should_receive(:word_box).with("Githug")
         Githug::UI.should_receive(:puts).with("resetting level")
-        subject.reset("45")
+        subject.reset(Githug::Level::LEVELS.index("rename_commit").to_s)
       end
 
       it "resets the level with a path" do

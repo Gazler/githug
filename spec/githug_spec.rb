@@ -94,6 +94,11 @@ describe "The Game" do
     `githug`.should be_solved
   end
 
+  it "solves the clean level" do
+    `git clean -f -d`
+    `githug`.should be_solved
+  end
+
   it "solves the stash level" do
     `git stash save`
     `githug`.should be_solved

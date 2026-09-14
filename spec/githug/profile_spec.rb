@@ -43,13 +43,8 @@ describe Githug::Profile do
 
     before(:each) do
       profile.stub(:save)
-      @levels = Githug::Level::LEVELS
-      Githug::Level::LEVELS = ["init", "add", "rm", "rm_cached", "diff"]
+      profile.stub(:levels).and_return(["init", "add", "rm", "rm_cached", "diff"])
       profile.level = "init"
-    end
-
-    after(:each) do
-      Githug::Level::LEVELS = @levels
     end
 
     describe "#level_bump" do
