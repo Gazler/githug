@@ -13,7 +13,7 @@ module Githug
       private
 
       def settings
-        return defaults unless File.exists?(PROFILE_FILE)
+        return defaults unless File.exist?(PROFILE_FILE)
         defaults.merge(YAML::load(File.open(PROFILE_FILE)))
       end
 
