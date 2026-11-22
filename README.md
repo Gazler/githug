@@ -22,6 +22,13 @@ ruby --version
 
 If ruby is not installed, follow the installation instructions on [ruby-lang.org](https://www.ruby-lang.org/en/documentation/installation/).
 
+Your git default branch should be named master. To set it as such you can run the command:
+
+```
+git config --global init.defaultbranch master
+```
+Don't worry, you'll learn more about how this works later in the game.
+
 ### Installation
 
 To install Githug, run
